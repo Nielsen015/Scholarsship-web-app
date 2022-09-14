@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -31,7 +34,7 @@ h6{
     padding: 2px 80px 40px 80px;
 }
 .section-m1 {
-    margin: 40px 80px;
+    padding: 40px 0 0 0;
 }
 /* navigation */
 nav {
@@ -299,6 +302,8 @@ main .content .text p{
     width: 45%;
     height: auto;
     border-radius: 20px;
+    background-size: cover;
+    background-position: center;
 }
 #about-head div {
     padding-left: 50px;
@@ -343,6 +348,8 @@ main .content .text p{
     width: 45%;
     height: auto;
     border-radius: 20px;
+    background-size: cover;
+    background-position: center;
 }
 #about-head1 div{
     padding-right: 50px;
@@ -361,7 +368,8 @@ main .content .text p{
     
     
  }
- #about-head1 .btn a{
+ #about-head1 .btn a,
+ #scholarships .btn a{
     text-decoration: none;
     color: #fff;
     font-size: 0.9rem;
@@ -371,8 +379,191 @@ main .content .text p{
     border-radius: 25px;
     transition: 0.5s ease;
 }
-#about-head1 .btn a:hover{
+#about-head1 .btn a:hover,
+#scholarships .btn a:hover{
     color: #24306e;
     background-color: #fff;
     border: 1.5px solid #24306e;
 }
+/* scholarship pages */
+#scholarships{
+    text-align: center;
+}
+#scholarships .course-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    grid-gap: 1.5rem;
+    margin-top: 50px;
+    
+}
+#scholarships .courses{
+    text-align: start;
+    background: #f9f9ff;
+    height: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    border-radius: 15px;
+}
+#scholarships .courses img{
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 15px 0px 0px;
+    transition: transform .2s;
+
+}
+#scholarships .courses .details{
+    padding: 15px 15px 0 15px;
+}
+#scholarships .courses .details .btn{
+ align-items: center;
+}
+#scholarships .btn {
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+#scholarships .courses .details i{
+    color: #2E3441;
+    font-size: 16px;
+}
+#scholarships .courses .details h6 a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #24306e;
+}
+.underline-hover-effect{
+    /* display: inline-block; */
+    padding-bottom: 0.15rem;
+    position: relative;
+}
+.underline-hover-effect::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #24306e;
+    transition: width 0.5s ease;
+}
+.underline-hover-effect:hover::before{
+    width: 50%;
+}#scholarships .courses .cost{
+    background-color: rgb(74, 74, 136);
+    color: #f9f9ff;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+}
+.gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #24306e;
+    bottom: 16px;
+    right: 32px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 32px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gotopbtn.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+#registration{
+    background-image: linear-gradient(rgba(99,112,168,0.5), rgba(81,91,233,0.5)),url("images/signup.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#registration .reminder{
+     color: #fff;
+}
+#registration .reminder h1{
+    color: #fff;
+    font-size: 30px;
+}
+#registration .reminder .time{
+    display: flex;
+    margin-top: 40px;
+}
+#registration .reminder .time .date{
+    text-align: center;
+    padding: 3px 15px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 5px;
+    margin: 0 5px 10px 5px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+#registration .form{
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+}
+#registration .form input{
+    margin: 15px 0;
+    padding: 15px 10px;
+    border: 1px solid rgb(84, 40, 241);
+    outline: none;
+}
+#registration .form input::placeholder{
+    color: #413c3c;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+#registration .form .btn{
+    margin-top: 20px;
+}
+#registration .form a.blue{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    color: #fff;
+    background: #fdc938;
+    transition: 0.3s ease;
+}
+#registration .form a.blue:hover{
+    color: #24306e;
+    background: #fff;
+    border: 1px solid #24306e;
+}
+footer{
+    padding: 8vw;
+    background-color: #24306e;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
