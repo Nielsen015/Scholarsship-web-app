@@ -21,6 +21,18 @@ h6{
     font-size: 1.1rem;
     color: rgb(36, 48, 110);
 }
+.section-p1 {
+    padding: 40px 80px;
+}
+.section-p2 {
+    padding: 10px 120px;
+}
+.section-p3 {
+    padding: 2px 80px 40px 80px;
+}
+.section-m1 {
+    margin: 40px 80px;
+}
 /* navigation */
 nav {
     display: flex;
@@ -57,7 +69,7 @@ nav .navigation ul li a{
     color: #ffff;
     font-size: 16px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: 0.5s ease;
 }
 nav .navigation ul li a:hover,
 nav .navigation ul li a.active {
@@ -142,6 +154,224 @@ nav .navigation .signup:hover {
     margin-top: 30px;
 }
 #home .btn a:hover{
+    color: #24306e;
+    background-color: #fff;
+    border: 1.5px solid #24306e;
+}
+/* info page */
+main{
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px 50px 75px 100px;
+    border-radius: 15px;
+    margin-top: -50px;
+}
+/* main .content{
+    display: flex;
+    justify-content: center;
+    padding-inline: 15px;
+    
+}
+main .content img{
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-right: -30px;
+    padding-left: -30px;
+}
+main .btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    background-color: #24306e;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: 0.5s ease;
+}
+main .btn,
+#info .btn,
+#tag .btn,
+#about-head .btn{
+    margin-top: 30px;
+}
+main .btn a:hover{
+    color: #24306e;
+    background-color: #fff;
+    border: 1.5px solid #24306e;
+}
+main .content .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 80px;
+} */
+main .content .text h2,
+#info .texth2,
+#about-head1 h2,
+#about-head h2{
+    color: #16100C;  
+}
+main .content .text p{
+   text-align: center; 
+   width: 200%;
+}
+/* #info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-inline: 15px;
+}
+#info img {
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
+}
+#info .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#info .btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    background-color: #24306e;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: 0.5s ease;
+}
+#info .btn a:hover{
+    color: #24306e;
+    background-color: #fff;
+    border: 1.5px solid #24306e;
+}
+#info .text p{
+   text-align: center; 
+   width: 200%;
+   
+}
+#tag {
+    display: flex;
+    justify-content: space-evenly;
+}
+#tag img {
+    width: 40%;
+    height: auto;
+    border-radius: 20px;
+}
+#tag .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 80px;
+}
+#tag .btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    background-color: #24306e;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: 0.5s ease;
+}
+#tag .btn a:hover{
+    color: #24306e;
+    background-color: #fff;
+    border: 1.5px solid #24306e;
+}
+#tag .text p{
+   text-align: center; 
+   width: 200%;
+   
+} */
+#about-head {
+    display: flex;
+    align-items: center;
+}
+#about-head img {
+    width: 45%;
+    height: auto;
+    border-radius: 20px;
+}
+#about-head div {
+    padding-left: 50px;
+    
+}
+#about-head div .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+#about-head div .text p{
+    text-align: center; 
+    
+    
+ }
+ #about-head .btn,
+ #about-head1 .btn{
+    margin-top: 30px;
+}
+ #about-head .btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    background-color: #24306e;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: 0.5s ease;
+}
+#about-head .btn a:hover{
+    color: #24306e;
+    background-color: #fff;
+    border: 1.5px solid #24306e;
+}
+#about-head1 {
+    display: flex;
+    align-items: center;
+}
+#about-head1 img {
+    width: 45%;
+    height: auto;
+    border-radius: 20px;
+}
+#about-head1 div{
+    padding-right: 50px;
+    
+}
+#about-head1 div .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    vertical-align: text-top;
+}
+#about-head1 div .text p{
+    text-align: center; 
+    
+    
+ }
+ #about-head1 .btn a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    background-color: #24306e;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: 0.5s ease;
+}
+#about-head1 .btn a:hover{
     color: #24306e;
     background-color: #fff;
     border: 1.5px solid #24306e;
