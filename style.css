@@ -620,7 +620,7 @@ footer li:hover{
     color: #fff;
 }
 footer .letter{
-    padding-left: 50px;
+    padding-left: 5px;
     align-items: right;
     padding-top: 20px;
 }
@@ -701,4 +701,13 @@ footer .subscribe .btn:hover{
     color: #721c24;
     background: #f8d7da;
     border: 1px solid #f5c6cb;
+  }
+  .copyright{
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    margin-top: 80px;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
   }
