@@ -410,9 +410,15 @@ main .content .text p{
     background-size: cover;
     background-position: center;
     border-radius: 15px 15px 0px 0px;
-    transition: transform .2s;
+   /* transform: transform .2s; */
 
 }
+/* .img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-2);
+} */
 #scholarships .courses .details{
     padding: 15px 15px 0 15px;
 }
@@ -462,13 +468,14 @@ main .content .text p{
     right: 15px;
     bottom: 100px;
 }
+/* floating button-- back to top */
 .gotopbtn{
     position: fixed;
     width: 50px;
     height: 50px;
     background: #24306e;
     bottom: 16px;
-    right: 32px;
+    right: 20px;
     text-decoration: none;
     color: #fff;
     font-size: 32px;
@@ -479,12 +486,21 @@ main .content .text p{
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #fff;
 }
 .gotopbtn.active {
     bottom: 32px;
     pointer-events: auto;
     opacity: 1;
 }
+.gotopbtn i{
+    color: #fff;
+    align-items: center;
+    font-size: 45px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+/* login--commented */
 #registration{
     background-image: linear-gradient(rgba(99,112,168,0.5), rgba(81,91,233,0.5)),url("images/signup.jpg");
     width: 100%;
@@ -558,12 +574,131 @@ main .content .text p{
     background: #fff;
     border: 1px solid #24306e;
 }
+/* footer */
 footer{
-    padding: 8vw;
+    padding: 4vw 8vw;
     background-color: #24306e;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 }
+footer .footer-col{
+    padding-bottom: 30px;
+}
+#footer-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 
+}
+#footer-row .footer-img{
+    opacity: 0.2;
+    width: 80vh;
+    height: auto;
+    border-radius: 50%;
+    /* align-items: center; */
+    /* padding-left: 100px; */
+    padding-right: 100px;
+}
+footer .footer-col a{
+    text-decoration: none;
+}
+footer h3{
+    color: #fff;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+footer li{
+    color: #7b838a;
+    list-style: none;
+    padding: 10px 0;
+    transition: 0.3s ease;
+}
+footer li:hover{
+    color: #fff;
+}
+footer .letter{
+    padding-left: 50px;
+    align-items: right;
+    padding-top: 20px;
+}
+footer .letter p{
+    color: #7b838a;
+    text-align: center;
+}
+footer .letter h3{
+    text-align: center;
+}
+footer .letter .subscribe{
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 120px;
+    
+}
+footer .follow{
+    /* margin-top:  20px; */
+    padding-right: 200px;
+    font-size: 20px;
+}
+footer .follow i { 
+    color: #fff;
+    padding-right: 4px;
+    cursor: pointer;
+    
+}
+footer .follow h3{
+    color: #fff;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+footer .follow i:hover,
+footer a:hover{
+    color: #F7941D;
+}
+.footer-row img{
+    border-radius: 50%;
+}
+footer input{
+    width: 250px;
+    padding: 9px 12px;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    color: #24306e;
+    font-family: 'Poppins', sans-serif;
+}
+footer .subscribe .btn{
+    padding: 9px 12px;
+    margin-left: -5px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+    background: #F7941D;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    
+}
+footer .subscribe .btn:hover{
+   color: #fff;
+   background-color: #1E995B; 
+
+}
+.alert{
+    margin: -9px 0 12px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .success-alert{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+  .error-alert{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
