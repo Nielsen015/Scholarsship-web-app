@@ -36,6 +36,13 @@ h6{
 .section-m1 {
     padding: 40px 0 0 0;
 }
+#mobile{
+    display: none;
+    align-items: center;  
+  }
+  #close{
+      display: none;
+  }
 /* navigation */
 nav {
     display: flex;
@@ -43,6 +50,17 @@ nav {
     justify-content: space-between;
     align-items: center;
     /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); */
+}
+nav .navigation{
+    display: flex;
+}
+#menu-btn{
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+#menu-close{
+    display: none;
 }
 nav img{
     width:80px;
@@ -711,3 +729,89 @@ footer .subscribe .btn:hover{
     cursor: pointer;
     width: 100%;
   }
+  @media (max-width:769px){
+    .section-p1{
+        padding: 40px 80px;
+    }
+   nav {
+       padding: 15px 20px;
+       width: 50%;
+    }
+    nav img{
+        width: 80px;
+        background-color: #fff;
+    }
+    #menu-close{
+        display: initial;
+        font-size: 1.6rem;
+        color: #fff;
+        padding: 30px 0 20px 20px;
+    }
+    #menu-btn{
+        display: initial;
+        top: 100px;
+        
+    }
+    nav .navigation ul{
+        position: absolute;
+        top: 0;
+        right: -220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 220px;
+        background: rgba(17, 20, 104, 0.45);
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #24306e;
+        height: 100vh;
+        /* padding: 30px 0 20px 20px; */
+    }
+    nav .navigation .buttons{
+        position: absolute;
+        top: 235px;
+        right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    nav .navigation .button{
+        margin-bottom: 8px;
+    }
+    nav .navigation ul li a:hover {
+    color: rgb(255, 255, 255); 
+    }
+    nav .navigation .signup:hover {
+        color: rgb(255, 255, 255); 
+    }
+    nav .navigation ul li a{
+        color: #24306e;
+    }
+    nav .navigation .signup{
+        border: 1px solid #fff;
+        padding: 3px 12px;
+        color: #fff;
+    }
+    #home{
+        height: 120vh;
+        /* padding: 0 80px; */
+        background-position: top 30% right 80%;
+    }
+    #home .home{
+        padding: 55px 15px;
+        width: 60%;
+    }
+    nav .navigation ul li{
+        padding: 0 0 20px 40px;
+        margin-left: 0;
+    }
+    nav .navigation ul li a{
+        color: #fff;
+    }
+    main{
+        width: 50%;
+    }
+    
+}
