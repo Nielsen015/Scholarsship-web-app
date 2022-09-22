@@ -8,6 +8,12 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/icon type">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+		
     <script src="https://use.fontawesome.com/4cdbe91b1d.js"></script>
     
      
@@ -19,23 +25,22 @@
     <nav>
         <img src="images/logo.png" alt="logo" >
         <div class="navigation">
-            <ul>
-                <i id="menu-close" class="fas fa-times"></i>
+            <ul id="navbar">
+                <i id="close" class="fas fa-times"></i>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Scholarships</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <img id="menu-btn" src="images/menu.png" alt="">
                 <div class="buttons">
                     <a href="#" class="button">Sign in</a>
                     <a href="#" class="signup">Sign up</a>
                 </div>
             </ul>
+            
+
+
         </div>
-           
-        
-        
-    </div>
+        <div id="bar"><i class="fas fa-bars"></i></div>
     </nav>
     <div class="home">
         <h2> <span style="color: #24306e;">Find Scholarships</span><br>and achieve your dreams</h2>
@@ -305,9 +310,17 @@
         </div>
         
     </footer>
-    
+    <script>
+        $('#bar').click(function(){
+           $('nav.navigation ul').addClass('active')
+       });
+       $('#close').click(function(){
+           $('nav.navigation ul').removeClass('active')
+       });
+   </script>
     <script src="https://use.fontawesome.com/4cdbe91b1d.js"></script>
     <script src="script.js"></script> 
-    <script></script>
+    <script src="file.js"></script>
+    
 </body>
 </html>

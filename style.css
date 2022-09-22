@@ -54,9 +54,9 @@ nav {
 nav .navigation{
     display: flex;
 }
-#menu-btn{
-    width: 30px;
-    height: 30px;
+#bar{
+    width: 40px;
+    height: 40px;
     display: none;
 }
 #menu-close{
@@ -729,89 +729,62 @@ footer .subscribe .btn:hover{
     cursor: pointer;
     width: 100%;
   }
-  @media (max-width:769px){
-    .section-p1{
-        padding: 40px 80px;
-    }
-   nav {
-       padding: 15px 20px;
-       width: 50%;
+  @media (max-width:953px){
+    nav {
+        padding: 15px 20px;
     }
     nav img{
         width: 80px;
-        background-color: #fff;
     }
-    #menu-close{
+    #bar{
         display: initial;
-        font-size: 1.6rem;
         color: #fff;
-        padding: 30px 0 20px 20px;
-    }
-    #menu-btn{
+        font-size: 2.0rem;
+    } 
+    #close{
         display: initial;
-        top: 100px;
-        
+        color: #fff;
+        font-size: 1.4rem;
+        padding: 20px 0 20px 20px;
+        margin-left: -40px;
     }
-    nav .navigation ul{
+    #navbar{
         position: absolute;
         top: 0;
         right: -220px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
         width: 220px;
         background: rgba(17, 20, 104, 0.45);
         backdrop-filter: blur(4.5px);
         border: 1px solid rgba(255, 255, 255, 0.18);
-        color: #24306e;
+        display: flex;
         height: 100vh;
-        /* padding: 30px 0 20px 20px; */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        transition: 0.5s;
     }
-    nav .navigation .buttons{
+    #navbar.active{
+        right: 0px;
+    }
+    nav .navigation ul li {
+        padding: 10px 0 20px 20px;
+        margin-left: -40px;
+
+    }
+    nav .navigation .buttons {
         position: absolute;
-        top: 235px;
-        right: 50px;
+        top: 280px;
+        right:75px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-start;
     }
     nav .navigation .button{
-        margin-bottom: 8px;
-    }
-    nav .navigation ul li a:hover {
-    color: rgb(255, 255, 255); 
-    }
-    nav .navigation .signup:hover {
-        color: rgb(255, 255, 255); 
-    }
-    nav .navigation ul li a{
-        color: #24306e;
+        margin-bottom: 10px;
     }
     nav .navigation .signup{
-        border: 1px solid #fff;
-        padding: 3px 12px;
-        color: #fff;
+        padding: 3px 8px;
     }
-    #home{
-        height: 120vh;
-        /* padding: 0 80px; */
-        background-position: top 30% right 80%;
-    }
-    #home .home{
-        padding: 55px 15px;
-        width: 60%;
-    }
-    nav .navigation ul li{
-        padding: 0 0 20px 40px;
-        margin-left: 0;
-    }
-    nav .navigation ul li a{
-        color: #fff;
-    }
-    main{
-        width: 50%;
-    }
-    
-}
+  }
