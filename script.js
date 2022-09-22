@@ -1,9 +1,21 @@
-const toTop = document.querySelector(".gotopbtn");
 
-window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100) {
-        toTop.classList.add("active");
-    }else{
-        toTop.classList.remove("active");
-    }
-})
+// $('#menu-btn').click(function(){
+//     $('nav.navigation ul').addClass('active')
+// });
+// $('#menu-close').click(function(){
+//     $('nav.navigation ul').removeClass('active')
+// });
+const bar = document.getElementById('bar');
+const close = document.getElementById('close');
+const nav = document.getElementById('navbar');
+
+if (bar){
+    bar.addEventListener('click', () => {
+        nav.classList.add('active');
+    })
+}
+if (close){
+    close.addEventListener('click', () => {
+        nav.classList.remove('active');
+    })
+}
