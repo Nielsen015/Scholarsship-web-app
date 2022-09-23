@@ -28,9 +28,23 @@
             <ul id="navbar">
                 <i id="close" class="fas fa-times"></i>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Scholarships</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <!-- <li class="dropdown"><button onclick="myFunction()" class="dropbtn">Scholarships</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                      </div></li> -->
+                <li> <div class="dropdown">
+                    <button class="dropbtn">Scholarships
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="#">Undergraduate</a>
+                      <a href="#">Masters</a>
+                      <a href="#">PhD</a>
+                    </div></div></li>
+                <li class="about"><a href="#">About Us</a></li>
+                <li class="contact"><a href="#">Contact Us</a></li>
                 <div class="buttons">
                     <a href="#" class="button">Sign in</a>
                     <a href="#" class="signup">Sign up</a>
@@ -318,6 +332,27 @@
            $('nav.navigation ul').removeClass('active')
        });
    </script>
+   <!-- ​<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script> -->
     <script src="https://use.fontawesome.com/4cdbe91b1d.js"></script>
     <script src="script.js"></script> 
     <script src="file.js"></script>
