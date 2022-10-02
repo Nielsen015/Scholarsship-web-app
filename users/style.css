@@ -11,7 +11,7 @@
     --color-info-light: #dce1eb;
     --color-dark: #363949;
     --color-light: rgba(132, 139, 200, 0.18);
-    --color-primary-variant: #111e88;
+    --color-primary-variant: #354bf2;
     --color-dark-variant: #677483;
     --color-background: #f6f6f9;
 
@@ -137,6 +137,7 @@ aside .logo img{
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 aside .close{
     display: none;
@@ -228,6 +229,7 @@ main .insights > div{
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    cursor: pointer;
 }
 main .insights > div:hover{
     box-shadow: none;
@@ -419,6 +421,11 @@ main .like a{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.right .shortcuts .load:hover{
+    background: var(--color-primary-variant);
+    color: white;
+    border: none;
 }
 .right .shortcuts .load div{
     display: flex;
