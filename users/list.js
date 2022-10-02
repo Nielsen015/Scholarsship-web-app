@@ -1,0 +1,6 @@
+const List =[
+    {
+        name: 'Havard',
+        
+    }
+]
