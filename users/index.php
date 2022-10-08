@@ -1,91 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholarly</title>
-    <link rel="shortcut icon" href="images/logo.png" type="image/icon type">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-		
-    <script src="https://use.fontawesome.com/4cdbe91b1d.js"></script>
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo"  >
-                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/index.html';">
-                    <h2>SCHO<span class="primary">LARLY </span></h2>
-                </div>
-                <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">close</span>
-                </div>
-            </div>
-            <div class="sidebar">
-                <a href="#" class="active">
-                    <span class="material-icons-sharp">
-                        home
-                        </span>
-                        <h3>Dashboard</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        monetization_on
-                        </span>
-                        <h3>Scholarships</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        account_balance_wallet
-                        </span>
-                        <h3>Wallet</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        checklist_rtl
-                        </span>
-                        <h3>My College List</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        <!-- swap_horizschool -->school
-                        </span>
-                        <h3>Application Process</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        message
-                        </span>
-                        <h3>Message us</h3>
-                        
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        notifications_active
-                        </span>
-                        <h3>Notifications</h3>
-                        <span class="message-count">0</span>
-                </a>
-                
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        settings
-                        </span>
-                        <h3>settings</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        logout
-                        </span>
-                        <h3>Logout</h3>
-                </a>
-            </div>
-        </aside>
+<?php
+include('includes/header.php'); 
+include('includes/sidebar.php'); 
+date_default_timezone_set('Africa/Nairobi');
+$currentTime = date( 'd-m-Y h:i:s A', time () );
+?>
         <!-- main section -->
         <main>
             <h1>Dashboard</h1>
@@ -97,7 +15,7 @@
             </div>
             <div class="insights">
                 <!-- wallet -->
-                <div onclick="window.location.href='/index.html';" class="wallet" >
+                <div onclick="window.location.href='/scholarship.php';" class="wallet" >
                     <span class="material-icons-sharp">
                         payments
                         </span>
@@ -279,8 +197,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script src="list.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+        <?php
+        include('includes/footer.php');
+        ?>

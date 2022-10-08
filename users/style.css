@@ -4,7 +4,7 @@
 :root{
     --color-primary: #24306e;
     --color-danger: #ff7782;
-    --color-success: #41f1b6;
+    --color-success: #46B469;
     --color-warning: #ffbb55;
     --color-white: #fff;
     --color-info-dark: #7d8da1;
@@ -236,7 +236,7 @@ main .insights > div:hover{
 }
 main .insights > div span{
     background: var(--color-primary);
-    padding: 00.5rem;
+    padding: 0.5rem;
     border-radius: 50%;
     color: var(--color-white);
     font-size: 2rem;
@@ -435,6 +435,187 @@ main .like a{
 .right .shortcuts .load div h3{
     font-weight: 600;
 }
+.scholar{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto; 
+}
+.theme{
+    display: flex;
+    flex-direction: row;
+}
+.scholar  button{
+    display: none;
+}
+.scholar .theme-toggler{
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 3.8rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: var(--border-radius-1);
+}
+.scholar.theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scholar .theme-toggler span.active{
+    background: var(--color-success);
+    color: white;
+    border-radius: var(--border-radius-1);
+} 
+.scholar .container{
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+    
+}
+.card-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    grid-gap: 1rem;
+}
+.card{
+    position: relative;
+    background: var(--color-white);
+    max-width: 325px;
+    width: 20rem;
+    height: 15rem;
+    margin: 25px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: all 300ms ease;
+    cursor: pointer;
+    /* align-items: center;
+    text-align: center;
+    justify-items: center; */
+}
+.card:hover{
+    box-shadow: none;
+}
+.card .info{
+    padding: 15px 15px 0 15px;
+}
+.card .info h3{
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.card .date{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.card span{
+    color: var(--color-dark-variant);
+    font-size: 16px;
+    margin-top: 2.5px;
+}
+.card .date h3{
+    font-size: 14px;
+    color: var(--color-dark-variant);
+}
+.card .btn{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+.card .btn a{
+   text-decoration: none;
+   color: #fff;
+   font-size: 0.9rem;
+   padding: 4px 10px;
+   background-color: #24306e;
+   font-weight: 500;
+   border-radius: 25px;
+   transition: 0.5s ease;
+}
+.card .btn a:hover{
+   color: #24306e;
+   background-color: #fff;
+   border: 1px solid var(--color-primary);
+}
+.scholar .underline-hover-effect{
+    /* display: inline-block; */
+    padding-bottom: 0.15rem;
+    position: relative;
+}
+ .scholar .underline-hover-effect::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #24306e;
+    transition: width 0.5s ease;
+}
+ .scholar .underline-hover-effect:hover::before{
+    width: 80%;
+}
+.scholar .pagination{
+    /* margin: 30px 30px 60px; */
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5 rem;
+}
+.pagination li{
+    display: inline-block;
+    margin: 5px;
+    box-shadow: var(--box-shadow);
+}
+.pagination li a{
+    color: var(--color-white);
+    font-size: 1.2rem;
+    line-height: 45px;
+}
+.previous-page, .next-page{
+    background: var(--color-primary);
+    width: 80px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+.previous-page:hover{
+    transform: translateX(-5px);
+}
+.next-page:hover{
+    transform: translateX(5px);
+}
+.current-page, .dots{
+    background: var(--color-dark-variant);
+    width: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pagination .active{
+    background: var(--color-primary);
+}
+.pagination .disable{
+    background: var(--color-dark-variant);
+}
+
 /* media query */
 @media screen and (max-width:1200px) {
    .container{
@@ -517,7 +698,7 @@ main .like a{
     }
     aside .sidebar a:last-child{
         position: absolute;
-        bottom: 15rem;
+        bottom: 30rem;
     }
     aside .close{
         display: inline-block;
