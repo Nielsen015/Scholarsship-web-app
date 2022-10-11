@@ -439,15 +439,19 @@ main .like a{
     display: grid;
     width: 96%;
     margin: 0 auto;
-    gap: 1.8rem;
+    gap: 2rem;
     grid-template-columns: 14rem auto; 
 }
 .theme{
     display: flex;
     flex-direction: row;
+    /* justify-content: space-evenly;
+    align-items: flex-start; */
+    
 }
 .scholar  button{
     display: none;
+    margin-right: 20px;
 }
 .scholar .theme-toggler{
     background: var(--color-light);
@@ -459,6 +463,7 @@ main .like a{
     cursor: pointer;
     margin-top: 1rem;
     border-radius: var(--border-radius-1);
+    margin-top: 2px;
 }
 .scholar.theme-toggler span{
     font-size: 1.2rem;
@@ -473,19 +478,62 @@ main .like a{
     color: white;
     border-radius: var(--border-radius-1);
 } 
-.scholar .container{
-    /* min-height: 100vh; */
+.scholar .card-deck{
+    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    margin-top: 10px;
-    
+    flex-direction: column;
 }
-.card-content{
+.results{
+    position: absolute;
+    left: 300px;
+    top: 55px;
+}
+.results h2{
+    font-size: 1rem;
+}
+.results span{
+    font-size: 0.8rem;
+}
+ .search-form{
+    position: absolute;
+    right: 80px;
+    top: 30px;
+}
+.search-form .search-bar{
+    width: 100%;
+    max-width:300px;
+    background: var(--color-white);
+    display: flex;
+    flex-wrap: wrap;
+    /* position: absolute; */
+    right: 80px;
+    border-radius: 60px;
+    padding: 10px 20px;
+    border: 1px solid var(--color-primary);
+    margin-top: -10px;
+    margin-bottom: 2rem;
+}
+.search-form .search-bar input{
+    background: none;
+}
+.search-form .search-bar input::placeholder{
+    color: var(--color-primary);
+    opacity: 1;
+    font-weight: 500;
+}
+.search-form .search-bar span{
+    align-items: right;
+}
+.scholar .card-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px;
 }
 .card{
     position: relative;
@@ -493,7 +541,6 @@ main .like a{
     max-width: 325px;
     width: 20rem;
     height: 15rem;
-    margin: 25px;
     box-shadow: var(--box-shadow);
     border-radius: 10px;
     overflow: hidden;
@@ -538,7 +585,7 @@ main .like a{
 }
 .card .btn a{
    text-decoration: none;
-   color: #fff;
+   color: white;
    font-size: 0.9rem;
    padding: 4px 10px;
    background-color: #24306e;
@@ -548,7 +595,7 @@ main .like a{
 }
 .card .btn a:hover{
    color: #24306e;
-   background-color: #fff;
+   background-color: white;
    border: 1px solid var(--color-primary);
 }
 .scholar .underline-hover-effect{
@@ -563,21 +610,20 @@ main .like a{
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #24306e;
+    background-color: var(--color-primary);
     transition: width 0.5s ease;
 }
  .scholar .underline-hover-effect:hover::before{
     width: 80%;
 }
-.scholar .pagination{
-    /* margin: 30px 30px 60px; */
+.pagination{
+    text-align: center;
+    margin: 10px 10px auto;
     user-select: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    margin-top: 1.5 rem;
 }
 .pagination li{
     display: inline-block;
@@ -698,7 +744,7 @@ main .like a{
     }
     aside .sidebar a:last-child{
         position: absolute;
-        bottom: 30rem;
+        bottom: 10rem;
     }
     aside .close{
         display: inline-block;
