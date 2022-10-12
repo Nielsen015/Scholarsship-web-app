@@ -15,7 +15,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
             </div>
             <div class="insights">
                 <!-- wallet -->
-                <div onclick="window.location.href='/scholarship.php';" class="wallet" >
+                <div onclick="window.location.href='wallet.php';" class="wallet" >
                     <span class="material-icons-sharp">
                         payments
                         </span>
@@ -27,7 +27,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                         </div>
                 </div>
                 <!-- message us -->
-                <div class="text">
+                <div onclick="window.location.href='message.php';" class="text">
                     <span class="material-icons-sharp">
                         send
                         </span>
@@ -39,7 +39,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                         </div>
                 </div>
                 <!-- find scholarships -->
-                <div class="search">
+                <div onclick="window.location.href='scholarship.php';" class="search">
                     <span class="material-icons-sharp">
                         search
                         </span>

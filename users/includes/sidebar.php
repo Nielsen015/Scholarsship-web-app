@@ -21,32 +21,32 @@
                         </span>
                         <h3>Scholarships</h3>
                 </a>
-                <a href="#">
+                <a href="wallet.php">
                     <span class="material-icons-sharp">
                         account_balance_wallet
                         </span>
                         <h3>Wallet</h3>
                 </a>
-                <a href="#">
+                <a href="list.php">
                     <span class="material-icons-sharp">
                         checklist_rtl
                         </span>
                         <h3>My College List</h3>
                 </a>
-                <a href="#">
+                <a href="process.php">
                     <span class="material-icons-sharp">
                         <!-- swap_horizschool -->school
                         </span>
                         <h3>Application Process</h3>
                 </a>
-                <a href="#">
+                <a href="message.php">
                     <span class="material-icons-sharp">
                         message
                         </span>
                         <h3>Message us</h3>
                         
                 </a>
-                <a href="#">
+                <a href="alert.php">
                     <span class="material-icons-sharp">
                         notifications_active
                         </span>
@@ -54,7 +54,7 @@
                         <span class="message-count">0</span>
                 </a>
                 
-                <a href="#">
+                <a href="setting.php">
                     <span class="material-icons-sharp">
                         settings
                         </span>

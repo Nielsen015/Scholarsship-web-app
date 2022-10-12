@@ -901,7 +901,7 @@ include('includes/header.php');
                showPage(1);
 
                $(document).on("click", ".paginaton li.current-page:not(.active)", function(){
-                return showPage(+$(this).text());
+                return showPage(+$(currentPage).text());
                });
                
                
