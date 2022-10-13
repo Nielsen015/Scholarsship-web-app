@@ -1,0 +1,446 @@
+ /*Start of About Page */
+ #about{
+    background-image: linear-gradient(rgba(9, 5, 54, 0.4),rgba(5,4,46,0.8)), url("../pictures/b3.jpg");
+    width: 100%;
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.about{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.about-content{	
+	text-align: center;
+    margin-top: 30px;    
+}
+
+.about-content h2{
+	font-weight: 500;
+	color: #fff;
+	font-size:30px ;
+}
+.about-content span{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.about-content p{
+	font-weight: 300;
+	color: #fff;
+}
+.about-container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.about-container .aboutInfo{
+	width: 50%;	
+   
+}
+.about-container .aboutInfo .box{
+	position: relative;
+	padding:40px 0 ;
+	display: flex;
+	justify-content: center;
+	align-items: center;   
+	border: 5px solid white;
+    margin: 0px 50px 50px 50px;
+    box-shadow: 10px 15px 18px #000;
+
+}
+
+.about-container .aboutInfo .box .logo-wrapper{
+	width: 80%;
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    box-shadow: 10px 15px 18px #000;
+	
+}
+
+/*about wrapper*/
+.about-wrapper{
+	width: 50%;
+	padding: 10px;	
+	border-radius: 10px;
+    background-color: #757377;
+    opacity: .9;	
+}
+
+.about-wrapper h2{
+	font-size: 25px;
+	color:#fff;
+	font-weight: 500;
+   
+}
+.about-wrapper p{
+	margin-top: 30px;
+	color: #fff;
+
+}
+
+/*mobile responsiveness*/
+/* @media(max-width: 991px){
+    htlm, body{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    #about{
+        min-height: 180vh;
+    }
+	.about{
+		
+		padding: 50px;
+	}
+
+	.about-container{
+		flex-direction: column;
+		
+	}
+
+	.about-container .abouttInfo{
+		margin-bottom: 10px;        
+	}
+
+    .about-container .aboutInfo .box{
+        height: 600px;
+        width: 70%;
+        
+    }
+
+	.about-container .aboutInfo,
+	.about-wrapper{
+		width: 100%;
+	}
+   
+} */
+@media(max-width: 480px){
+    htlm, body{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+}
+
+/*End of About page */
+
+@media (max-width:953px){   
+    #about{
+        min-height: 180vh;
+    }
+	.about{
+		
+		padding: 50px;
+	}
+
+	.about-container{
+		flex-direction: column;
+		
+	}
+
+	.about-container .abouttInfo{
+		margin-bottom: 10px;        
+	}
+
+    .about-container .aboutInfo .box{
+      
+        width: 50%;
+        
+    }
+
+	.about-container .aboutInfo,
+	.about-wrapper{
+		width: 100%;
+	}
+
+  }
+  @media (max-width: 580px) {
+    nav .navigation .buttons {
+        left: -25px;
+        top: 270px;
+        
+    }
+    #home .home{
+        text-align: center;
+        justify-content: center;
+        padding: 60vw 2vw 4vw 2vw;
+        font-weight: 600;
+    }
+    #about-head,
+    #about-head1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 2vw 8vw 2vw 8vw;
+    }
+    main{
+        /* margin-left: -70px; */
+        background: #fff;
+        padding: 25px 10px 15px 10px;
+        margin-top: -30px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #about-head img{
+        width: 100%;
+        margin-top: 1px;
+
+    }
+    #about-head1 img {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+    #about-head div .text {
+       text-align: center;
+       justify-content: flex-start;
+       align-items: center;
+       text-align: center;
+       justify-content: center;
+       padding: 10vw 2vw 4vw 2vw;
+       margin-top: 20px;
+       /* padding: 2vw 8vw 2vw 8vw; */
+       width: 120%;
+       margin-left: -55px;
+    }
+    #about-head1 .btn{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #about-head1 div .text {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 2vw 8vw 2vw 8vw;
+        width: 120%;
+     }
+    #about-head1 .btn{
+    margin-left: 35px;
+    } 
+    #about-head .btn{
+        margin-left: -40px;
+      }
+    #footer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    }
+    footer .follow {
+        padding-right: 30px;
+        margin-top: 5px;
+    }
+    footer .letter .subscribe {
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -10px;
+        justify-content: center;
+    }
+    footer input {
+        width: 55%;
+        padding-left: 20px;
+        margin-left: 20px;
+        
+    }
+    #scholarships {
+        padding: 8vw 6vw 8vw 6vw;
+    }
+    .copyright{
+      font-size: 14px;
+      }
+  }
+  @media (max-width: 370px){
+    #home .home{
+        padding: 60vw 2vw 4vw 2vw;
+    }
+    #home .home h2{
+        font-size: 25px;
+        font-weight: 500;
+        color: #fff;
+    }
+    #home .home span{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    #home .home p{
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .copyright{
+        font-size: 12px;
+        }
+
+  }
+  @media screen and (max-width: 540px) and (min-width: 530px) {
+    #scholarships{
+        padding: 15vw;
+        text-align: center;
+
+    } 
+    footer input {
+        width: 65%;
+        padding-left: 20px;
+        margin-left: 20px;
+        
+    }
+    
+  }
+  @media screen and (max-width: 300px) and (min-width: 200px){
+    footer input {
+        width: 55%;
+        padding-left: 20px;
+        margin-left: 20px;
+        
+    }
+    .copyright{
+        font-size: 10px;
+        }
+    #scholarships {
+    padding: 2vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+    }
+   #scholarships .course-box{
+    padding: 4vw 2vw 4vw 2vw;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+    /* flex-wrap: wrap; */
+    padding: 2vw 6vw 2vw 6vw;
+   }
+    #about-head1 .btn{
+        padding: 2vw;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        } 
+    main{
+        width: 200%;
+        
+    }
+    #scholarships .courses .cost {
+        bottom: 80px;
+    }
+    #scholarships .btn {
+        margin-top: 10px;
+    }
+  }
+  @media screen and (max-width: 720px) and (min-width: 700px){
+    body{
+        width: 100%;
+    }
+    nav .navigation .buttons {
+        left: -35px;
+        top: 270px;
+        
+    }
+    #home .home{
+        text-align: center;
+        justify-content: center;
+        padding: 60vw 2vw 4vw 2vw;
+        font-weight: 600;
+    }
+    #about-head,
+    #about-head1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 2vw 8vw 2vw 8vw;
+    }
+    main{
+        /* margin-left: -70px; */
+        background: #fff;
+        padding: 25px 10px 15px 10px;
+        margin-top: -30px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #about-head img{
+        width: 100%;
+        margin-top: 1px;
+
+    }
+    #about-head1 img {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+    #about-head div .text {
+       text-align: center;
+       justify-content: flex-start;
+       align-items: center;
+       text-align: center;
+       justify-content: center;
+       padding: 10vw 2vw 4vw 2vw;
+       margin-top: 20px;
+       /* padding: 2vw 8vw 2vw 8vw; */
+       width: 120%;
+       margin-left: -55px;
+    }
+    #about-head1 .btn{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #about-head1 div .text {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 2vw 8vw 2vw 8vw;
+        width: 120%;
+     }
+    #about-head1 .btn{
+    margin-left: 35px;
+    } 
+    #about-head .btn{
+        margin-left: -40px;
+      }
+      #scholarships {
+        padding: 6vw 12vw 6vw 12vw;
+    }
+    #scholarships .courses .cost {
+        bottom: 135px;
+    }
+    footer .follow {
+        padding-right: 5px;
+        margin-top: 35px;
+    }
+    footer .letter {
+        padding-left: 0px;
+        align-items: center;
+        padding-top: 20px;
+        margin-right: 0px;
+    }
+  }

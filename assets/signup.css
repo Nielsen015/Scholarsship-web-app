@@ -1,0 +1,432 @@
+/*Signup Page*/
+
+#signup{
+    background-image: linear-gradient(rgba(9, 5, 54, 0.5),rgba(5,4,46,0.9)), url("../pictures/b4.jpg");
+    width: 100%;
+    height: 195vh;
+    background-size: cover;
+    background-position: center;
+}
+.input-space{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+  }
+
+/* .signin-bg{
+    width: 5000px;
+}
+
+.signin-form{
+    width: 400px;
+} */
+
+@media (max-width:953px){
+    nav {
+        padding: 15px 20px;
+    }
+    nav img{
+        width: 80px;
+    }
+    #bar{
+        display: initial;
+        color: #fff;
+        font-size: 2.0rem;
+    } 
+    #close{
+        display: initial;
+        color: #fff;
+        font-size: 1.4rem;
+        padding: 20px 0 20px 20px;
+        margin-left: -40px;
+    }
+    #navbar{
+        position: absolute;
+        top: 0;
+        right: -220px;
+        width: 220px;
+        background: rgba(17, 20, 104, 0.45);
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 5px;
+        transition: 0.5s;
+    }
+    #navbar.active{
+        right: 0px;
+    }
+    nav .navigation ul li {
+        padding: 10px 0 20px 20px;
+        margin-left: -40px;
+        font-weight: 800;
+
+    }
+    nav .navigation .buttons {
+        position: absolute;
+        top: 270px;
+        right:75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    nav .navigation .button{
+        margin-bottom: 15px;
+    }
+    nav .navigation .signup{
+        padding: 3px 8px;
+    }
+    #home .home{
+        padding: 395px 70px; 
+        justify-content: space-between;
+    }
+    main{
+        padding: 25px 50px 25px 100px;
+        margin-top: -40px;
+    }
+    #about-head,
+    #about-head1{
+        padding: 2vw vw 8vw 4vw;
+    }
+    #about-head img {
+        width: 40%;
+        padding-top: -10px;
+    }
+    #about-head div .text{
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    #about-head1 img{
+        width: 45%;
+    }
+    #about-head div .text{
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    #about-head1 div .text{
+        margin-right: 10px;
+    }
+    #scholarships{
+        padding: 8vw 4vw 8vw 4vw;
+        text-align: center;
+        margin-bottom: 15px;
+
+    } 
+    
+    /* #scholarships .course-box{
+       width: 100%;
+       height: auto;
+        
+    }
+    #scholarships .courses .cost{
+        right: 15px;
+        bottom: 190px;
+    }
+    #scholarships .cost:nth-child(3){
+        right: 15px;
+        bottom: 150px;
+    } */
+    .gotopbtn{
+        bottom: 50px;
+        right: 225px;
+    }
+    footer .letter{
+        padding-left: 0px;
+        align-items: center;
+        padding-top: 20px;
+    }
+    footer .follow {
+       padding-right: 30px;
+       margin-top: 35px;
+    }
+    .dropdown-content{
+    margin-bottom: 100px;
+    }
+    .dropdown{
+    margin-bottom: 20px;
+    }
+    /* .navigation .about{
+    margin-top: 90px;
+    } */
+    /* .navigation .contact{
+    margin-bottom: 30px;
+    } */
+  }
+  @media (max-width: 580px) {
+    nav .navigation .buttons {
+        left: -25px;
+        top: 270px;
+        
+    }
+    #home .home{
+        text-align: center;
+        justify-content: center;
+        padding: 60vw 2vw 4vw 2vw;
+        font-weight: 600;
+    }
+    #about-head,
+    #about-head1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 2vw 8vw 2vw 8vw;
+    }
+    main{
+        /* margin-left: -70px; */
+        background: #fff;
+        padding: 25px 10px 15px 10px;
+        margin-top: -30px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #about-head img{
+        width: 100%;
+        margin-top: 1px;
+
+    }
+    #about-head1 img {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+    #about-head div .text {
+       text-align: center;
+       justify-content: flex-start;
+       align-items: center;
+       text-align: center;
+       justify-content: center;
+       padding: 10vw 2vw 4vw 2vw;
+       margin-top: 20px;
+       /* padding: 2vw 8vw 2vw 8vw; */
+       width: 120%;
+       margin-left: -55px;
+    }
+    #about-head1 .btn{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #about-head1 div .text {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 2vw 8vw 2vw 8vw;
+        width: 120%;
+     }
+    #about-head1 .btn{
+    margin-left: 35px;
+    } 
+    #about-head .btn{
+        margin-left: -40px;
+      }
+    #footer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    }
+    footer .follow {
+        padding-right: 30px;
+        margin-top: 5px;
+    }
+    footer .letter .subscribe {
+        align-items: center;
+        margin-top: 20px;
+        margin-left: -10px;
+        justify-content: center;
+    }
+    footer input {
+        width: 55%;
+        padding-left: 20px;
+        margin-left: 20px;
+        
+    }
+    #scholarships {
+        padding: 8vw 6vw 8vw 6vw;
+    }
+    .copyright{
+      font-size: 14px;
+      }
+  }
+  @media (max-width: 370px){
+    #home .home{
+        padding: 60vw 2vw 4vw 2vw;
+    }
+    #home .home h2{
+        font-size: 25px;
+        font-weight: 500;
+        color: #fff;
+    }
+    #home .home span{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    #home .home p{
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .copyright{
+        font-size: 12px;
+        }
+
+  }
+  @media screen and (max-width: 540px) and (min-width: 530px) {
+    #scholarships{
+        padding: 15vw;
+        text-align: center;
+
+    } 
+    footer input {
+        width: 65%;
+        padding-left: 20px;
+        margin-left: 20px;
+        
+    }
+    
+  }
+  @media screen and (max-width: 300px) and (min-width: 200px){
+    footer input {
+        width: 55%;
+        padding-left: 20px;
+        margin-left: 20px;
+        
+    }
+    .copyright{
+        font-size: 10px;
+        }
+    #scholarships {
+    padding: 2vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+    }
+   #scholarships .course-box{
+    padding: 4vw 2vw 4vw 2vw;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+    /* flex-wrap: wrap; */
+    padding: 2vw 6vw 2vw 6vw;
+   }
+    #about-head1 .btn{
+        padding: 2vw;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        } 
+    main{
+        width: 200%;
+        
+    }
+    #scholarships .courses .cost {
+        bottom: 80px;
+    }
+    #scholarships .btn {
+        margin-top: 10px;
+    }
+  }
+  @media screen and (max-width: 720px) and (min-width: 700px){
+    body{
+        width: 100%;
+    }
+    nav .navigation .buttons {
+        left: -35px;
+        top: 270px;
+        
+    }
+    #home .home{
+        text-align: center;
+        justify-content: center;
+        padding: 60vw 2vw 4vw 2vw;
+        font-weight: 600;
+    }
+    #about-head,
+    #about-head1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 2vw 8vw 2vw 8vw;
+    }
+    main{
+        /* margin-left: -70px; */
+        background: #fff;
+        padding: 25px 10px 15px 10px;
+        margin-top: -30px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #about-head img{
+        width: 100%;
+        margin-top: 1px;
+
+    }
+    #about-head1 img {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+    #about-head div .text {
+       text-align: center;
+       justify-content: flex-start;
+       align-items: center;
+       text-align: center;
+       justify-content: center;
+       padding: 10vw 2vw 4vw 2vw;
+       margin-top: 20px;
+       /* padding: 2vw 8vw 2vw 8vw; */
+       width: 120%;
+       margin-left: -55px;
+    }
+    #about-head1 .btn{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #about-head1 div .text {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 2vw 8vw 2vw 8vw;
+        width: 120%;
+     }
+    #about-head1 .btn{
+    margin-left: 35px;
+    } 
+    #about-head .btn{
+        margin-left: -40px;
+      }
+      #scholarships {
+        padding: 6vw 12vw 6vw 12vw;
+    }
+    #scholarships .courses .cost {
+        bottom: 135px;
+    }
+    footer .follow {
+        padding-right: 5px;
+        margin-top: 35px;
+    }
+    footer .letter {
+        padding-left: 0px;
+        align-items: center;
+        padding-top: 20px;
+        margin-right: 0px;
+    }
+  }
