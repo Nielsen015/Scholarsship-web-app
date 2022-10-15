@@ -26,7 +26,7 @@ include('includes/header.php');
                         </span>
                         <h3>Scholarships</h3>
                 </a>
-                <a href="wallet.php">
+                <a href="wallet.php" class="active">
                     <span class="material-icons-sharp">
                         account_balance_wallet
                         </span>

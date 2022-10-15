@@ -659,11 +659,13 @@ footer .follow{
     /* margin-top:  20px; */
     padding-right: 200px;
     font-size: 20px;
+    transition: all 0.5 ease;
 }
 footer .follow i { 
     color: #fff;
     padding-right: 0px;
     cursor: pointer;
+    transition: all 0.5 ease;
     
 }
 footer .follow h3{
@@ -821,6 +823,19 @@ footer .subscribe .btn:hover{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  /* faded content */
+  .scholarly-search__more {
+    text-align: center;
+    padding: 300px 0 100px;
+    position: relative;
+    top: -200px;
+    background: linear-gradient(to bottom,transparent,#F5F5F9 35%);
+    margin-bottom: -200px;
+}
+ .scholarly-search__more p.message {
+    font-size: 1.5em;
+    font-weight: 700;
+}
   @media (max-width:953px){
     nav {
         padding: 15px 20px;
