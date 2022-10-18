@@ -95,6 +95,85 @@ include('includes/header.php');
                     </div>
                 </div>
             </div>
+            <div class="table">
+                <div class="table-header">
+                    <p>My Wish List </p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Type to search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div class="table-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Award</th>
+                                <th>Deadline</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>Havard</td>
+                            <td> KES 150000</td>
+                            <td>5 December 2022</td>
+                            <td><button>Apply</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>Havard</td>
+                            <td> KES 150000</td>
+                            <td>5 December 2022</td>
+                            <td><button>Apply</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr><tr>
+                            <td>Havard</td>
+                            <td> KES 150000</td>
+                            <td>5 December 2022</td>
+                            <td><button>Apply</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>Havard</td>
+                            <td> KES 150000</td>
+                            <td>5 December 2022</td>
+                            <td><button>Apply</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>Havard</td>
+                            <td> KES 150000</td>
+                            <td>5 December 2022</td>
+                            <td><button>Apply</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>Havard</td>
+                            <td> KES 150000</td>
+                            <td>5 December 2022</td>
+                            <td><button>Apply</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                    <div><i class="fa-solid fa-angles-left"></i></div>
+                    <div><i class="fa-solid fa-chevron-left"></i></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div><i class="fa-solid fa-angles-right"></i></div>
+                    <div><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+                </div>
+                
+            </div>
     </main>
 
 <?php

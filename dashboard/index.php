@@ -198,5 +198,5 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
             </div>
         </div>
         <?php
-        include('includes/footer.php');
+        include('includes/footer_index.php');
         ?>

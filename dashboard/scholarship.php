@@ -97,9 +97,7 @@ include('includes/header.php');
                 <div class="search-form">
                     <form action="" class="search-bar">
                         <input type="text" placeholder="Type to Search" name="q" class="text">
-                        <span class="material-icons-sharp">
-                        search
-                        </span>
+                        <i class="fa fa-search"></i>
                     </form>
                 </div>
                 <div class="card-content" style="display: none;" > 
