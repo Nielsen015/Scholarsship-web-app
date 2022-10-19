@@ -74,30 +74,6 @@ include('includes/header.php');
             </div>
         </aside>
     <main>
-        <div class="top">
-            <div class="theme">
-                <button id="menu-btn" class="ham">
-                    <span class="material-icons-sharp">
-                        menu
-                        </span>
-                </button>
-                <div class="theme-toggler">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                        </span>
-                        <span class="material-icons-sharp">
-                        dark_mode
-                        </span>
-                </div>
-            </div>
-                
-                <div class="profile">
-                    <div class="info"><b>Nielsen</b></div>
-                    <div class="profile-photo">
-                        <img src="images/man.png" alt="">
-                    </div>
-                </div>
-            </div>
         <div class="wrapper1">
             <div class="text"><h2>Application Process Procedure</h2></div>
             <div class="center-line">
@@ -172,6 +148,29 @@ include('includes/header.php');
                 </section>
             </div>
         </div>
+        <div class="theme">
+            <div class="top1">
+                <button id="menu-btn" class="ham">
+                    <span class="material-icons-sharp">
+                        menu
+                        </span>
+                </button>
+                
+                <div class="profile">
+                    <div class="theme-toggler">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                        </span>
+                        <span class="material-icons-sharp">
+                        dark_mode
+                        </span>
+                </div>
+                    <div class="info"><b>Nielsen</b></div>
+                    <div class="profile-photo">
+                        <img src="images/man.png" alt="">
+                    </div>
+                </div>
+            </div>
     </main>
 
 <?php

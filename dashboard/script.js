@@ -33,10 +33,6 @@ List.forEach(list => {
     tr.innerHTML = trContent;
     document.querySelector('table tbody').appendChild(tr);
 })
-// like btn
-    let btnLike = document.querySelector('#btnh1');
-
-    btnLike.addEventListener('click', () => btnLike.style.color='#24306e')
 //list table
 $(document).ready(function () {
     $('#dtBasicExample').DataTable();

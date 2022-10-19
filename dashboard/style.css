@@ -57,6 +57,7 @@ body{
     font-size: 0.88rem;
     background: var(--color-background);
     user-select: none;
+    -webkit-user-select: none;
     overflow-x: hidden;
     color: var(--color-dark);
 }
@@ -1022,17 +1023,20 @@ tr:hover td{
 
 .process  .ham{
     display: none;
-    margin-right: 20px;
+    margin-top: 6px;
+    
 }
 .process .theme-toggler{
     background: var(--color-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 1.6rem;
+    height: 1.7rem;
     width: 3.8rem;
     cursor: pointer;
     border-radius: var(--border-radius-1);
+    margin-right: 20px;
+    margin-top: 6px;
 }
 .process.theme-toggler span{
     font-size: 1.2rem;
@@ -1047,24 +1051,24 @@ tr:hover td{
     color: white;
     border-radius: var(--border-radius-1);
 } 
-.process .top .profile{
+.process .top1 .profile{
     position: absolute;
     right: 10px;
     display: flex;
     flex-direction: row;
-    top: 10px;
+    top: 6px;
     justify-content: space-between;
 }
-.process .top .profile .info{
+.process .top1 .profile .info{
     margin-right: 8px;
-    margin-top: 10px;
+    margin-top: 6px;
 }
 .process .wrapper1{
     max-width: 1080px;
     margin: 50px auto;
     padding: 0 20px;
-    width: 800px;
-    margin-left: 70px;
+    width: 950px;
+    margin-left: 20px;
     position: relative;
 }
 .wrapper1 .text{
@@ -1171,6 +1175,11 @@ tr:hover td{
         width: 94%;
         grid-template-columns: 7rem auto;
     }
+    .process .wrapper1{
+        width: 650px;
+        margin-left: 0px;
+        
+    }
 }
 @media screen and (max-width:790px) {
     .process{
@@ -1185,6 +1194,7 @@ tr:hover td{
     .process .wrapper1{
         width: auto;
         margin-left: auto;
+        margin-top: 0px;
     }
     .wrapper1 .center-line{
         left: 40px;
@@ -1211,7 +1221,7 @@ tr:hover td{
     .wrapper1 .row{
         margin: 10px 0;
     }
-    .process .top{
+    .process .top1{
         position: fixed;
         top: 0;
         left: 0;
@@ -1224,12 +1234,102 @@ tr:hover td{
         box-shadow: 0 1rem 1rem var(--color-light);
 
     }
-    .process .top .ham{
+    .process .top1 .ham{
         display: initial;
+    }
+    .process .top1 .toggle{
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+    .process .top1 button .ham{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+    .process .profile .info{
+        display: none;
+    }
+    .process .top1 button span{
+        font-size: 2rem;
     }
 }
 /* Message page */
+.message{
+    width: 800px;
+    background: var(--color-white);
+    border-radius: 6px;
+    padding: 20px 60px 40px 40px;
+    box-shadow: var(--box-shadow);
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+.message .message-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+}
+.message .message-content .left-side{
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+.message .message-content .left-side::before{
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-primary);
+}
+ .message-content .left-side .details i {
+    font-size: 25px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+.message-content .left-side .details{
+    margin: 14px;
+    text-align: center;
+}
+.message-content .left-side .details .topic{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+.message-content .left-side .details .text-one,
+.message-content .left-side .details .text-two{
+    font-size: 14px;
+    color: #afafb6;
+}
+.message .message-content .right-side{
+    width: 75%;
+    margin-left: 50px;
+}
+.message-content .right-side .topic-text{
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+ .right-side .input-box{
+    height: 50px;
+    width: 100%;
+    margin: 12px 0;
+ }
+.right-side .input-box select{
+    height: 50%;
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 2px;
+    background-color: #afafb6;
+    color: #fff;
+}
   
 @media screen and (max-width:1200px) {
    .container{
@@ -1348,6 +1448,9 @@ tr:hover td{
         z-index: 2;
         box-shadow: 0 1rem 1rem var(--color-light);
 
+    }
+    .right .theme-toggler {
+        margin-top: 0.5rem;
     }
     .right .top .toggle{
         width: 4.4rem;
