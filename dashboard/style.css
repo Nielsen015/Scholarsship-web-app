@@ -791,7 +791,7 @@ main .like a{
 @media screen and (max-width:440px){
     .scholar .card-content{
         grid-template-columns: repeat(1, 1fr);
-        margin-left: 1px;
+        margin-left: 1.5px;
     }
     /* /* .pagination li{
         width: 8rem;
