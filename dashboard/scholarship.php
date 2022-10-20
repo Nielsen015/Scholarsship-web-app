@@ -75,21 +75,29 @@ include('includes/header.php');
         </aside>
         <!-- main section -->
         <main>
-                <div class="theme">
-                    <button id="menu-btn" class="ham">
-                        <span class="material-icons-sharp">
-                            menu
-                            </span>
-                    </button>
+        <div class="theme">
+            <div class="top1">
+                <button id="menu-btn" class="ham">
+                    <span class="material-icons-sharp">
+                        menu
+                        </span>
+                </button>
+                
+                <div class="profile">
                     <div class="theme-toggler">
-                        <span class="material-icons-sharp active">
-                            light_mode
-                            </span>
-                            <span class="material-icons-sharp">
-                            dark_mode
-                            </span>
+                    <span class="material-icons-sharp active">
+                        light_mode
+                        </span>
+                        <span class="material-icons-sharp">
+                        dark_mode
+                        </span>
+                </div>
+                    <div class="info"><b>Nielsen</b></div>
+                    <div class="profile-photo">
+                        <img src="images/man.png" alt="">
                     </div>
                 </div>
+            </div>
             <div class="card-deck">
                 <div class="results">
                     <h2>3000 <span>results</span></h2>
@@ -1080,7 +1088,7 @@ include('includes/header.php');
                var numberOfItems = $(".card-content .card").length;
                var limitPerPage = 9; //number of cards per page
                var totalPages = Math.ceil(numberOfItems / limitPerPage);
-               var paginationSize = 7; //how many page elements visible in the pagination
+               var paginationSize = 5; //how many page elements visible in the pagination
                var currentPage;
 
                function showPage(whichPage){

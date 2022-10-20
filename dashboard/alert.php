@@ -44,14 +44,14 @@ include('includes/header.php');
                         </span>
                         <h3>Application Process</h3>
                 </a>
-                <a href="message.php" class="active">
+                <a href="message.php">
                     <span class="material-icons-sharp">
                         message
                         </span>
                         <h3>Message us</h3>
                         
                 </a>
-                <a href="alert.php">
+                <a href="alert.php" class="active">
                     <span class="material-icons-sharp">
                         notifications_active
                         </span>
@@ -97,49 +97,46 @@ include('includes/header.php');
                     </div>
                 </div>
             </div>
-        <div class="message1"> 
-            <div class="message1-content">
-                <div class="left-side">
-                    <div class="address details">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="topic">Address</div>
-                        <div class="text-one">Nairobi, Kenya</div>
-                    </div>
-                    <div class="phone details">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="topic">Contact</div>
-                        <div class="text-one">+254743159753</div>
-                    </div>
-                    <div class="email details">
-                        <i class="fas fa-envelope"></i>
-                        <div class="topic">Email</div>
-                        <div class="text-one">scholarly@gmail.com</div>
+            <div class="table">
+                <div class="table-header">
+                    <p>My Wish List </p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Type to search">
+                        <i class="fa fa-search"></i>
                     </div>
                 </div>
-                <div class="right-side">
-                    <div class="topic-text">Send us a Message</div>
-                    <p>Send us a direct chat and we shall respond to your issues.You can also reach us on phone or email address.</p>
-                <form action="send.php">
-                <div class="input-box">
-                    <span class="details">Subject</span>
-                    <Select  id="mode" name="mode" class="form-control" required>
-                        <option value="" selected="disabled">Select your Subject</option>
-                        <option value="refund"> Refund</option>
-                        <option value="others">Walet Balance</option>
-                        <option value="others">Other Issues</option>
-                    </Select>
+                <div class="table-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Serial</th>
+                                <th>Message Status</th>
+                                <th>Date Sent</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>1</td>
+                            <td> Not Read</td>
+                            <td>5 December 2022</td>
+                            <td><button>Read</button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                    <div><i class="fa-solid fa-angles-left"></i></div>
+                    <div><i class="fa-solid fa-chevron-left"></i></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div><i class="fa-solid fa-angles-right"></i></div>
+                    <div><i class="fa-solid fa-chevron-right"></i></div>
                 </div>
-                <div class="input-box message1-box">
-                    <span class="details">Message</span>
-                    <textarea name="details" id="details" required placeholder="Type Your Message Here"></textarea>
                 </div>
-                <div class="button">
-                    <button type="submit">Send Now</button>
-                </div>
-                </form>
-                </div>
+                
             </div>
-        </div>
     </main>
 
 <?php
