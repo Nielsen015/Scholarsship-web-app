@@ -74,26 +74,28 @@ include('includes/header.php');
             </div>
         </aside>
     <main>
-        <div class="top">
-                <button id="menu-btn" class="ham">
-                    <span class="material-icons-sharp">
-                        menu
-                        </span>
-                </button>
-                <div class="theme-toggler">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                        </span>
+            <div class="theme">
+                <div class="top1">
+                    <button id="menu-btn" class="ham">
                         <span class="material-icons-sharp">
-                        dark_mode
-                        </span>
-                </div>
-                <div class="profile">
-                    <div class="info"><b>Nielsen</b></div>
-                    <div class="profile-photo">
-                        <img src="images/man.png" alt="">
+                            menu
+                            </span>
+                    </button>
+                    
+                    <div class="profile">
+                        <div class="theme-toggler">
+                        <span class="material-icons-sharp active">
+                            light_mode
+                            </span>
+                            <span class="material-icons-sharp">
+                            dark_mode
+                            </span>
                     </div>
-                </div>
+                        <div class="info"><b>Nielsen</b></div>
+                        <div class="profile-photo">
+                            <img src="images/man.png" alt="">
+                        </div>
+                    </div>
             </div>
             <div class="table">
                 <div class="table-header">

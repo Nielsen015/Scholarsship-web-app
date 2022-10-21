@@ -125,7 +125,7 @@ include('includes/header.php');
                     <Select  id="mode" name="mode" class="form-control" required>
                         <option value="" selected="disabled">Select your Subject</option>
                         <option value="refund"> Refund</option>
-                        <option value="others">Walet Balance</option>
+                        <option value="others">Wallet Balance</option>
                         <option value="others">Other Issues</option>
                     </Select>
                 </div>

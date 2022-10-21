@@ -75,13 +75,16 @@ include('includes/header.php');
         </aside>
         <!-- main section -->
         <main>
-        <div class="top">
+        <div class="theme">
+            <div class="top1">
                 <button id="menu-btn" class="ham">
                     <span class="material-icons-sharp">
                         menu
                         </span>
                 </button>
-                <div class="theme-toggler">
+                
+                <div class="profile">
+                    <div class="theme-toggler">
                     <span class="material-icons-sharp active">
                         light_mode
                         </span>
@@ -89,14 +92,13 @@ include('includes/header.php');
                         dark_mode
                         </span>
                 </div>
-                <div class="profile">
                     <div class="info"><b>Nielsen</b></div>
                     <div class="profile-photo">
                         <img src="images/man.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="wrapper">
+    <div class="wrapper">
     <input type="radio" name="slider" id="tab-1" checked>
     <input type="radio" name="slider" id="tab-2" >
     <input type="radio" name="slider" id="tab-3">
@@ -146,9 +148,9 @@ include('includes/header.php');
                 <table>
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Platform</th>
-                            <th>Type</th>
+                            <th class="date">Date</th>
+                            <th class="platform">Platform</th>
+                            <th class="type">Type</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -181,116 +183,12 @@ include('includes/header.php');
                 </tbody>
             </table>
             <button>Clear History</button>
-      </div>
-    </div>
-    
-  </div>
-            <!-- <div class="wallet-money">
-                <input type="radio" name="slider" id="tab-1" checked>
-                <input type="radio" name="slider" id="tab-2">
-                <input type="radio" name="slider" id="tab-3">
-                <header>
-                    <label for="tab-1" class="tab-1">Wallet</label>
-                    <label for="tab-2" class="tab-2">Refund</label>
-                    <label for="tab-3" class="tab-3">History</label>
-                    <div class="slider"></div>
-                </header>
-                <div class="cards-area">
-                    <div class="cards">
-                        <div class="row">
-                            <div class="balance">
-                                <span>100</span>
-                                <p>Total Balance</p>
-                            </div>
-                            <ul class="features">
-                                <li><i class="fas fa-check"><span>Use your balance to Apply</span></i></li>
-                                <li><i class="fas fa-check"><span>You can Request for a refund</span></i></li>
-                                <li><i class="fas fa-check"><span>Payment is done via mobile money</span></i></li>
-                                <li><i class="fas fa-check"><span>Secure Gateway for transactions</span></i></li>
-                            </ul>
-
-                        </div>
-                        <div class="row">
-                            <div class="refund">
-                            <span class="material-icons-sharp">
-                            currency_exchange
-                            </span>
-                                <p>Refund Request</p>
-                            </div>
-                            <ul class="features">
-                                <li><i class="fas fa-check"><span>Refund should  be done within 20 days.</span></i></li>
-                                <li><i class="fas fa-check"><span>Refund can not be processed after Application of scholarship</span></i></li>
-                                <li><i class="fas fa-check"><span>Money is refunded by us within 3 days</span></i></li>
-                                <li><i class="fas fa-check"><span>Contact us incase yoyu need help</span></i></li>
-                            </ul>
-
-                        </div>
-                        <div class="row">
-                            <div class="history">
-                            <span class="material-icons-sharp">
-                            history
-                            </span>
-                                <p>Transaction History</p>
-                            </div>
-                            <table>
-                                <thead>
-                                    <tr>Date</tr>
-                                    <tr>Platform</tr>
-                                    <tr>Type</tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                    <td>5/10/2022</td>
-                                    <td>M-pesa</td>
-                                    <td>Load</td>
-                                    </tr>
-                                    <tr>
-                                    <td>5/10/2022</td>
-                                    <td>M-pesa</td>
-                                    <td>Load</td>
-                                    </tr>
-                                    <tr>
-                                    <td>5/10/2022</td>
-                                    <td>M-pesa</td>
-                                    <td>Load</td>
-                                    </tr>
-                                    <tr>
-                                    <td>5/10/2022</td>
-                                    <td>M-pesa</td>
-                                    <td>Load</td>
-                                    </tr>
-                                    <tr>
-                                    <td>5/10/2022</td>
-                                    <td>M-pesa</td>
-                                    <td>Load</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-
-                        </div>
-                    </div>
-                    <button  onclick="window.location.href='/scholarship/index.html'">Load Wallet</button>
-                </div> -->
-                
-
-                
-            <!-- <h3>My wallet Balance</h3>
-                <div class="wallet-balance">
-                <span class="material-icons-sharp">
-                account_balance_wallet
-                </span>
-                <p>Total Balance</p>
-                <p class="amount">Kes 100</p>
-                </div>
-                <div class="btns">
-                    <div class="btn"><a href="#">Load Wallet</a></div>
-                    <div class="btn"><a href="#">Request refund</a></div>
-                </div>
-
-                 -->
-            
             </div>
+            </div>
+            
+        </div>
+            
+    </div>
           
            
         </main>

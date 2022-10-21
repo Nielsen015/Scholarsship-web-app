@@ -51,7 +51,7 @@ include('includes/header.php');
                         <h3>Message us</h3>
                         
                 </a>
-                <a href="alert.php" class="active">
+                <a href="alert.php">
                     <span class="material-icons-sharp">
                         notifications_active
                         </span>
@@ -59,7 +59,7 @@ include('includes/header.php');
                         <span class="message-count">0</span>
                 </a>
                 
-                <a href="setting.php">
+                <a href="setting.php" class="active">
                     <span class="material-icons-sharp">
                         settings
                         </span>

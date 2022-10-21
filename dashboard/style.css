@@ -723,6 +723,9 @@ main .like a{
     
 }
 @media screen and (max-width:790px) {
+    .scholar{
+        grid-template-columns: 1fr;
+    }
     @keyframes showMenu {
         to{
             left: 0;
@@ -869,7 +872,7 @@ main .like a{
 }
 .wrapper{
     width: 600px;
-    height: 400;
+    height: auto;
     background: var(--color-white);
     border-radius: 16px;
     padding: 20px;
@@ -1044,10 +1047,106 @@ main .like a{
 .row table tbody tr:last-child td{
     border: none;
 }
-.row table{
+/* .row table{
     align-items: center;
     text-align: center;
     justify-content: center;
+} */
+/* wallet media queries */
+@media screen and (max-width:1200px) {
+    .wrapper{
+        width: 700px;
+        margin-left: 50px;
+        margin-top: 40px;
+        box-sizing: border-box;
+      }
+      #tab-1:checked ~ header .slider{
+        left: 8%;
+        width: 90px;
+        transform: translateX(5%);
+      }
+      #tab-2:checked ~ header .slider{
+        left: 50%;
+        width: 120px;
+        transform: translateX(-50%);
+      }
+      #tab-3:checked ~ header .slider{
+        left: 93%;
+        width: 95px;
+        transform: translateX(-105%);
+      }
+}
+@media screen and (max-width: 920px){
+    .wrapper{
+        width: 620px;
+        margin-left: auto;
+        margin-top: 40px;
+      }
+      #tab-1:checked ~ header .slider{
+        left: 6%;
+      }
+      #tab-3:checked ~ header .slider{
+        left: 94%;
+      }
+}
+@media screen and (max-width:500px) {
+    .wrapper{
+        width: 350px;
+        margin-left: -5px;
+        margin-top: 10px;
+      }
+      #tab-1:checked ~ header .slider{
+        left: 2%;
+        width: 75px;
+      }
+      #tab-2:checked ~ header .slider{
+        width: 80px;
+      }
+      #tab-3:checked ~ header .slider{
+        left: 100%;
+        width: 80px;
+      }
+}
+@media screen and (max-width:400px) {
+    #tab-1:checked ~ header .slider{
+        left: 1%;
+        width: 70px;
+      }
+    .wrapper{
+        margin-left: -8px;
+        width: 330px;
+      }
+}
+@media screen and (max-width:365px) {
+    #tab-1:checked ~ header .slider{
+        left: 1%;
+        width: 70px;
+        
+      }
+    .wrapper{
+        margin-left: -10px;
+        width: 300px;
+        margin-top: -5px;
+      }
+}
+@media screen and (max-width:300px) {
+    #tab-1:checked ~ header .slider{
+        left: -1%;
+        width: 60px;  
+      }
+      #tab-2:checked ~ header .slider{
+        left: 50%;
+        width: 80px;  
+      }
+      #tab-3:checked ~ header .slider{
+        left: 100%;
+        width: 65px;  
+      }
+    .wrapper{
+        margin-left: -10px;
+        width: 250px;
+        margin-top: -5px;
+      }
 }
 /* college list page */
 .table{
@@ -1055,6 +1154,7 @@ main .like a{
     border-radius: 12px;
     margin-left: 4rem;
     margin-top: 4rem;
+    text-align: center;
 }
 .table-header{
     display: flex;
@@ -1175,6 +1275,55 @@ tr:hover td{
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
     margin: 0 5px;
     cursor: pointer;
+}
+/* college list media screen */
+@media screen and (max-width: 1200px){
+    .table{
+        margin-left: 2rem;
+    }
+}
+@media screen and (max-width: 1000px){
+    .table{
+        width: 700px;
+        margin-left: 0.5rem;
+    }
+}
+@media screen and (max-width: 900px){
+    .table{
+        width: 650px;
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width: 800px){
+    .table{
+        width: 600px;
+        margin-left: 30px;
+    }
+    .table-section table thead th{
+        font-size: 12px;
+    }
+    .table-section table{
+        width: 100%;
+        table-layout: fixed;
+        
+    }
+}
+@media screen and (max-width: 500px){
+    .table{
+        width: 350px;
+        margin-left: -5px;
+        margin-top: 0rem;
+    }
+    .table-section table thead th{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 379px){
+    .table{
+        width: 320px;
+        margin-left: -10px;
+        margin-top: 0rem;
+    }
 }
 /* Application Process */
 .process{
@@ -1651,6 +1800,7 @@ tr:hover td{
 }
 /* settings page */
 
+
   /*Dashboard screen setting  */
 @media screen and (max-width:1200px) {
    .container{
@@ -1685,13 +1835,13 @@ tr:hover td{
     width: 83vw;
    }
    /* main table thead tr th:last-child, */
-   main table thead tr th:first-child{
+   .like table thead tr th:first-child{
     display: none;
-   }
-   main table tbody tr td:last-child,
-   main table tbody tr td:nth-child(2){
+   } 
+   .like table tbody tr td:last-child,
+   .like table tbody tr td:nth-child(2){
     display: none;
-   }
+   } 
    
 }
 /* mobile phones media query */
