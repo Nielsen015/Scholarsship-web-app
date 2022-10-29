@@ -806,7 +806,7 @@ main .like a{
         margin-top: 0.2rem;
     }
     .search-form{
-        right: 10px;
+        right: 8px;
         top: 120px;
     }
     .results{
@@ -1800,7 +1800,189 @@ tr:hover td{
 }
 /* settings page */
 
+.alert-box{
+    max-width: 600px;
+    width: 350px;
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 5;
+    /* display: initial; */
+    transform: all 0.3s ease;
+}
+/* #check{
+    display: none;
+} */
+.show-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 55px;
+    background: #24306e;
+    padding: 0 30px;
+    font-size: 16px;
+    line-height: 55px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+}
+/* #check:checked ~ .alert-box{
+    opacity: 1;
+    pointer-events: auto;
+} */
+.alert-box .icon{
+    height: 100px;
+    width: 100px;
+    color: var(--color-danger);
+    border:3px solid var(--color-danger);
+    line-height: 97px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+.alert-box header{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.alert-box p{
+    font-size: 18px;
+}
+.alert-box .btns{
+    margin-top: 20px;
+}
+.alert-box label{
+    display: inline-flex;
+    height: 35px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 10px;
+}
+.btns label:first-child{
+    background: var(--color-danger);
+}
+.btns label:last-child{
+    background: var(--color-warning);
+}
+.process main .container2{
+    background: var(--color-white);
+    width: 800px;
+    height: 500px;
+    margin: 0 50px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-top: 5%;
+    position: relative;
+}
+.container2 .leftbox{
+    float: left;
+    top: -5%;
+    left: 5%;
+    position: absolute;
+    width: 10%;
+    height: 110%;
+    background: var(--color-primary);
+    box-shadow: var(--box-shadow);
+    border: .1rem solid #fff;
+}
+.leftbox nav a{
+    list-style: none;
+    padding: 35px;
+    color: var(--color-white);
+    font-size: 1.1rem;
+    display: block;
+    transition: all .3s ease-in-out;
 
+}
+.leftbox nav a:hover{
+    color: #677483;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.leftbox nav a:first-child{
+    margin-top: 7px;
+}
+.leftbox nav a.active{
+    color:var(--color-success)
+}
+.container2 .rightbox{
+    width: 60%;
+    margin-left: 20%;
+}
+.tabshow{
+    transition: all .5s ease-in;
+    width: 80%;
+    display: none;
+}
+.container2 h1{
+    color: var(--color-success);
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+    margin-top: 15px;
+}
+.container2 h2{
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+.container2 input{
+    border: 0;
+    border-bottom: 1px solid var(--color-success);
+    width: 80%;
+    padding: 7px 0;
+    font-size: 14px;
+    outline: none;
+    color: var(--color-primary);
+    background: none;
+}
+.container2 select{
+    background: none;
+    border: 1px solid var(--color-success);
+    border-radius: 2px;
+    list-style: none;
+    /* height: 25px; */
+    padding: 7px 2px;
+    color: var(--color-primary);
+    outline: none;
+}
+.container2 .btn9{
+    font-size: 16px;
+    color: var(--color-white);
+    padding: 7px 15px;
+    border: 0;
+    outline: none;
+    background: #24306e;
+    box-shadow: var(--box-shadow);
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all .3s ease;
+}
+.container2 .btn9:hover{
+    background: none;
+    border:1px solid #24306e;
+    color: var(--color-primary);
+
+
+}
   /*Dashboard screen setting  */
 @media screen and (max-width:1200px) {
    .container{

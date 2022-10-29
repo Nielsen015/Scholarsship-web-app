@@ -41,7 +41,7 @@
         margin-left: -40px;
     }
     #navbar{
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -220px;
         width: 220px;
@@ -55,6 +55,7 @@
         align-items: flex-start;
         margin-bottom: 5px;
         transition: 0.5s;
+        z-index: 999;
     }
     #navbar.active{
         right: 0px;

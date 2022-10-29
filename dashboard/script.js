@@ -38,3 +38,31 @@ $(document).ready(function () {
     $('#dtBasicExample').DataTable();
     $('.dataTables_length').addClass('bs-select');
   });
+
+// Countries
+document.addEventListener('DOMContentLoaded', () =>{
+    const selectDrop = document.querySelector('#countries');
+    fetch('https://restcountries.com/v3.1/all').then(res =>{
+        return res.json();
+    }).then(data => {
+        let output = "";
+     data.forEach(country =>{
+        output += `<option>${country.name}</option>`;
+     })
+     selectDrop.innerHTML = output;
+    }).catch(err => {
+        console.log(err);
+    })
+
+});
+// show password
+const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});

@@ -897,7 +897,7 @@ pre {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
-    max-width: 50%; }
+    max-width: 100%; }
   .col-md-7 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 58.33333%;
@@ -8216,7 +8216,7 @@ margin-top: 20px; }
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   box-shadow: 5px 10px 18px #000;
-  padding: 50px;
+  padding: 20px;
   margin-top: -15px;
 }
 

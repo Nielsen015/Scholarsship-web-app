@@ -767,7 +767,7 @@ footer .subscribe .btn:hover{
     }
     nav .navigation .buttons {
         position: absolute;
-        top: 270px;
+        top: 290px;
         right:75px;
         display: flex;
         flex-direction: column;

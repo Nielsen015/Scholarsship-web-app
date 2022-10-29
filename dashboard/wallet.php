@@ -65,7 +65,7 @@ include('includes/header.php');
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="#">
+                <a href="/scholarship/signin.html" onclick="return confirm('Are you sure you want to logout?');">
                     <span class="material-icons-sharp">
                         logout
                         </span>
