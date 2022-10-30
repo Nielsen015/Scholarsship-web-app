@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('database/dbconfig.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,18 +35,12 @@
             <ul id="navbar">
                 <i id="close" class="fas fa-times"></i>
                 <li><a href="index.html" >Home</a></li>
-                <!-- <li class="dropdown"><button onclick="myFunction()" class="dropbtn">Scholarships</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                      </div></li> -->
                 <li class=""><a href="scholarship.php">Scholarships</a></li>
                 <li class="" ><a href="aboutus.html">About Us</a></li>
                 <li class="" ><a href="contactus.html">Contact Us</a></li>
                 <div class="buttons">
                     <a href="#" class="button">Sign in</a>
-                    <a href="signup.html" class="signup">Sign up</a>
+                    <a href="signup.php" class="signup">Sign up</a>
                 </div>
             </ul>
             
@@ -55,7 +54,14 @@
             <div class="col-md-6 col-lg-4 signin-bg">
                 <div class="login-wrap p-0 ">
               <h3 class="mb-4 text-center">Sign into your account</h3>
-              <form  action="" method="POST" class="signin-form">
+              <form action="signincode.php" method="POST" class="signin-form">
+              <?php
+                if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
+                {
+                    echo '<h4 class="bg-danger text-white"> '.$_SESSION['status'].' </h4>';
+                    unset($_SESSION['status']);
+                }
+                ?>
                   <div class="form-group input-space">
                       <input type="text" name="username" class="form-control" placeholder="Username" required>
                   </div>
@@ -69,7 +75,7 @@
             <div class="form-group d-md-flex">
                 <div class="w-50">
                 <div class="w-50 text-md-left">
-                                <a href="signup.html" style="color: #fff">Create Account</a>
+                                <a href="signup.php" style="color: #fff">Create Account</a>
                             </div>
                             </div>
                             <div class="w-50 text-md-right">

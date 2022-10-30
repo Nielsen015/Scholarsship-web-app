@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('database/dbconfig.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +45,7 @@
                 <li class="" ><a href="aboutus.html">About Us</a></li>
                 <li class=""><a href="contactus.html">Contact Us</a></li>
                 <div class="buttons">
-                    <a href="signin.html" class="button">Sign in</a>
+                    <a href="signin.php" class="button">Sign in</a>
                     <a href="#" class="signup active">Sign up</a>
                 </div>
             </ul>
@@ -55,8 +60,22 @@
     <div class="col-md-6 col-lg-4 signin-bg">
     <div class="login-wrap p-0">
       <h3 class="mb-4 text-center">Sign up for an account</h3>
-      <form  action="" method="POST" class="signin-form">
+      <form  action="register.php" method="POST" class="signin-form">
         <div class="form-group d-md-flex ">
+        <?php
+            if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
+            {
+                echo '<h4 class="bg-danger text-white"> '.$_SESSION['status'].' </h4>';
+                unset($_SESSION['status']);
+            }
+        ?>
+        <?php
+            if(isset($_SESSION['state']) && $_SESSION['state'] !='') 
+            {
+                echo '<h4 class="bg-success text-white"> '.$_SESSION['state'].' </h4>';
+                unset($_SESSION['state']);
+            }
+        ?>
             <div class="form-wrapper ">
                 <label for="">First Name</label>
                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
@@ -157,27 +176,6 @@
            $('nav.navigation ul').removeClass('active')
        });
    </script>
-   <!-- ​<script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-    </script> -->
     <script src="https://use.fontawesome.com/4cdbe91b1d.js"></script>
     <script src="script.js"></script> 
     <script src="file.js"></script>

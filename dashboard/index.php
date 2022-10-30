@@ -6,6 +6,20 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 ?>
         <!-- main section -->
         <main>
+        <?php
+            if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
+            {
+                echo '<h4 class="bg-danger text-white"> '.$_SESSION['status'].' </h4>';
+                unset($_SESSION['status']);
+            }
+        ?>
+        <?php
+            if(isset($_SESSION['state']) && $_SESSION['state'] !='') 
+            {
+                echo '<h4 class="bg-success text-white"> '.$_SESSION['state'].' </h4>';
+                unset($_SESSION['state']);
+            }
+        ?>
             <h1>Dashboard</h1>
             <div class="greet">
                 <span class="material-icons-sharp">

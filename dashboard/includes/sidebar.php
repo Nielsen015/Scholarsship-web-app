@@ -60,7 +60,7 @@
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin.html" onclick="return confirm('Are you sure you want to logout?');">
+                <a href="/scholarship/signin.php" onclick="return confirm('Are you sure you want to logout?');">
                     <span class="click-me material-icons-sharp">
                         logout
                         </span>
