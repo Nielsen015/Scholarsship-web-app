@@ -97,36 +97,20 @@ include('includes/header.php');
                     </div>
                 </div>
             </div>
-<!-- pop up box -->
-        <!-- <div id="id01" class="alert-box">
-                <div class="icon">
-                    <i class="fas fa-exclamation"></i>
-                </div>
-                <header>Logout</header>
-                <p>Are You sure you want to logout?</p>
-                <div class="btns">
-                    <label for="check" onclick="window.location.href='/index.html';">Logout</label>
-                    <label for="check" onclick="document.getElementById('id01').style.display='none'">Cancel</label>
-                </div>
-        </div> -->
-        <!-- end of pop up -->
-        <div class="container2">
-            <div class="leftbox">
-                <nav>
-                    <a href="" onclick="tabs(0)" class="tab active">
-                    <i class="fa fa-user-circle-o"></i>
-                    </a>
-                    <a href="" onclick="tabs(1)" class="tab">
-                    <i class="fa fa-sliders"></i>
-
-                    </a>
-                    <a href="" onclick="tabs(2)" class="tab">
-                    <i class="fa fa-graduation-cap"></i>
-                    </a>
-                </nav>
-            </div>
-            <div class="rightbox">
-                <div class="profile tabshow">
+    <div class="wrapper2">
+    <input type="radio" name="slider" id="tab-1" checked>
+    <input type="radio" name="slider" id="tab-2" >
+    <input type="radio" name="slider" id="tab-3">
+    <header>
+      <label for="tab-1" class="tab-1"><i class="fa fa-user-circle-o"></i></label>
+      <label for="tab-2" class="tab-2"><i class="fa fa-sliders"></i></label>
+      <label for="tab-3" class="tab-3"><i class="fa fa-graduation-cap"></i></label>
+      <div class="slider"></div>
+    </header>
+    <div class="card-area">
+      <div class="cards">
+        <div class="row row-1">
+        <div class="profile tabshow">
                     <h1>Personal info</h1>
                     <form action="">
                     <h2>First Name</h2>
@@ -397,13 +381,23 @@ include('includes/header.php');
                     </select>
                     </div>
                     <h2>Username</h2>
-                    <input type="text" class="input" value="Username" required>
+                    <input type="text" class="input" value="Username" required><br>
                     <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
                     </form>
 
                 </div>
-            <div class="setting tabshow">
+        </div>
+        <div class="row">
+        <div class="setting tabshow">
                     <h1>Edit Panel</h1>
+                    <form action="picture.php" method="POST" enctype="multipart/form-data" class="form-pic">
+                    <div class="profile-photo1">
+                        <img src="images/man.png" alt="">
+                    </div>
+                    <label for="myfile">Change Profile Picture:</label>
+                    <input type="file" name="compfile" class="form-control" accept=".jpeg, .jpg, .png" value="" required>
+                        <button type="submit"  name="submit" class="btn10" value="Upload">Submit</button>
+                    </form>
                     <form action="">
                     <h2>Old Password</h2>
                     <input type="text" class="input" value="old Password" placeholder="Old Password" required>
@@ -414,11 +408,13 @@ include('includes/header.php');
                     <input type="password" class="input" value="confirm password" placeholder="confirm Password" id="id_password" required>
                     <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                     <h2>Email</h2>
-                    <input type="email" class="input" value="email" required>
+                    <input type="email" class="input" value="email" required><br>
                     <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
                     </form>
-                </div>
-                <div class="Academic tabshow">
+        </div>
+        </div>
+            <div class="row">
+            <div class="academic tabshow">
                     <h1>Academic Records</h1>
                     <form action="">
                     <h2>Graduation date/expected Date</h2>
@@ -433,22 +429,13 @@ include('includes/header.php');
                     </form>
                 </div>
             </div>
+            </div>
+            
         </div>
+            
+    </div>
 
     </main>
-    <script>
-        const tabBtn = document.querySelector(".tab");
-        const tab = document.querySelector(".tabshow");
-
-        function tabs(panelIndex) {
-            tab.forEach(function(node) {
-                node.style.display = "none";
-            });
-            tab[panelIndex].style.display = "block";
-        }
-        tabs(0);
-    </script>
-
 <?php
 include('includes/footer.php');
 ?>
