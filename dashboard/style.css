@@ -2037,9 +2037,14 @@ tr:hover td{
         left: 94%;
       }
 }
+@media screen and (max-width:500px){
+    .wrapper2{
+        width: 550px;
+      } 
+}
 @media screen and (max-width:500px) {
     .wrapper2{
-        width: 450px;
+        width: 380px;
         margin-left: -5px;
         margin-top: 10px;
       }
@@ -2054,6 +2059,25 @@ tr:hover td{
         left: 100%;
         width: 80px;
       }
+ .wrapper2 .profile-photo1{
+        margin-left: 40%;
+  }
+  .wrapper2 .setting .form-pic input{
+    margin-left: 22%;
+  }
+  .wrapper2 .setting .form-pic label{
+    margin-left: 28%;
+
+  }
+  .wrapper2  .btn10{
+
+    margin: 0px 40%;
+}
+.wrapper2 .profile,
+.wrapper2 .setting,
+.wrapper2 .academic{
+  margin-left: 3%;
+}
 }
 @media screen and (max-width:400px) {
     #tab-1:checked ~ header .slider{
@@ -2062,7 +2086,7 @@ tr:hover td{
       }
     .wrapper2{
         margin-left: -8px;
-        width: 360px;
+        width: 355px;
       }
 }
 @media screen and (max-width:365px) {
@@ -2073,7 +2097,7 @@ tr:hover td{
       }
     .wrapper2{
         margin-left: -10px;
-        width: 335px;
+        width: 340px;
         margin-top: -5px;
       }
 }
@@ -2095,6 +2119,34 @@ tr:hover td{
         width: 250px;
         margin-top: -5px;
       }
+      .wrapper2 .profile-photo1{
+        margin-left: 30%;
+  }
+  .wrapper2 .setting .form-pic input{
+    margin-left: 9%;
+  }
+  .wrapper2 .setting .form-pic label{
+    margin-left: 15%;
+
+  }
+  .wrapper2  .btn10{
+
+    margin: 0px 30%;
+}
+.wrapper2 .profile,
+.wrapper2 .setting,
+.wrapper2 .academic{
+  margin-left: 2%;
+}
+.wrapper2  select{
+    background: none;
+    border: none;
+    border-radius: none;
+    list-style: none;
+    padding: 7px 2px;
+    color: var(--color-primary);
+    outline: none;
+}
 }
 
   /*Dashboard screen setting  */
