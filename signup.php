@@ -120,50 +120,6 @@ include('database/dbconfig.php');
     </div>
 </div>        
     </section>
-    <!-- info -->
-    <!-- <section class="section-p1">
-        <main>
-            <div class="content">
-                <img src="pictures/b5.jpg" alt="">
-                <div class="text">
-                    <h2>Find Scholarships</h2>
-                    <p>Find and compare University <br>
-                    Scholarships Worldwide. Get a <br>collections of suitable scholarships 
-                    <br>from our expansive scholarship <br>database.</p>
-                    <div class="btn">
-                        <a href="#">Find Scholarships</a>
-                    </div>
-                </div>
-                
-            </div>
-        </main>
-    </section> -->
-    <!-- <section id="info" class="section-p1">
-        
-        <div class="text">
-            <h2>Find Scholarships</h2>
-            <p>Find and compare University <br>
-            Scholarships Worldwide. Get a <br>collections of suitable scholarships 
-            <br>from our expansive scholarship <br>database.</p>
-            <div class="btn">
-                <a href="#">Find Scholarships</a>
-            </div>
-        </div>
-        <img src="pictures/pic7.jpg" alt="">
-    </section>
-    <section id="tag" class="section-p1">
-        <img src="pictures/pic9.jpg" alt="">
-        <div class="text">
-            <h2>Find Scholarships</h2>
-            <p>Find and compare University <br>
-            Scholarships Worldwide. Get a <br>collections of suitable scholarships 
-            <br>from our expansive scholarship <br>database.</p>
-            <div class="btn">
-                <a href="#">Find Scholarships</a>
-            </div>
-        </div>
-        
-    </section> -->
    
    
    

@@ -35,8 +35,8 @@ if(isset($_POST['login_btn']))
     if($password === $cpassword)
     {
 
-   
-        $query = "INSERT INTO users (first_name,last_name,username,email,password) VALUES('$first_name','$last_name','$username','$email','$password')";
+        $hashed = hash('sha512', $password);
+        $query = "INSERT INTO users (first_name,last_name,username,email,password) VALUES('$first_name','$last_name','$username','$email','$hashed')";
         $query_run = mysqli_query($connection,$query);
     
         if($query_run)
