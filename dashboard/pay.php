@@ -126,7 +126,7 @@ include('security.php');
     <div class="wrapper3">
     <input type="radio" name="slider" id="hill-1" checked>
     <input type="radio" name="slider" id="hill-2" >
-    <header>
+    <header class="header">
       <label for="hill-1" class="hill-1">Mpesa</label>
       <label for="hill-2" class="hill-2">Airtel Money</label>
       <div class="slider"></div>
