@@ -39,13 +39,13 @@
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index">Home</a></li>
                   <li><a href="#" class="active">Scholarships</a></li>
-                  <li><a href="aboutus.html">About Us</a></li>
-                  <li><a href="contactus.html">Contact Us</a></li>
+                  <li><a href="About us">About Us</a></li>
+                  <li><a href="Contact us">Contact Us</a></li>
                   <li><div class="buttons">
-                    <a href="signin.html" class="button">Sign in</a>
-                    <a href="signup.html" class="signup">Sign up</a>
+                    <a href="signin" class="button">Sign in</a>
+                    <a href="signup" class="signup">Sign up</a>
                 </div></li>
                 
                 </ul>
@@ -323,10 +323,10 @@
                         <div class="single-footer-widget">
                             <h4>Quick Links</h4>
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="aboutus.html">About Us</a></li>
-                                <li><a href="contactus.html">Contact Us</a></li>
-                                <li><a href="signup.html">Sign Up</a></li>
+                                <li><a href="index">Home</a></li>
+                                <li><a href="About us">About Us</a></li>
+                                <li><a href="Contact us">Contact Us</a></li>
+                                <li><a href="signup">Sign Up</a></li>
                             </ul>								
                         </div>
                     </div>
@@ -334,10 +334,10 @@
                         <div class="single-footer-widget">
                             <h4>My Account</h4>
                             <ul>
-                                <li><a href="signin.html">Sign in</a></li>
-                                <li><a href="dashboard/index.php">Dashboard</a></li>
-                                <li><a href="dashboard/list.php">Wish List</a></li>
-                                <li><a href="dashboard/setting.php">Profile</a></li>
+                                <li><a href="signin">Sign in</a></li>
+                                <li><a href="dashboard/index">Dashboard</a></li>
+                                <li><a href="dashboard/list">Wish List</a></li>
+                                <li><a href="dashboard/setting">Profile</a></li>
                             </ul>								
                         </div>
                     </div>

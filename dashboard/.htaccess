@@ -1,0 +1,19 @@
+# RewriteEngine on
+# RewriteCond %{SCRIPT_FILENAME} !-d
+# RewriteCond %{SCRIPT_FILENAME} !-f
+# RewriteRule ^content/(.*)$ content.php?q=$1
+# RewriteRule ^guarantee/(.*)$ guarantee.php?q=$1
+
+# RewriteEngine on
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}\.php -f
+# RewriteRule ^(.*)$ $1.php
+
+# RewriteEngine on
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}\.html -f
+# RewriteRule ^(.*)$ $1.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

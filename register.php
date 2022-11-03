@@ -27,29 +27,30 @@ if(isset($_POST['login_btn']))
     {
         $_SESSION['status'] = "Username already Taken, please try another one";
         $_SESSION['status_code'] = "warning";
-        header('location: signup.php');
+        header('location: signup');
     }
     else
      {
 
     if($password === $cpassword)
     {
-
-        $hashed = hash('sha512', $password);
+        //$hashed = hash('sha512', $password);
+        $hashed = md5($password);
         $query = "INSERT INTO users (first_name,last_name,username,email,password) VALUES('$first_name','$last_name','$username','$email','$hashed')";
         $query_run = mysqli_query($connection,$query);
+        $sql = "INSERT INTO academics (username) VALUES('$username')";
+        $sql_run = mysqli_query($connection,$sql);
     
         if($query_run)
         {
-      
-            $_SESSION['state'] = "Registration Successful!! Sign in Here.";
-            header('location: dashboard/index.php');
+            $_SESSION['username'] = $username;
+            header('location: dashboard');
         }
         else
         {
             $_SESSION['status'] = 'Invalid Username or Password!!! Try again';
             $_SESSION['status_code'] = "warning";
-            header('Location: signup.php');
+            header('Location: signup');
 
         }
     }
@@ -57,7 +58,7 @@ if(isset($_POST['login_btn']))
         {
             $_SESSION['status'] = "password and confirm password Do Not Match";
             $_SESSION['status_code'] = "warning";
-            header('location: signup.php');
+            header('location: signup');
         }
     }
 }

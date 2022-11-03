@@ -16,6 +16,6 @@ else
 if(!$_SESSION['username'])
 {
     $_SESSION['id']=$num['id'];
-    header('Location: signin');
+    header('Location: /scholarship/signin');
 }
 ?>

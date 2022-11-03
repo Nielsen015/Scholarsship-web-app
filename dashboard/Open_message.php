@@ -1,9 +1,9 @@
 <?php
-include('includes/header.php'); 
+include('includes/header.php');
 include('security.php'); 
 ?>
 <body>
-    <div class="scholar">
+    <div class="process">
         <aside>
             <div class="top">
                 <div class="logo"  >
@@ -27,7 +27,7 @@ include('security.php');
                         </span>
                         <h3>Scholarships</h3>
                 </a>
-                <a href="wallet" class="active">
+                <a href="wallet">
                     <span class="material-icons-sharp">
                         account_balance_wallet
                         </span>
@@ -52,16 +52,18 @@ include('security.php');
                         <h3>Message us</h3>
                         
                 </a>
-                <a href="alert">
+                <a href="alert" class="active">
                     <span class="material-icons-sharp">
                         notifications_active
                         </span>
                         <h3>Notifications</h3>
-                        <span class="message-count"><?php 
+                        <?php 
                             $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
                             $query_run = mysqli_query($connection, $query);
                             $row = mysqli_num_rows($query_run);
-                            {?><?php echo $row; ?></span><?php } ?>
+                            {?>
+                        <span class="message-count"><?php echo $row; ?></span>
+                        <?php } ?>
                 </a>
                 
                 <a href="setting">
@@ -78,8 +80,7 @@ include('security.php');
                 </a>
             </div>
         </aside>
-        <!-- main section -->
-        <main>
+    <main>
         <div class="theme">
             <div class="top1">
                 <button id="menu-btn" class="ham">
@@ -103,16 +104,16 @@ include('security.php');
                     while($row=mysqli_fetch_array($query_run))
                     {
                     ?>
-                    <div class="info"><b><?php  echo $row['username']; ?></b></div><?php }?>
+                    <div class="info"><b><?php  echo $row['username']; ?></b><?php }?></b></div>
                     <div class="profile-photo">
                     <?php
                     $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
                     $query_run = mysqli_query($connection,$query);
                     while($row=mysqli_fetch_assoc($query_run))
                     {
-                        $default = "profile/default.jpg";
                       ?>
-                 <?php
+                      
+                      <?php
                       if($row['compfile'] == ''){
                         echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
                         // echo $default;}
@@ -123,101 +124,62 @@ include('security.php');
                     </div>
                 </div>
             </div>
-    <div class="wrapper">
-    <input type="radio" name="slider" id="tab-1" checked>
-    <input type="radio" name="slider" id="tab-2" >
-    <input type="radio" name="slider" id="tab-3">
-    <header>
-      <label for="tab-1" class="tab-1">Wallet</label>
-      <label for="tab-2" class="tab-2">Refund</label>
-      <label for="tab-3" class="tab-3">History</label>
-      <div class="slider"></div>
-    </header>
-    <div class="card-area">
-      <div class="cards">
-        <div class="row row-1">
-          <div class="price-details">
-            <span class="price">100</span>
-            <p>Total Balance</p>
-          </div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i><span>Use your balance to Apply for numerous Scholarships</span></li>
-            <li><i class="fas fa-check"></i><span>You can Request for a refund on certain terms</span></li>
-            <li><i class="fas fa-check"></i><span>Payment is done via mobile money i.e M-pesa, Airtel Money</span></li>
-            <li><i class="fas fa-check"></i><span>Secure Gateway for all transactions</span></li>
-          </ul>
-          <button>Load wallet</button>
-        </div>
-        <div class="row">
-        <div class="refund">
-            <span class="material-icons-sharp">
-            currency_exchange
-            </span>
-                <p>Refund Request</p>
-          </div>
-          <ul class="features">
-            <li><i class="fas fa-check"></i><span>Refund should  be done within 20 days</span></li>
-            <li><i class="fas fa-check"></i><span>Refund can not be processed after Application of scholarship</span></li>
-            <li><i class="fas fa-check"></i><span>Money is refunded by us within 3 days</span></li>
-            <li><i class="fas fa-check"></i><span>Message us incase you need help</span></li>
-          </ul>
-          <button>Request a Refund</button>
-        </div>
-            <div class="row">
-            <div class="history">
-                <span class="material-icons-sharp">
-                history
-                </span>
-                <p>Transaction History</p>
+            <div class="table">
+            <?php
+                if(isset($_GET['id']))
+                {
+                    $main_id = $_GET['id'];
+                    $sql_update = mysqli_query($connection,"UPDATE alert SET status=1 WHERE id='$main_id'");
+                }
+                ?>
+                <div class="table-header">
+                    <p>Notification Panel </p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Type to search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div class="table-section">
+                <?php
+                $sr_no=1;
+                $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=1 AND  id='$main_id'";
+                $query_run = mysqli_query($connection,$query);
+
+                 ?>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Message info</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            while($main_result = mysqli_fetch_assoc($query_run))
+                            {
+                            ?>
+                            <tr>
+                            <td><?php echo $main_result['messages']; ?> <a href="alert"><button>Back</button></a></td>
+                            
+                            </tr>
+                            <?php
+                                } 
+                            ?>
+                            
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                    <div><i class="fa-solid fa-angles-left"></i></div>
+                    <div><i class="fa-solid fa-chevron-left"></i></div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div><i class="fa-solid fa-angles-right"></i></div>
+                    <div><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+                </div>
+                
             </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="date">Date</th>
-                            <th class="platform">Platform</th>
-                            <th class="type">Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <td>5/10/2022</td>
-                    <td>M-pesa</td>
-                    <td>Load</td>
-                    </tr>
-                    <tr>
-                    <td>5/10/2022</td>
-                    <td>M-pesa</td>
-                    <td>Load</td>
-                    </tr>
-                    <tr>
-                    <td>5/10/2022</td>
-                    <td>M-pesa</td>
-                    <td>Load</td>
-                    </tr>
-                    <tr>
-                    <td>5/10/2022</td>
-                    <td>M-pesa</td>
-                    <td>Load</td>
-                    </tr>
-                    <tr>
-                    <td>5/10/2022</td>
-                    <td>M-pesa</td>
-                    <td>Load</td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-            <button>Clear History</button>
-            </div>
-            </div>
-            
-        </div>
-            
-    </div>
-          
-           
-        </main>
-</div>
-    <script src="script.js"></script>
-</body>
-</html>
+    </main>
+
+<?php
+include('includes/footer.php');
+?>

@@ -1172,6 +1172,16 @@ main .like a{
     font-size: 16px;
     
 }
+.read{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px 2px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-success);
+}
 .table-header .search-bar{
     border: 1px solid var(--color-primary);
     border-radius: 25px;
@@ -1207,6 +1217,11 @@ main .like a{
     table-layout: fixed;
     
 }
+.table-section .echo_text{
+    font-size: 22px;
+    color: var(--color-primary);
+    font-family: 'Poppins', sans-serif;
+}
 
 .table-section table thead th{
     position: sticky;
@@ -1237,8 +1252,6 @@ tr:hover td{
 }
 .table-section button:nth-child(1){
     background-color: var(--color-success);
-    margin-left: 10px;
-    margin-right: 10px;
     color: var(--color-white);
 }
 .table-section button:nth-child(2){
@@ -1938,7 +1951,6 @@ tr:hover td{
         width: 3.8rem;
         height: 3.8rem;
         border-radius: 50%;
-        overflow: hidden;
         margin-left: 45%;
   }
   .wrapper2 .setting .form-pic input{
@@ -2132,6 +2144,24 @@ tr:hover td{
   .wrapper2  .btn10{
 
     margin: 0px 30%;
+}
+.btn-success{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    background-color: var(--color-success);
+}
+.btn-warning{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    background-color: var(--color-warning);
 }
 .wrapper2 .profile,
 .wrapper2 .setting,

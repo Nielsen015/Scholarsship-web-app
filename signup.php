@@ -34,18 +34,18 @@ include('database/dbconfig.php');
         <div class="navigation">
             <ul id="navbar">
                 <i id="close" class="fas fa-times"></i>
-                <li><a href="index.html" >Home</a></li>
+                <li><a href="index" >Home</a></li>
                 <!-- <li class="dropdown"><button onclick="myFunction()" class="dropbtn">Scholarships</button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="#home">Home</a>
                         <a href="#about">About</a>
                         <a href="#contact">Contact</a>
                       </div></li> -->
-                <li class=""><a href="scholarship.php">Scholarships</a></li>
-                <li class="" ><a href="aboutus.html">About Us</a></li>
-                <li class=""><a href="contactus.html">Contact Us</a></li>
+                <li class=""><a href="scholarship">Scholarships</a></li>
+                <li class="" ><a href="about">About Us</a></li>
+                <li class=""><a href="contact">Contact Us</a></li>
                 <div class="buttons">
-                    <a href="signin.php" class="button">Sign in</a>
+                    <a href="signin" class="button">Sign in</a>
                     <a href="#" class="signup active">Sign up</a>
                 </div>
             </ul>
@@ -112,7 +112,7 @@ include('database/dbconfig.php');
         <button type="submit" name="login_btn" class="form-control btn btn-primary submit px-3">Sign up</button>
     </div> 
     <div class="text-center">
-        <a class="small"  href="signin.php" style="color: #B2BEFF;">Already have an account? Login</a>
+        <a class="small"  href="signin" style="color: #B2BEFF;">Already have an account? Login</a>
     </div>      
   </form>
   </div>

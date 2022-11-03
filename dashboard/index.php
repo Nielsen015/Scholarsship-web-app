@@ -1,4 +1,5 @@
 <?php
+include('security.php'); 
 include('includes/header.php'); 
 include('includes/sidebar.php'); 
 date_default_timezone_set('Africa/Nairobi');
@@ -25,8 +26,16 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                 <span class="material-icons-sharp">
                     waving_hand
                     </span>
-                <h2>Hello Nielsen</h2>
+                    <?php
+        $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+$query_run = mysqli_query($connection,$query);
+while($row=mysqli_fetch_array($query_run))
+{
+?>
+    
+                <h2>Hello <?php  echo $row['username']; ?></h2>
             </div>
+            <?php }?>
             <div class="insights">
                 <!-- wallet -->
                 <div onclick="window.location.href='wallet.php';" class="wallet" >
@@ -103,7 +112,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                         </tr>
                     </tbody> -->
                 </table>
-                <a href="#">Show all</a>
+                <a href="college_list">Show all</a>
             </div>
         </main>
         <!-- end of main -->
@@ -122,10 +131,33 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                         dark_mode
                         </span>
                 </div>
+                <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
+    
                 <div class="profile">
-                    <div class="info"><b>Nielsen</b></div>
+                    <div class="info"><b><?php  echo $row['username']; ?></b></div>
+                <?php }?>
                     <div class="profile-photo">
-                        <img src="images/man.png" alt="">
+                    <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_assoc($query_run))
+                    {
+                        $default = "profile/default.jpg";
+                      ?>
+                 <?php
+                      if($row['compfile'] == ''){
+                        echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
+                        // echo $default;}
+                      else{
+                       echo '<img src="profile/'.$row['compfile'].'" alt="profile" class="profile-photo">';}
+                       ?>
+                 <?php }?>
+                        <!-- <img src="images/man.png" alt=""> -->
                     </div>
                 </div>
             </div>

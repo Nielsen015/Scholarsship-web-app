@@ -1,12 +1,13 @@
 <?php
 include('includes/header.php');
+include('security.php'); 
 ?>
 <body>
     <div class="process">
         <aside>
             <div class="top">
                 <div class="logo"  >
-                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/scholarship/index.html';">
+                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/scholarship/index';">
                     <h2>SCHO<span class="primary">LARLY </span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -14,58 +15,62 @@ include('includes/header.php');
                 </div>
             </div>
             <div class="sidebar">
-                <a href="index.php">
+                <a href="index">
                     <span class="material-icons-sharp">
                         home
                         </span>
                         <h3>Dashboard</h3>
                 </a>
-                <a href="scholarship.php">
+                <a href="scholarship">
                     <span class="material-icons-sharp">
                         monetization_on
                         </span>
                         <h3>Scholarships</h3>
                 </a>
-                <a href="wallet.php">
+                <a href="wallet">
                     <span class="material-icons-sharp">
                         account_balance_wallet
                         </span>
                         <h3>Wallet</h3>
                 </a>
-                <a href="list.php">
+                <a href="college_list">
                     <span class="material-icons-sharp">
                         checklist_rtl
                         </span>
                         <h3>My College List</h3>
                 </a>
-                <a href="process.php">
+                <a href="process">
                     <span class="material-icons-sharp">
                         <!-- swap_horizschool -->school
                         </span>
                         <h3>Application Process</h3>
                 </a>
-                <a href="message.php" class="active">
+                <a href="message" class="active">
                     <span class="material-icons-sharp">
                         message
                         </span>
                         <h3>Message us</h3>
                         
                 </a>
-                <a href="alert.php">
+                <a href="alert">
                     <span class="material-icons-sharp">
                         notifications_active
                         </span>
                         <h3>Notifications</h3>
-                        <span class="message-count">0</span>
+                        <span class="message-count"><?php 
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query_run = mysqli_query($connection, $query);
+                            $row = mysqli_num_rows($query_run);
+                            {?><?php echo $row; ?></span><?php } ?>
                 </a>
                 
-                <a href="setting.php">
+                <a href="setting">
                     <span class="material-icons-sharp">
                         settings
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin.php" onclick="return confirm('Are you sure you want to logout?');">
+                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
                     <span class="material-icons-sharp">
                         logout
                         </span>
@@ -91,9 +96,29 @@ include('includes/header.php');
                         dark_mode
                         </span>
                 </div>
-                    <div class="info"><b>Nielsen</b></div>
+                <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
+                    <div class="info"><b><?php  echo $row['username']; ?></b><?php }?></div>
                     <div class="profile-photo">
-                        <img src="images/man.png" alt="">
+                    <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_assoc($query_run))
+                    {
+                      ?>
+                      
+                      <?php
+                      if($row['compfile'] == ''){
+                        echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
+                        // echo $default;}
+                      else{
+                       echo '<img src="profile/'.$row['compfile'].'" alt="profile" class="profile-photo">';}
+                       ?>
+                 <?php }?>
                     </div>
                 </div>
             </div>
@@ -119,10 +144,10 @@ include('includes/header.php');
                 <div class="right-side">
                     <div class="topic-text">Send us a Message</div>
                     <p>Send us a direct chat and we shall respond to your issues.You can also reach us on phone or email address.</p>
-                <form action="send.php">
+                <form action="send.php" method="POST">
                 <div class="input-box">
                     <span class="details">Subject</span>
-                    <Select  id="mode" name="mode" class="form-control" required>
+                    <Select  id="subject" name="subject" class="form-control" required>
                         <option value="" selected="disabled">Select your Subject</option>
                         <option value="refund"> Refund</option>
                         <option value="others">Wallet Balance</option>
@@ -131,10 +156,10 @@ include('includes/header.php');
                 </div>
                 <div class="input-box message1-box">
                     <span class="details">Message</span>
-                    <textarea name="details" id="details" required placeholder="Type Your Message Here"></textarea>
+                    <textarea name="message" id="message" required placeholder="Type Your Message Here"></textarea>
                 </div>
                 <div class="button">
-                    <button type="submit">Send Now</button>
+                    <button type="submit"  name="submit" value="Send">Send Now</button>
                 </div>
                 </form>
                 </div>

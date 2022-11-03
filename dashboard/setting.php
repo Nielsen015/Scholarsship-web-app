@@ -1,12 +1,13 @@
 <?php
 include('includes/header.php');
+include('security.php'); 
 ?>
 <body>
     <div class="process">
         <aside>
             <div class="top">
                 <div class="logo"  >
-                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/scholarship/index.html';'popup','width=600,height=600';">
+                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/scholarship/index';'popup','width=600,height=600';">
                     <h2>SCHO<span class="primary">LARLY </span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -14,58 +15,62 @@ include('includes/header.php');
                 </div>
             </div>
             <div class="sidebar">
-                <a href="index.php">
+                <a href="index">
                     <span class="material-icons-sharp">
                         home
                         </span>
                         <h3>Dashboard</h3>
                 </a>
-                <a href="scholarship.php">
+                <a href="scholarship">
                     <span class="material-icons-sharp">
                         monetization_on
                         </span>
                         <h3>Scholarships</h3>
                 </a>
-                <a href="wallet.php">
+                <a href="wallet">
                     <span class="material-icons-sharp">
                         account_balance_wallet
                         </span>
                         <h3>Wallet</h3>
                 </a>
-                <a href="list.php">
+                <a href="college_list">
                     <span class="material-icons-sharp">
                         checklist_rtl
                         </span>
                         <h3>My College List</h3>
                 </a>
-                <a href="process.php">
+                <a href="process">
                     <span class="material-icons-sharp">
                         <!-- swap_horizschool -->school
                         </span>
                         <h3>Application Process</h3>
                 </a>
-                <a href="message.php">
+                <a href="message">
                     <span class="material-icons-sharp">
                         message
                         </span>
                         <h3>Message us</h3>
                         
                 </a>
-                <a href="alert.php">
+                <a href="alert">
                     <span class="material-icons-sharp">
                         notifications_active
                         </span>
                         <h3>Notifications</h3>
-                        <span class="message-count">0</span>
+                        <span class="message-count"><?php 
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query_run = mysqli_query($connection, $query);
+                            $row = mysqli_num_rows($query_run);
+                            {?><?php echo $row; ?></span><?php } ?>
                 </a>
                 
-                <a href="setting.php" class="active">
+                <a href="setting" class="active">
                     <span class="material-icons-sharp">
                         settings
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin.php" onclick="return confirm('Are you sure you want to logout?');">
+                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
                     <span class="material-icons-sharp">
                         logout
                         </span>
@@ -91,9 +96,31 @@ include('includes/header.php');
                         dark_mode
                         </span>
                 </div>
-                    <div class="info"><b>Nielsen</b></div>
+                <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
+    
+                    <div class="info"> <div class="info"><b><?php  echo $row['username']; ?></b></div>
+                <?php }?></div>
                     <div class="profile-photo">
-                        <img src="images/man.png" alt="">
+                    <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_assoc($query_run))
+                    {
+                      ?>
+                      
+                      <?php
+                      if($row['compfile'] == ''){
+                        echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
+                        // echo $default;}
+                      else{
+                       echo '<img src="profile/'.$row['compfile'].'" alt="profile" class="profile-photo">';}
+                       ?>
+                 <?php }?>
                     </div>
                 </div>
             </div>
@@ -111,18 +138,24 @@ include('includes/header.php');
       <div class="cards">
         <div class="row row-1">
         <div class="profile tabshow">
+        <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <h1>Personal info</h1>
-                    <form action="">
+                    <form action="">  
                     <h2>First Name</h2>
-                    <input type="text" class="input" value="Enter Your First Name" required>
+                    <input type="text" class="input" value="<?php  echo $row['first_name']; ?>" required placeholder="First Name">
                     <h2>First Name</h2>
-                    <input type="text" class="input" value="Enter Your Last Name" required>
-                    <h2>Birthday</h2>
-                    <input type="date" class="input" value="Date of Birth" required>
+                    <input type="text" class="input" value="<?php  echo $row['last_name']; ?>" required placeholder="last Name">
+                    <h2>Date of Birth</h2>
+                    <input type="date" class="input" value="<?php  if($row['birth'] == ''){ echo '';} else{echo $row['birth'];} ?>" required>
                     <h2>Gender</h2>
                     <label class="custom-select">
-                        <select id="" required>
-                            <option disabled selected>Select Your Gender</option>
+                        <select id="" name="gender" required>
+                            <option disabled selected>Select Gender<?php  if($row['gender'] == ''){ echo '';} else{echo $row['gender'];} ?></option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
@@ -131,8 +164,8 @@ include('includes/header.php');
                     <label for="country"><h2>Country</h2></label>     
                     <div class="countrylist">
                     
-                    <select id="country" name="country" class="countries" required>
-                    <option value="Kenya" selected disabled>Select Your Country </option><i class="fas fa-angle-down"></i>
+                    <select id="" name="country"  required><i class="fas fa-angle-down"></i>
+                    <option disabled selected><?php  if($row['country'] == ''){ echo 'Select Your Country';} else{echo $row['country'];} ?> </option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -381,9 +414,10 @@ include('includes/header.php');
                     </select>
                     </div>
                     <h2>Username</h2>
-                    <input type="text" class="input" value="Username" required><br>
+                    <input type="text" class="input" value="<?php  echo $row['username']; ?>" required placeholder="Username"><br>
                     <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
                     </form>
+                    <?php }?>
 
                 </div>
         </div>
@@ -392,41 +426,69 @@ include('includes/header.php');
                     <h1>Edit Panel</h1>
                     <form action="picture.php" method="POST" enctype="multipart/form-data" class="form-pic">
                     <div class="profile-photo1">
-                        <img src="images/man.png" alt="">
+                    <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_assoc($query_run))
+                    {
+                      ?>
+                      <?php
+                      if($row['compfile'] == ''){
+                        echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
+                        // echo $default;}
+                      else{
+                       echo '<img src="profile/'.$row['compfile'].'" alt="profile" class="profile-photo">';}
+                       ?>
+                 <?php }?>
+                        <!-- <img src="images/man.png" alt=""> -->
                     </div>
                     <label for="myfile">Change Profile Picture:</label>
                     <input type="file" name="compfile" class="form-control" accept=".jpeg, .jpg, .png" value="" required>
                         <button type="submit"  name="submit" class="btn10" value="Upload">Submit</button>
                     </form>
-                    <form action="">
+                    <form action="initialize.php" method="POST">
+                    <?php
+                    $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <h2>Old Password</h2>
-                    <input type="text" class="input" value="old Password" placeholder="Old Password" required>
+                    <input type="text" class="input" name="old"  placeholder="Old Password" required>
                     <h2>New Password</h2>
                     <input type="password" name="password" placeholder="New Password" required="" id="id_password">
                     <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                     <h2>Confirm Passowrd</h2>
-                    <input type="password" class="input" value="confirm password" placeholder="confirm Password" id="id_password" required>
+                    <input type="password" class="input" name="cpassword"  placeholder="confirm Password" id="id_password" required>
                     <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                     <h2>Email</h2>
-                    <input type="email" class="input" value="email" required><br>
+                    <input type="email" class="input" name="email" value="<?php  echo $row['email']; ?>" placeholder="Enter Email" required><br>
                     <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
                     </form>
+                    <?php }?>
         </div>
         </div>
             <div class="row">
             <div class="academic tabshow">
                     <h1>Academic Records</h1>
-                    <form action="">
+                    <?php
+                    $query = "SELECT * FROM academics where username ='".$_SESSION['username']."'";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                        ?>
+                    <form action="initialize.php" method="POST">
                     <h2>Graduation date/expected Date</h2>
-                    <input type="date" class="input" value="" required>
+                    <input type="date" class="input" value="<?php  if($row['date'] == ''){ echo 'Graduation/Expected date';} else{echo $row['date'];} ?>" required>
                     <h2>University GPA out of 4</h2>
-                    <input type="number" class="input" value="4" min="0" max="4" placeholder="GPA" required>
+                    <input type="number" class="input" value="<?php  if($row['score'] == ''){ echo '';} else{echo $row['score'];} ?>" min="0" max="4" placeholder="GPA" required>
                     <h2>Course Studied</h2>
-                    <input type="text" class="input" value="" placeholder="Course/degree" required>
+                    <input type="text" class="input" value="<?php  if($row['course'] == ''){ echo '';} else{echo $row['course'];} ?>" placeholder="Course/degree" required>
                     <h2>Learning Institution</h2>
-                    <input type="text" class="input" value="" placeholder="University/College" required>
-                    <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
+                    <input type="text" class="input" value="<?php  if($row['school'] == ''){ echo '';} else{echo $row['school'];} ?>" placeholder="University/College" required>
+                    <button type="submit" type="submit" name="academics" value="academics"class="btn9">Update</button>
                     </form>
+                    <?php }?>
                 </div>
             </div>
             </div>

@@ -34,13 +34,13 @@ include('database/dbconfig.php');
         <div class="navigation">
             <ul id="navbar">
                 <i id="close" class="fas fa-times"></i>
-                <li><a href="index.html" >Home</a></li>
-                <li class=""><a href="scholarship.php">Scholarships</a></li>
-                <li class="" ><a href="aboutus.html">About Us</a></li>
-                <li class="" ><a href="contactus.html">Contact Us</a></li>
+                <li><a href="index" >Home</a></li>
+                <li class=""><a href="Scholarships">Scholarships</a></li>
+                <li class="" ><a href="About us">About Us</a></li>
+                <li class="" ><a href="Contact us">Contact Us</a></li>
                 <div class="buttons">
                     <a href="#" class="button">Sign in</a>
-                    <a href="signup.php" class="signup">Sign up</a>
+                    <a href="signup" class="signup">Sign up</a>
                 </div>
             </ul>
             
@@ -75,7 +75,7 @@ include('database/dbconfig.php');
             <div class="form-group d-md-flex">
                 <div class="w-50">
                 <div class="w-50 text-md-left">
-                                <a href="signup.php" style="color: #fff">Create Account</a>
+                                <a href="signup" style="color: #fff">Create Account</a>
                             </div>
                             </div>
                             <div class="w-50 text-md-right">
