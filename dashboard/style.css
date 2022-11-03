@@ -2323,3 +2323,205 @@ tr:hover td{
 
     
 }
+/* payment page */
+ .wrapper3{
+    width: 600px;
+    height: auto;
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 20px;
+    margin-left: 150px;
+    margin-top: 20px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+  .wrapper3 header{
+    height: 55px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+  }
+  header label{
+    height: 100%;
+    z-index: 2;
+    width: 30%;
+    display: flex;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    margin-left: 60px;
+  }
+  #hill-1:checked ~ header .hill-1,
+  #hill-2:checked ~ header .hill-2{
+    color: var(--color-white);
+  }
+  header label:nth-child(2){
+    width: 40%;
+
+  }
+  header .slider{
+    position: absolute;
+    height: 85%;
+    border-radius: inherit;
+    background: var(--color-primary);
+    transition: all 0.3s ease;
+  }
+  #hill-1:checked ~ header .slider{
+    left: 17%;
+    width: 90px;
+    transform: translateX(5%);
+  }
+  #hill-2:checked ~ header .slider{
+    left: 71%;
+    width: 120px;
+    transform: translateX(-50%);
+  }
+  .wrapper3 input[type="radio"]{
+    display: none;
+  }
+  .card-area{
+    overflow: hidden;
+  }
+  .card-area .cards{
+    display: flex;
+    width: 300%;
+  }
+  .cards .row{
+    width: 33.4%;
+  }
+  .cards .row-1{
+    transition: all 0.3s ease;
+  }
+  #tab-4:checked ~ .card-area .cards .row-1{
+     margin-left: 0%;
+  }
+  #tab-5:checked ~ .card-area .cards .row-1{
+    margin-left: -33.4%;
+  }
+  .row .price-details,
+  .history,
+  .refund{
+    margin: 20px 0;
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--color-primary);
+  }
+  .price-details .price{
+    font-size: 65px;
+    font-weight: 600;
+    position: relative;
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--color-success);
+  }
+  .price-details .price::before,
+  .price-details .price::after{
+    position: absolute;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+  }
+  .price-details img{
+    width: 25%;
+    height: 25%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 38%;
+  }
+  .row .pay_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .row .pay_form h5{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--color-primary);
+  }
+  .row .pay_form input{
+    background: none;
+    border: 1px solid var(--color-dark-variant);
+    border-radius: 3px;
+    margin-bottom: 5px;
+    width: 50%;
+    height: 28px;
+    padding: 2px;
+    margin-left: 25%;
+  }
+  .row .pay_form input::placeholder{
+    color: var(--color-dark-variant);
+    font-size: 16px;
+  }
+  .row .pay_form button{
+    background: #24306e;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 15%;
+    margin: 15px 40%;
+  }
+  /* .price-details .price::after{
+    content: "/mon";
+    right: -33px;
+    bottom: 17px;
+    font-size: 13px;
+  } 
+  .price-details p,
+  .history p,
+  .refund p{
+    font-size: 18px;
+    margin-top: 5px;
+    color: var(--color-primary);
+  }
+  .row .features li{
+    display: flex;
+    font-size: 15px;
+    list-style: none;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .features li i{
+    background: var(--color-primary);
+    background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+  }
+  .features li span{
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  .wrapper button{
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    background: linear-gradient(145deg, var(--color-dark-variant) 0%, var(--color-success) 100%);
+    transition: transform 0.3s ease;
+  }
+  .wrapper button:hover{
+    transform: scale(0.98);
+  }
+  .row table{
+    background: var(--color-white);
+    width: 100%;
+    text-align: center;
+}
+.row table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+.row table tbody tr:last-child td{
+    border: none;
+} 

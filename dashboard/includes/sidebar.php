@@ -27,7 +27,7 @@
                         </span>
                         <h3>Wallet</h3>
                 </a>
-                <a href="list">
+                <a href="college_list">
                     <span class="material-icons-sharp">
                         checklist_rtl
                         </span>

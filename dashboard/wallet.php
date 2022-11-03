@@ -146,7 +146,7 @@ include('security.php');
             <li><i class="fas fa-check"></i><span>Payment is done via mobile money i.e M-pesa, Airtel Money</span></li>
             <li><i class="fas fa-check"></i><span>Secure Gateway for all transactions</span></li>
           </ul>
-          <button>Load wallet</button>
+          <button onclick="window.location.href='pay';" >Load wallet</button>
         </div>
         <div class="row">
         <div class="refund">

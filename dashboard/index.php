@@ -233,7 +233,7 @@ while($row=mysqli_fetch_array($query_run))
 
                 </div>
                 <!-- end of Help -->
-                <div class="load">
+                <div class="load" onclick="window.location.href='pay';">
                     <div>
                     <span class="material-icons-sharp">
                         add
