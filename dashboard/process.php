@@ -120,7 +120,7 @@ include('security.php');
                     </div>
                     <p>Incase your wallet balance is at zero, then you need to load it up through our secure payment gateways.</p>
                     <div class="bottom">
-                        <a href="load">Load Wallet</a>
+                        <a href="pay">Load Wallet</a>
                     </div>
                 </section>
             </div>

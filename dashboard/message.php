@@ -122,6 +122,7 @@ include('security.php');
                     </div>
                 </div>
             </div>
+        </div>
         <div class="message1"> 
             <div class="message1-content">
                 <div class="left-side">

@@ -62,20 +62,6 @@ include('database/dbconfig.php');
       <h3 class="mb-4 text-center">Sign up for an account</h3>
       <form  action="register.php" method="POST" class="signin-form">
         <div class="form-group d-md-flex ">
-        <?php
-            if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
-            {
-                echo '<h4 class="bg-danger text-white"> '.$_SESSION['status'].' </h4>';
-                unset($_SESSION['status']);
-            }
-        ?>
-        <?php
-            if(isset($_SESSION['state']) && $_SESSION['state'] !='') 
-            {
-                echo '<h4 class="bg-success text-white"> '.$_SESSION['state'].' </h4>';
-                unset($_SESSION['state']);
-            }
-        ?>
             <div class="form-wrapper ">
                 <label for="">First Name</label>
                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>

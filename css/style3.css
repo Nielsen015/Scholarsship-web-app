@@ -5390,7 +5390,9 @@ button.bg-warning:focus {
   background-color: #d39e00 !important; }
 
 .bg-danger {
-  background-color: #dc3545 !important; }
+  background-color: #dc3545 !important; 
+  border-radius: 2px;
+}
 
 a.bg-danger:hover, a.bg-danger:focus,
 button.bg-danger:hover,
@@ -7989,7 +7991,11 @@ button.bg-dark:focus {
   font-style: italic !important; }
 
 .text-white {
-  color: #fff !important; }
+  color: #fff !important;
+font-size: 18px;
+text-align: center;
+align-items: center;
+justify-content: center; }
 
 .text-primary {
   color: #007bff !important; }

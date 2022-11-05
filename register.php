@@ -44,6 +44,8 @@ if(isset($_POST['login_btn']))
         if($query_run)
         {
             $_SESSION['username'] = $username;
+            $_SESSION['status'] = "Welcome To Scholarly, $username";
+            $_SESSION['status_code'] = "success";
             header('location: dashboard');
         }
         else

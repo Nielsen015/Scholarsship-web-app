@@ -141,47 +141,39 @@ include('security.php');
                             <td> KES 150000</td>
                             <td>5 December 2022</td>
                             <td><button>Apply</button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <input type="hidden" name="delete_text" value="">
+                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                             <tr>
                             <td>Havard</td>
                             <td> KES 150000</td>
                             <td>5 December 2022</td>
                             <td><button>Apply</button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <input type="hidden" name="delete_text" value="">
+                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
                             </tr><tr>
                             <td>Havard</td>
                             <td> KES 150000</td>
                             <td>5 December 2022</td>
                             <td><button>Apply</button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <input type="hidden" name="delete_text" value="">
+                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                             <tr>
                             <td>Havard</td>
                             <td> KES 150000</td>
                             <td>5 December 2022</td>
                             <td><button>Apply</button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <input type="hidden" name="delete_text" value="">
+                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                             <tr>
                             <td>Havard</td>
                             <td> KES 150000</td>
                             <td>5 December 2022</td>
                             <td><button>Apply</button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                            </tr>
-                            <tr>
-                            <td>Havard</td>
-                            <td> KES 150000</td>
-                            <td>5 December 2022</td>
-                            <td><button>Apply</button>
-                            <button><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <input type="hidden" name="delete_text" value="">
+                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                         </tbody>
                     </table>

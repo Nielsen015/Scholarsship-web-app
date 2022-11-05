@@ -7,20 +7,6 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 ?>
         <!-- main section -->
         <main>
-        <?php
-            if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
-            {
-                echo '<h4 class="bg-danger text-white"> '.$_SESSION['status'].' </h4>';
-                unset($_SESSION['status']);
-            }
-        ?>
-        <?php
-            if(isset($_SESSION['state']) && $_SESSION['state'] !='') 
-            {
-                echo '<h4 class="bg-success text-white"> '.$_SESSION['state'].' </h4>';
-                unset($_SESSION['state']);
-            }
-        ?>
             <h1>Dashboard</h1>
             <div class="greet">
                 <span class="material-icons-sharp">
@@ -38,7 +24,7 @@ while($row=mysqli_fetch_array($query_run))
             <?php }?>
             <div class="insights">
                 <!-- wallet -->
-                <div onclick="window.location.href='wallet.php';" class="wallet" >
+                <div onclick="window.location.href='wallet';" class="wallet" >
                     <span class="material-icons-sharp">
                         payments
                         </span>
@@ -50,7 +36,7 @@ while($row=mysqli_fetch_array($query_run))
                         </div>
                 </div>
                 <!-- message us -->
-                <div onclick="window.location.href='message.php';" class="text">
+                <div onclick="window.location.href='message';" class="text">
                     <span class="material-icons-sharp">
                         send
                         </span>
@@ -62,7 +48,7 @@ while($row=mysqli_fetch_array($query_run))
                         </div>
                 </div>
                 <!-- find scholarships -->
-                <div onclick="window.location.href='scholarship.php';" class="search">
+                <div onclick="window.location.href='scholarship';" class="search">
                     <span class="material-icons-sharp">
                         search
                         </span>
@@ -201,7 +187,7 @@ while($row=mysqli_fetch_array($query_run))
                         </span>
                     </div>
                     <div class="right">
-                        <div class="info"><h3>Application Process</h3></div>
+                        <div class="info" onclick="window.location.href='process';"><h3>Application Process</h3></div>
 
                     </div>
 
@@ -245,4 +231,5 @@ while($row=mysqli_fetch_array($query_run))
         </div>
         <?php
         include('includes/footer_index.php');
+        include('includes/script.php');
         ?>

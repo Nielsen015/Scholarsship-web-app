@@ -88,25 +88,31 @@ include('security.php');
                         </span>
                 </button>
                 
+                <div class="profile">
+                    <div class="theme-toggler">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                        </span>
+                        <span class="material-icons-sharp">
+                        dark_mode
+                        </span>
+                </div>
                 <?php
                     $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
                     $query_run = mysqli_query($connection,$query);
                     while($row=mysqli_fetch_array($query_run))
                     {
                     ?>
-    
-                <div class="profile">
-                    <div class="info"><b><?php  echo $row['username']; ?></b></div>
-                <?php }?>
+                    <div class="info"><b><?php  echo $row['username']; ?></b><?php }?></div>
                     <div class="profile-photo">
                     <?php
                     $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
                     $query_run = mysqli_query($connection,$query);
                     while($row=mysqli_fetch_assoc($query_run))
                     {
-                        $default = "profile/default.jpg";
                       ?>
-                 <?php
+                      
+                      <?php
                       if($row['compfile'] == ''){
                         echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
                         // echo $default;}
@@ -114,10 +120,10 @@ include('security.php');
                        echo '<img src="profile/'.$row['compfile'].'" alt="profile" class="profile-photo">';}
                        ?>
                  <?php }?>
-                        <!-- <img src="images/man.png" alt=""> -->
                     </div>
                 </div>
             </div>
+        </div>
             <div class="card-deck">
                 <div class="results">
                     <h2>3000 <span>results</span></h2>
@@ -141,7 +147,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -159,7 +165,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button onclick="Toggle1()" id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -177,7 +183,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -195,7 +201,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -213,7 +219,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -231,7 +237,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -249,7 +255,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -267,7 +273,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -285,7 +291,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -303,7 +309,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -321,7 +327,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -339,7 +345,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -357,7 +363,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -375,7 +381,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -392,7 +398,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -410,7 +416,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -428,7 +434,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -446,7 +452,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -464,7 +470,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -482,7 +488,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -500,7 +506,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -518,7 +524,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -536,7 +542,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -554,7 +560,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -572,7 +578,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -590,7 +596,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -608,7 +614,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -626,7 +632,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -644,7 +650,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -662,7 +668,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -680,7 +686,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -698,7 +704,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -716,7 +722,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -734,7 +740,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -752,7 +758,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -770,7 +776,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -788,7 +794,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -806,7 +812,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -824,7 +830,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -842,7 +848,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -860,7 +866,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -878,7 +884,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -896,7 +902,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -913,7 +919,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -931,7 +937,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -949,7 +955,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -967,7 +973,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -985,7 +991,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -1003,7 +1009,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -1021,7 +1027,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -1039,7 +1045,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
@@ -1057,7 +1063,7 @@ include('security.php');
                                 </span>
                             <h3>Deadline: December 5, 2022</h3>
                         </div>
-                        <div class="btn"><a href="#">View details</a></div>
+                        <button class="btn">View details<button>
                         <button onclick="myFunction()" id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>

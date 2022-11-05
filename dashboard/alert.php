@@ -169,8 +169,8 @@ include('security.php');
                    <button type="button" class="state btn-warning" style="color: #fff; background: #be2326;"> Not Read</button>
                   <?php } ?></td>
                             <td><?php echo $row['date']; ?></td>
-                            <td><a href="Open_message? id=<?php echo $row['id'];?>"><button>Read</button></a><input type="hidden" name="delete_text" value="<?php echo $row['id']; ?>">
-                            <button type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
+                            <td><div class="btn_a"><a href="Open_message? id=<?php echo $row['id'];?>"><button>Read</button></a><form action="initialize.php" method="post"><input type="hidden" name="delete_text" value="<?php echo $row['id']; ?>">
+                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></form></div></td>
                             <div class="echo_text">
                             <?php
                         }
@@ -200,4 +200,5 @@ include('security.php');
 
 <?php
 include('includes/footer.php');
+include('includes/script.php');
 ?>

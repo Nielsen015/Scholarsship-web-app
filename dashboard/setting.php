@@ -144,21 +144,22 @@ include('security.php');
                     while($row=mysqli_fetch_array($query_run))
                     {
                     ?>
+                    <!-- info page -->
                     <h1>Personal info</h1>
-                    <form action="">  
+                    <form action="initialize.php" method="POST">  
                     <h2>First Name</h2>
-                    <input type="text" class="input" value="<?php  echo $row['first_name']; ?>" required placeholder="First Name">
-                    <h2>First Name</h2>
-                    <input type="text" class="input" value="<?php  echo $row['last_name']; ?>" required placeholder="last Name">
+                    <input type="text" class="input" name="first" value="<?php  echo $row['first_name']; ?>" required placeholder="First Name">
+                    <h2>Last Name</h2>
+                    <input type="text" class="input" name="last"  value="<?php  echo $row['last_name']; ?>" required placeholder="last Name">
                     <h2>Date of Birth</h2>
-                    <input type="date" class="input" value="<?php  if($row['birth'] == ''){ echo '';} else{echo $row['birth'];} ?>" required>
+                    <input type="date" class="input" name="date"  value="<?php  if($row['birth'] == ''){ echo '';} else{echo $row['birth'];} ?>" required>
                     <h2>Gender</h2>
                     <label class="custom-select">
                         <select id="" name="gender" required>
-                            <option disabled selected>Select Gender<?php  if($row['gender'] == ''){ echo '';} else{echo $row['gender'];} ?></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option disabled selected><?php  if($row['gender'] == ''){ echo 'Select Gender';} else{echo $row['gender'];} ?></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                         </select>
                     </label>
                     <label for="country"><h2>Country</h2></label>     
@@ -414,8 +415,8 @@ include('security.php');
                     </select>
                     </div>
                     <h2>Username</h2>
-                    <input type="text" class="input" value="<?php  echo $row['username']; ?>" required placeholder="Username"><br>
-                    <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
+                    <input type="text" class="input" name="username" value="<?php  echo $row['username']; ?>" required placeholder="Username"><br>
+                    <button type="submit" type="submit" name="info" class="btn9">Update</button>
                     </form>
                     <?php }?>
 
@@ -423,6 +424,7 @@ include('security.php');
         </div>
         <div class="row">
         <div class="setting tabshow">
+            <!-- edit panel -->
                     <h1>Edit Panel</h1>
                     <form action="picture.php" method="POST" enctype="multipart/form-data" class="form-pic">
                     <div class="profile-photo1">
@@ -435,12 +437,10 @@ include('security.php');
                       <?php
                       if($row['compfile'] == ''){
                         echo '<img src="profile/man.png" alt="profile" class="profile-photo">';}
-                        // echo $default;}
                       else{
                        echo '<img src="profile/'.$row['compfile'].'" alt="profile" class="profile-photo">';}
                        ?>
                  <?php }?>
-                        <!-- <img src="images/man.png" alt=""> -->
                     </div>
                     <label for="myfile">Change Profile Picture:</label>
                     <input type="file" name="compfile" class="form-control" accept=".jpeg, .jpg, .png" value="" required>
@@ -456,20 +456,21 @@ include('security.php');
                     <h2>Old Password</h2>
                     <input type="text" class="input" name="old"  placeholder="Old Password" required>
                     <h2>New Password</h2>
-                    <input type="password" name="password" placeholder="New Password" required="" id="id_password">
+                    <input type="password" name="new" placeholder="New Password" required="" id="id_password">
                     <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                     <h2>Confirm Passowrd</h2>
                     <input type="password" class="input" name="cpassword"  placeholder="confirm Password" id="id_password" required>
                     <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
                     <h2>Email</h2>
                     <input type="email" class="input" name="email" value="<?php  echo $row['email']; ?>" placeholder="Enter Email" required><br>
-                    <button type="submit" type="submit" name="subscribe" value="subscribe"class="btn9">Update</button>
+                    <button type="submit" type="submit" name="edit" class="btn9">Update</button>
                     </form>
                     <?php }?>
         </div>
         </div>
             <div class="row">
             <div class="academic tabshow">
+                <!-- academics page -->
                     <h1>Academic Records</h1>
                     <?php
                     $query = "SELECT * FROM academics where username ='".$_SESSION['username']."'";
@@ -479,14 +480,14 @@ include('security.php');
                         ?>
                     <form action="initialize.php" method="POST">
                     <h2>Graduation date/expected Date</h2>
-                    <input type="date" class="input" value="<?php  if($row['date'] == ''){ echo 'Graduation/Expected date';} else{echo $row['date'];} ?>" required>
+                    <input type="date" name="date" class="input" value="<?php  if($row['date'] == ''){ echo 'Graduation/Expected date';} else{echo $row['date'];} ?>" required>
                     <h2>University GPA out of 4</h2>
-                    <input type="number" class="input" value="<?php  if($row['score'] == ''){ echo '';} else{echo $row['score'];} ?>" min="0" max="4" placeholder="GPA" required>
+                    <input type="number" name="gpa" class="input" value="<?php  if($row['score'] == ''){ echo '';} else{echo $row['score'];} ?>" min="0" max="4" placeholder="GPA" required>
                     <h2>Course Studied</h2>
-                    <input type="text" class="input" value="<?php  if($row['course'] == ''){ echo '';} else{echo $row['course'];} ?>" placeholder="Course/degree" required>
+                    <input type="text" name="course" class="input" value="<?php  if($row['course'] == ''){ echo '';} else{echo $row['course'];} ?>" placeholder="Course/degree" required>
                     <h2>Learning Institution</h2>
-                    <input type="text" class="input" value="<?php  if($row['school'] == ''){ echo '';} else{echo $row['school'];} ?>" placeholder="University/College" required>
-                    <button type="submit" type="submit" name="academics" value="academics"class="btn9">Update</button>
+                    <input type="text" name="place" class="input" value="<?php  if($row['school'] == ''){ echo '';} else{echo $row['school'];} ?>" placeholder="University/College" required>
+                    <button type="submit" name="academics" class="btn9">Update</button>
                     </form>
                     <?php }?>
                 </div>
@@ -499,5 +500,6 @@ include('security.php');
 
     </main>
 <?php
+include('includes/script.php');
 include('includes/footer.php');
 ?>

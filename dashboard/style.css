@@ -618,17 +618,18 @@ main .like a{
     text-align: center;
     margin-top: 1rem;
 }
-.card .btn a{
+.card .btn {
    text-decoration: none;
    color: white;
    font-size: 0.9rem;
-   padding: 4px 10px;
+   padding: 5px 10px;
    background-color: #24306e;
    font-weight: 500;
    border-radius: 25px;
    transition: 0.5s ease;
+   margin: 5px 90px;
 }
-.card .btn a:hover{
+.card .btn:hover{
    color: #24306e;
    background-color: white;
    border: 1px solid var(--color-primary);
@@ -1254,9 +1255,15 @@ tr:hover td{
     background-color: var(--color-success);
     color: var(--color-white);
 }
-.table-section button:nth-child(2){
+.table-section .delete{
     background-color: var(--color-danger);
     color:#fff;
+}
+.table-section .btn_a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2px;
 }
 ::-webkit-scrollbar{
     height: 5px;
@@ -2261,7 +2268,7 @@ tr:hover td{
     }
     aside .sidebar a:last-child{
         position: absolute;
-        bottom: 10rem;
+        bottom: 8rem;
     }
     aside .close{
         display: inline-block;
@@ -2452,6 +2459,7 @@ tr:hover td{
     height: 28px;
     padding: 2px;
     margin-left: 25%;
+    color: var(--color-primary);
   }
   .row .pay_form input::placeholder{
     color: var(--color-dark-variant);
@@ -2466,3 +2474,99 @@ tr:hover td{
     width: 15%;
     margin: 15px 40%;
   } 
+  /* Payment media screens */
+  @media screen and (max-width:1200px) {
+    .wrapper3{
+        width: 700px;
+        margin-left: 50px;
+        margin-top: 40px;
+        box-sizing: border-box;
+      }
+      .row .pay_form button{
+        width: 25%;
+      } 
+      #hill-1:checked ~ .header .slider{
+        left: 16.5%;
+        width: 90px;
+        transform: translateX(5%);
+      }
+      #hill-2:checked ~ .header .slider{
+        left: 68%;
+        width: 120px;
+        transform: translateX(-50%);
+      }
+}
+@media screen and (max-width: 920px){
+    .wrapper3{
+        width: 620px;
+        margin-left: auto;
+        margin-top: 40px;
+      }
+      #hill-1:checked ~ .header .slider{
+        left: 16%;
+      }
+      #hill-2:checked ~ .header .slider{
+        left: 70.5%;
+      }
+}
+@media screen and (max-width:500px) {
+    .wrapper3{
+        width: 350px;
+        margin-left: -5px;
+        margin-top: 10px;
+      }
+      #hill-1:checked ~ .header .slider{
+        left: 17.5%;
+        width: 85px;
+      }
+      #hill-2:checked ~ .header .slider{
+        width: 85px;
+        left: 74%;
+      }
+}
+@media screen and (max-width:400px) {
+    #hill-1:checked ~ .header .slider{
+        left: 20%;
+        width: 70px;
+      }
+    .wrapper3{
+        margin-left: -8px;
+        width: 330px;
+      }
+}
+@media screen and (max-width:365px) {
+    #hill-1:checked ~ .header .slider{
+        left: 20%;
+        width: 70px;
+        
+      }
+    #hill-2:checked ~ .header .slider{
+        left: 80%;
+        width: 100px;
+        
+      }
+    .wrapper3{
+        margin-left: -10px;
+        width: 300px;
+        margin-top: -5px;
+      }
+}
+@media screen and (max-width:300px) {
+    #hill-1:checked ~ .header .slider{
+        left: 10%;
+        width: 70px;  
+      }
+      #hill-2:checked ~ .header .slider{
+        left: 72%;
+        width: 80px;  
+      }
+      .header label{
+       
+        margin-left: 30px;
+      }
+    .wrapper3{
+        margin-left: -10px;
+        width: 250px;
+        margin-top: -5px;
+      }
+}

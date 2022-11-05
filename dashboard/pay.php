@@ -142,13 +142,13 @@ include('security.php');
             <h5>Amount(minimum 100)</h5>
             <input type="number" placeholder="Enter Amount" value="100" min="100" required>
             <h5>Enter Your M-pesa Number</h5>
-            <input input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="0712345678">
+            <input input type="tel" id="phone" name="phone" pattern="[0-7]{2}[0-9]{8}" required placeholder="0712345678">
           <button>Pay</button>
           </form>
         </div>
         <div class="row">
         <div class="price-details">
-            <img src="images/aitrel.png" alt="">
+            <img src="images/airtelm.png" alt="logo">
                 <p>Airtel Wallet</p>
           </div>
           <form action="" class="pay_form">
