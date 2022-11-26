@@ -126,6 +126,12 @@ include('security.php');
                     </div>
                 </div>
                 <div class="table-section">
+                <?php
+                $sr_no=1;
+                $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."'";
+                $query_run = mysqli_query($connection,$query);
+
+                 ?>
                     <table>
                         <thead>
                             <tr>
@@ -136,45 +142,32 @@ include('security.php');
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                while($row = mysqli_fetch_assoc($query_run))
+                                {
+                        ?>
                             <tr>
-                            <td>Havard</td>
-                            <td> KES 150000</td>
-                            <td>5 December 2022</td>
-                            <td><button>Apply</button>
-                            <input type="hidden" name="delete_text" value="">
-                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
+                            <td><?php echo $sr_no++; ?></td>
+                            <td><?php echo $row['subject']; ?></td>
+                            <td><?php echo $row['date']; ?></td>
+                            <td><?php echo $row['date']; ?></td>
+                            <td><?php echo $row['date']; ?></td>
+                            <td><div class="btn_a"><a href="Open_message? id=<?php echo $row['id'];?>"><button>Apply</button></a><form action="initialize.php" method="post"><input type="hidden" name="delete_list" value="<?php echo $row['id']; ?>">
+                            <button class="delete"type="submit" name="delete_listbtn"><i class="fa-solid fa-trash"></i></button></form></div></td>
+                            <div class="echo_text">
+                            <?php
+                        }
+                    } 
+                    else{
+                         echo "<p style='color: #be2326; font-size: 18px;'>You have not added any Scholarship to your list.</p>";
+                    }
+                    ?>
+                            </div>
+                            
                             </tr>
-                            <tr>
-                            <td>Havard</td>
-                            <td> KES 150000</td>
-                            <td>5 December 2022</td>
-                            <td><button>Apply</button>
-                            <input type="hidden" name="delete_text" value="">
-                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
-                            </tr><tr>
-                            <td>Havard</td>
-                            <td> KES 150000</td>
-                            <td>5 December 2022</td>
-                            <td><button>Apply</button>
-                            <input type="hidden" name="delete_text" value="">
-                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
-                            </tr>
-                            <tr>
-                            <td>Havard</td>
-                            <td> KES 150000</td>
-                            <td>5 December 2022</td>
-                            <td><button>Apply</button>
-                            <input type="hidden" name="delete_text" value="">
-                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
-                            </tr>
-                            <tr>
-                            <td>Havard</td>
-                            <td> KES 150000</td>
-                            <td>5 December 2022</td>
-                            <td><button>Apply</button>
-                            <input type="hidden" name="delete_text" value="">
-                            <button class="delete"type="submit" name="delete_textbtn"><i class="fa-solid fa-trash"></i></button></td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                     <div class="pagination">

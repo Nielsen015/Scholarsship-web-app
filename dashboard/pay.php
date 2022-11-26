@@ -151,7 +151,7 @@ include('security.php');
             <img src="images/airtelm.png" alt="logo">
                 <p>Airtel Wallet</p>
           </div>
-          <form action="" class="pay_form">
+          <form action="initiate_sdk.php" class="pay_form">
             <h5>Amount(minimum 100)</h5>
             <input type="number" placeholder="Enter Amount" value="100" required>
             <h5>Enter Your Airtel Money Number</h5>

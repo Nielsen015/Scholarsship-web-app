@@ -1,5 +1,8 @@
+<?php
+include('database/dbconfig.php');
+?>
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="en" class="no-js">
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -89,22 +92,28 @@
                                 <img class="img-fluid" src="pictures/pic5.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=1";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -113,22 +122,28 @@
                                 <img class="img-fluid" src="pictures/pic8.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=2";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -137,22 +152,28 @@
                                 <img class="img-fluid" src="pictures/pic2.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=3";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -161,22 +182,28 @@
                                 <img class="img-fluid" src="pictures/pic3.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=4";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -185,22 +212,28 @@
                                 <img class="img-fluid" src="pictures/pic1.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=5";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -209,22 +242,28 @@
                                 <img class="img-fluid" src="images/c4.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=6";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -233,22 +272,28 @@
                                 <img class="img-fluid" src="images/c2.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=7";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
                     <div class="single-popular-carusel col-lg-3 col-md-6">
                         <div class="thumb-wrap relative">
@@ -257,24 +302,30 @@
                                 <img class="img-fluid" src="images/c1.jpg" alt="">
                             </div>
                             <div class="meta d-flex justify-content-between">
+                            <?php
+                    $query = "SELECT * FROM scholarships WHERE id=8";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                                 <h5>Award:</h5>
-                                <h4>$15000</h4>
+                                <h4>$<?php echo $row['Amount']; ?></h4>
                             </div>									
                         </div>
                         <div class="details">
                             <a href="course-details.html">
                                 <h4>
-                                    Havard Scholarship
+                                <?php echo substr($row['Scholarship Name'],0,25); ?>
                                 </h4>
                             </a>
                             <p>
-                                Deadline: 5 December, 2022										
+                                Deadline: <?php echo $row['Deadline']; ?>									
                             </p>
                             
                         </div>
-                        <div class="btn-detail"><a href="">Apply Now</a></div>
+                        <div class="btn-detail"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                     </div>	
-                    <a href="#" class="primary-btn text-uppercase mx-auto">Load More Scholarships</a>													
+                    <a href="dashboard/scholarship" class="primary-btn text-uppercase mx-auto">Load More Scholarships</a>													
                 </div>
             </div>	
         </section>
@@ -296,14 +347,14 @@
                         <div class="row details-content">
                             <div class="col single-detials">
                                 <span class="lnr lnr-graduation-hat"></span>
-                                <a href="#"><h4>Search & get</h4></a>		
+                                <a href="dashboard/scholarship"><h4>Search & get</h4></a>		
                                 <p>
                                     Search through our database for a scholarship that suites you and apply.
                                 </p>						
                             </div>
                             <div class="col single-detials">
                                 <span class="lnr lnr-license"></span>
-                                <a href="#"><h4>Get admited</h4></a>		
+                                <a href="dashboard/scholarship"><h4>Get admited</h4></a>		
                                 <p>
                                     Get admitted to your college of choice through the scholarship fund and achieve your goals.
                                 </p>						

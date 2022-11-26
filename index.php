@@ -1,3 +1,6 @@
+<?php
+include('database/dbconfig.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +49,7 @@
         <h2> <span style="color: #24306e;">Find Scholarships</span><br>and achieve your dreams</h2>
         <p>Get financial aid to cater for your studies.<br>We provide a colletion of scholarships applications that suit your needs.</p>
         <div class="btn">
-            <a href="#">Get started</a>
+            <a href="signin">Get started</a>
         </div>
     </div>
        
@@ -61,7 +64,7 @@
                 Scholarships Worldwide.Get a collections of suitable scholarships <br>
                 from our expansive scholarship database.</p>
                 <div class="btn">
-                    <a href="#">Find Scholarships</a>
+                    <a href="dashboard/index">Find Scholarships</a>
                 </div>
             </div>
         </div>
@@ -74,7 +77,7 @@
                 <p>Get scholarships according to your degree of prefrence. 
                     Find financial aid to help you fund your education.</p>
                 <div class="btn">
-                    <a href="#">Find by Degree</a>
+                    <a href="dashboard/index">Find by Degree</a>
                 </div>
             </div>
         </div>
@@ -88,7 +91,7 @@
                 <p>Access scholarships that match your education financial
                      needs and achieve your goals.</p>
                 <div class="btn">
-                    <a href="#">Apply Now</a>
+                    <a href="dashboard/scholarship">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -101,76 +104,109 @@
             <div class="courses">
                 <img src="images/c1.jpg" alt="img">
                 <div class="details">
+                <?php
+                    $query = "SELECT * FROM scholarships WHERE id=9";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <span>
-                        <i class="fas fa-calendar"> Deadline:</i>
+                        <i class="fas fa-calendar"> Deadline: <?php echo $row['Deadline']; ?></i>
                     </span>
-                    <h6 class="underline-hover-effect"><a href="#">scholarship name</a></h6>
+                    <h6 class="underline-hover-effect"><a href="dashboard/scholarship"><?php echo substr($row['Scholarship Name'],0,25); ?></a></h6>
                 </div>
-                <div class="cost">$1000</div>
-                <div class="btn"><a href="#">Apply Now</a></div>
+                <div class="cost">$<?php echo $row['Amount']; ?></div>
+                <div class="btn"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
             </div>
             
             <div class="courses">
                 <img src="images/c2.jpg" alt="img">
                 <div class="details">
+                <?php
+                    $query = "SELECT * FROM scholarships WHERE id=10";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <span>
-                        <i class="fas fa-calendar"> Deadline:</i>
+                        <i class="fas fa-calendar"> Deadline: <?php echo $row['Deadline']; ?></i>
                     </span>
-                    <h6 class="underline-hover-effect"><a href="#">scholarship name</a></h6>
+                    <h6 class="underline-hover-effect"><a href="dashboard/scholarship"><?php echo substr($row['Scholarship Name'],0,25); ?></a></h6>
                 </div>
-                <div class="cost">$1000</div>
-                <div class="btn"><a href="#">Apply Now</a></div>
+                <div class="cost">$<?php echo $row['Amount']; ?></div>
+                <div class="btn"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
             </div>
             
             <div class="courses">
                 <img src="images/c3.jpg" alt="img">
                 <div class="details">
+                <?php
+                    $query = "SELECT * FROM scholarships WHERE id=11";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <span>
-                        <i class="fas fa-calendar"> Deadline:</i>
+                        <i class="fas fa-calendar"> Deadline: <?php echo $row['Deadline']; ?></i>
                     </span>
-                    <h6 class="underline-hover-effect"><a href="#">scholarship name</a></h6>
+                    <h6 class="underline-hover-effect"><a href="dashboard/scholarship"><?php echo substr($row['Scholarship Name'],0,25); ?></a></h6>
                 </div>
-                <div class="cost">$1000</div>
-                <div class="btn"><a href="#">Apply Now</a></div>
+                <div class="cost">$<?php echo $row['Amount']; ?></div>
+                <div class="btn"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
             </div>
             
             <div class="courses">
                 <img src="images/c4.jpg" alt="img">
                 <div class="details">
+                <?php
+                    $query = "SELECT * FROM scholarships WHERE id=12";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <span>
-                        <i class="fas fa-calendar"> Deadline:</i>
+                        <i class="fas fa-calendar"> Deadline: <?php echo $row['Deadline']; ?></i>
                     </span>
-                    <h6 class="underline-hover-effect"><a href="#">scholarship name</a></h6>
+                    <h6 class="underline-hover-effect"><a href="dashboard/scholarship"><?php echo substr($row['Scholarship Name'],0,25); ?></a></h6>
                 </div>
-                
-                <div class="cost">$1000</div>
-                <div class="btn"><a href="#">Apply Now</a></div>
+                <div class="cost">$<?php echo $row['Amount']; ?></div>
+                <div class="btn"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                 
             </div>
             <div class="courses">
                 <img src="images/c5.jpg" alt="img">
                 <div class="details">
+                <?php
+                    $query = "SELECT * FROM scholarships WHERE id=13";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <span>
-                        <i class="fas fa-calendar"> Deadline:</i>
+                        <i class="fas fa-calendar"> Deadline: <?php echo $row['Deadline']; ?></i>
                     </span>
-                    <h6 class="underline-hover-effect"><a href="#">scholarship name</a></h6>
+                    <h6 class="underline-hover-effect"><a href="dashboard/scholarship"><?php echo substr($row['Scholarship Name'],0,25); ?></a></h6>
                 </div>
-                
-                <div class="cost">$1000</div>
-                <div class="btn"><a href="#">Apply Now</a></div>
+                <div class="cost">$<?php echo $row['Amount']; ?></div>
+                <div class="btn"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                 
             </div>
             <div class="courses">
                 <img src="images/c6.jpg" alt="img">
                 <div class="details">
+                <?php
+                    $query = "SELECT * FROM scholarships WHERE id=14";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <span>
-                        <i class="fas fa-calendar"> Deadline:</i>
+                        <i class="fas fa-calendar"> Deadline: <?php echo $row['Deadline']; ?></i>
                     </span>
-                    <h6 class="underline-hover-effect"><a href="#">scholarship name</a></h6>
+                    <h6 class="underline-hover-effect"><a href="dashboard/scholarship"><?php echo substr($row['Scholarship Name'],0,25); ?></a></h6>
                 </div>
-                
-                <div class="cost">$1000</div>
-                <div class="btn"><a href="#">Apply Now</a></div>
+                <div class="cost">$<?php echo $row['Amount']; ?></div>
+                <div class="btn"><a href="dashboard/scholarship">Apply Now</a><?php }?></div>
                 
             </div>
             

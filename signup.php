@@ -84,8 +84,8 @@ include('database/dbconfig.php');
             <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         </div>
         <div class="form-group input-space">                
-            <input id="password-field" type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
-            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            <input id="password-field1" type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
+            <span toggle="#password-field1" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         </div>           
         
     
@@ -124,6 +124,7 @@ include('database/dbconfig.php');
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>   
+    <script src="js/main.js"></script> 
+    <script src="js/main3.js"></script>  
 </body>
 </html>

@@ -456,11 +456,11 @@ include('security.php');
                     <h2>Old Password</h2>
                     <input type="text" class="input" name="old"  placeholder="Old Password" required>
                     <h2>New Password</h2>
-                    <input type="password" name="new" placeholder="New Password" required="" id="id_password">
-                    <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                    <input id="password-field" type="password" name="new" class="form-control" placeholder="New Password" required>
+                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-left: -30px; cursor: pointer;"></span>
                     <h2>Confirm Passowrd</h2>
-                    <input type="password" class="input" name="cpassword"  placeholder="confirm Password" id="id_password" required>
-                    <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+                    <input id="password-field1" type="password" name="cpassword" class="form-control" placeholder="Confirm Password" required>
+                    <span toggle="#password-field1" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-left: -30px; cursor: pointer;"></span>
                     <h2>Email</h2>
                     <input type="email" class="input" name="email" value="<?php  echo $row['email']; ?>" placeholder="Enter Email" required><br>
                     <button type="submit" type="submit" name="edit" class="btn9">Update</button>
@@ -497,8 +497,8 @@ include('security.php');
         </div>
             
     </div>
-
     </main>
+    <script src="js/main.js"></script>
 <?php
 include('includes/script.php');
 include('includes/footer.php');

@@ -1,6 +1,6 @@
 <?php
 include('includes/header.php'); 
-include('security.php'); 
+include('security.php');
 ?>
 <body>
     <div class="scholar">
@@ -97,6 +97,11 @@ include('security.php');
                         dark_mode
                         </span>
                 </div>
+                <?php 
+                //  include('includes/dbconfig.php');
+                //  $query = "SELECT * FROM scholarships";
+                //  $query_run = mysqli_query($connection,$query);
+                ?>
                 <?php
                     $query = "SELECT * FROM users where username ='".$_SESSION['username']."'";
                     $query_run = mysqli_query($connection,$query);
@@ -126,7 +131,11 @@ include('security.php');
         </div>
             <div class="card-deck">
                 <div class="results">
-                    <h2>3000 <span>results</span></h2>
+                <?php
+             $query = "SELECT id FROM scholarships ORDER BY id";  
+             $query_run = mysqli_query($connection, $query);
+             $row = mysqli_num_rows($query_run);
+             echo'<h2>'.$row.'<span> results </span></h2>'; ?>
                 </div>
                 <div class="search-form">
                     <form action="" class="search-bar">
@@ -134,941 +143,51 @@ include('security.php');
                         <i class="fa fa-search"></i>
                     </form>
                 </div>
-                <div class="card-content" style="display: none;" > 
+                <?php
+                    $query = "SELECT * FROM scholarships";
+                    $query_run = mysqli_query($connection,$query);
+                    
+                    ?>
+                <div class="card-content" > 
+                <?php
+                    // $query = "SELECT * FROM scholarships WHERE id=1";
+                    //$query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
                     <div class="card">
+                    <?php
+                    // while($row=mysqli_fetch_array($query_run))
+                    // {
+                    ?>
                         <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
+                        <?php
+                    // $query = "SELECT * FROM scholarships WHERE id=1";
+                    // $query_run = mysqli_query($connection,$query);
+                    // while($row=mysqli_fetch_array($query_run))
+                    // {
+                    ?>
+                        <h3>$<?php echo $row['Amount']; ?></h3>
+                        <h2 class="underline-hover-effect"><?php echo substr($row['Scholarship Name'],0,40); ?></h2>
+                        <!-- <h2>PhD Scholarship</h2> -->
                         </div>
                         <div class="date">
                             <span class="material-icons-sharp">
                                 calendar_month
                                 </span>
-                            <h3>Deadline: December 5, 2022</h3>
+                            <h3>Deadline: <?php echo $row['Deadline'];?> </h3>
                         </div>
-                        <button class="btn">View details<button>
+                        
+                        <button class="myBtn btn">View details<button>
                         <button id="btnh1" class="heart"><span class="material-icons-sharp">
                         favorite
                         </span></i>
                         </button>
+                    
+                        <?php //}?>
                     </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button onclick="Toggle1()" id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div> <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div> <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
-                    <div class="card">
-                        <div class="info">
-                        <h3>$10,000</h3>
-                        <h2 class="underline-hover-effect">Havard Scholarship</h2>
-                        <h2>PhD Scholarship</h2>
-                        </div>
-                        <div class="date">
-                            <span class="material-icons-sharp">
-                                calendar_month
-                                </span>
-                            <h3>Deadline: December 5, 2022</h3>
-                        </div>
-                        <button class="btn">View details<button>
-                        <button onclick="myFunction()" id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
-                        </span></i>
-                        </button>
-                    </div>
+                    <?php }?>
+                     
                 </div>
                 <div class="pagination">
                     <!-- <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
@@ -1082,10 +201,155 @@ include('security.php');
                 </div>
                
             </div>
+            <style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--color-background);
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  border: 1px solid #888;
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+  color: var(--color-primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color-danger);
+  text-decoration: none;
+  cursor: pointer;
+}
+.myBtn {
+  background-color: #24306e;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  margin-left: 6.6rem;
+  margin-top: 0.8rem;
+}
+.myBtn:hover{
+   color: #24306e;
+   background-color: white;
+   border: 1px solid var(--color-primary);
+}
+.modal-content h2 {
+   margin: 0;
+   color: var(--color-primary);
+}
+.modal-content p {
+  font-size: 14px;
+  /* opacity: 0.7; */
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+.modal-content a {
+    background-color: #24306e;
+    border-radius: 25px;
+    color: white;
+    font-size: 12px;
+    padding: 5px 8px;
+    /* margin-top: 8px; */
+    /* padding-top: 1rem; */
+}
+.modal-content a:hover{
+   color: #24306e;
+   background-color: white;
+   border: 1px solid var(--color-primary);
+}
+</style>
+
+
+
+<!-- The Modal <i class='bx bx-x'> -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+     <span class="close">&times;</span>
+    <?php
+                    $query = "SELECT * FROM scholarships WHERE id=1";
+                    $query_run = mysqli_query($connection,$query);
+                    while($row=mysqli_fetch_array($query_run))
+                    {
+                    ?>
+                        <h2><?php echo $row['Scholarship Name']; ?></h2>
+                        <p><?php echo $row['Description']; ?></p>
+                
+                       
+        <a href="<?php echo $row['Link']; ?>" target="_blank">Apply Now</a><?php }?>
+  </div>
+
+</div>
           
            
         </main>
         <!-- end of main -->
+        <script>
+// Get the modal
+ var modal = document.getElementById("myModal");
+
+ // Get the button that opens the modal
+ var btn = document.getElementsByClassName("myBtn");
+
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+  btn[i].onclick = function() {
+    modal.style.display = "block";
+  }
+} 
+//  btn.onclick = function() {
+//    modal.style.display = "block";
+//  }
+
+// When the user clicks on <span> (x), close the modal
+ $('.close').click(function(){
+   modal.style.display = "none";
+ })
+//  span.onclick = function() {
+//    modal.style.display = "none";
+//  }
+
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function(event) {
+  if (event.target == modal) {
+     modal.style.display = "none";
+   }
+ }
+
+
+</script>
         <script type="text/javascript">
             function getPageList(totalPages, page, maxLength){
                 function range(start, end){
@@ -1114,7 +378,7 @@ include('security.php');
                var numberOfItems = $(".card-content .card").length;
                var limitPerPage = 9; //number of cards per page
                var totalPages = Math.ceil(numberOfItems / limitPerPage);
-               var paginationSize = 5; //how many page elements visible in the pagination
+               var paginationSize = 7; //how many page elements visible in the pagination
                var currentPage;
 
                function showPage(whichPage){
@@ -1144,8 +408,8 @@ include('security.php');
                $(".card-content").show();
                showPage(1);
 
-               $(document).on("click", ".paginaton li.current-page:not(.active)", function(){
-                return showPage(+$(currentPage).text());
+               $(document).on("click", ".pagination li.current-page:not(.active)", function(){
+                return showPage(+$(this).text());
                });
                
                

@@ -29,6 +29,32 @@ if(isset($_POST['delete_textbtn']))
     }
     
 }
+// delete college list button
+if(isset($_POST['delete_listbtn']))
+{
+    $id =$_POST['delete_list'];
+
+    $query = "DELETE FROM list WHERE id='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    
+    if($query_run)
+    {
+        $_SESSION['status'] = "Scholarship has been Deleted";
+        $_SESSION['status_code'] = "success";
+        header('Location: alert');
+
+    }
+    else
+    {
+        $_SESSION['status'] = "Error! cannot delete Message, please contact Admin";
+        $_SESSION['status_code'] = "error";
+        header('Location: alert');
+
+
+    }
+    
+}
 // edit page
 if(isset($_POST['edit'])) 
 {

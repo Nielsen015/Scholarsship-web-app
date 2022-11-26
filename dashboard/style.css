@@ -582,8 +582,8 @@ main .like a{
 }
 .card .info h3{
     color: var(--color-primary);
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 .card .date{
     display: flex;
@@ -856,6 +856,17 @@ main .like a{
     }
     .scholar .top1 button span{
         font-size: 2rem;
+    }
+}
+@media screen and (max-width:300px){
+    .search-form{
+        right: -50px;
+        top: 120px;
+    }
+    .results{
+        position: absolute;
+        left: 20px;
+        top: 120px;
     }
 }
 /* wallet page */
