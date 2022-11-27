@@ -64,39 +64,43 @@ while($row=mysqli_fetch_array($query_run))
             <div class="like">
                 <h2>My Scholarship wishlist</h2>
                 <table>
+                      <?php
+                $sr_no=1;
+                $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."'";
+                $query_run = mysqli_query($connection,$query);
+
+                 ?>
                     <thead>
                         <tr>
+                            <th>Serial</th>
                             <th>Name</th>
                             <th>Award</th>
                             <th>Deadline</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr>
-                            <td>Charity Hopes</td>
-                            <td>$1000</td>
-                            <td>5th December</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Charity Hopes</td>
-                            <td>$1000</td>
-                            <td>5th December</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Charity Hopes</td>
-                            <td>$1000</td>
-                            <td>5th December</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Charity Hopes</td>
-                            <td>$1000</td>
-                            <td>5th December</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                    </tbody> -->
+                        
+                        <?php
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                while($row = mysqli_fetch_assoc($query_run))
+                                {
+                        ?>
+                            <tr>
+                            <td><?php echo $sr_no++; ?></td>
+                            <td><?php echo $row['subject']; ?></td>
+                            <td><?php echo $row['messages']; ?></td>
+                            <td><?php echo $row['date']; ?></td>
+                            <td><div class="btn_a"><a href="Open_message? id=<?php echo $row['id'];?>">Details</a></td>
+                            <div class="echo_text">
+                            <?php
+                        }
+                    } 
+                    else{
+                         echo "<p style='color: #be2326; font-size: 18px;'>You have not added any Scholarship to your list.</p>";
+                    }
+                    ?>
+                </tbody>
                 </table>
                 <a href="college_list">Show all</a>
             </div>

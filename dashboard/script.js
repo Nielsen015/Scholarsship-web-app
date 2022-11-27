@@ -22,22 +22,22 @@ themeToggle.addEventListener('click', () => {
 })
 
 // fill table
-List.forEach(list => {
-    const tr = document.createElement('tr');
-    const trContent = `
-                    <td>${list.name}</td>
-                    <td>${list.award}</td>
-                    <td>${list.deadline}</td>
-                    <td class="primary">Details</td>
-                    `;
-    tr.innerHTML = trContent;
-    document.querySelector('table tbody').appendChild(tr);
-})
-//list table
-$(document).ready(function () {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-  });
+// List.forEach(list => {
+//     const tr = document.createElement('tr');
+//     const trContent = `
+//                     <td>${list.name}</td>
+//                     <td>${list.award}</td>
+//                     <td>${list.deadline}</td>
+//                     <td class="primary">Details</td>
+//                     `;
+//     tr.innerHTML = trContent;
+//     document.querySelector('table tbody').appendChild(tr);
+// })
+// //list table
+// $(document).ready(function () {
+//     $('#dtBasicExample').DataTable();
+//     $('.dataTables_length').addClass('bs-select');
+//   });
 
 // Countries
 document.addEventListener('DOMContentLoaded', () =>{
