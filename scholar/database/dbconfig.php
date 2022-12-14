@@ -1,11 +1,11 @@
-<link href="../<css/sb-admin-2.min.css" rel="sytlesheet">
+<link href="../css/sb-admin-2.min.css" rel="sytlesheet">
 
 <?php
 
 $server_name = "localhost";
 $db_username = "root";
 $db_password = "Moses015";
-$db_name = "cadesone";
+$db_name = "scholarly";
 
 $connection = mysqli_connect($server_name,$db_username,$db_password,$db_name);
 

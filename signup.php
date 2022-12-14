@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('database/dbconfig.php');
+include('log.php');
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +96,7 @@ include('database/dbconfig.php');
             <span class="checkmark" required></span>	</label>
     </div>
     <div class="form-group">
-        <button type="submit" name="login_btn" class="form-control btn btn-primary submit px-3">Sign up</button>
+        <button type="submit" name="signup_btn" class="form-control btn btn-primary submit px-3">Sign up</button>
     </div> 
     <div class="text-center">
         <a class="small"  href="signin" style="color: #B2BEFF;">Already have an account? Login</a>

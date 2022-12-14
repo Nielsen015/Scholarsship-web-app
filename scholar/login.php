@@ -18,7 +18,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                     <div class="col-lg-12">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">CADESONE | Housing : Admin Login</h1>
+                                <h1 class="h4 text-gray-900 mb-4">SCHOLARLY : Admin Login</h1>
                                 <?php
                                     if(isset($_SESSION['status']) && $_SESSION['status'] !='') 
                                     {
@@ -35,6 +35,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                                     <input type="password" name="password" class="form-control form-control-user" placeholder="Password" required>
                                 </div>
                                 <button type="submit" name="login_btn" class="btn btn-primary btn-user btn-block"> Login </button>
+                                <h6 style="text-decoration:none;color:#1cc88a;text-align:center;margin-top: 5px;"><a href="forgot password" style="text-decoration:none;">Forgot Password?</a></h2>
                             </form>
                         </div>
                     </div>

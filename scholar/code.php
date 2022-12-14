@@ -18,44 +18,63 @@ if(isset($_POST['check_submit_btn']))
         echo"It's Available.";
      }
 }
-
+// create admin user
 if(isset($_POST['registerbtn'])) 
 {
+    $firstname = mysqli_real_escape_string($connection, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($connection, $_POST['lastname']);
     $username = mysqli_real_escape_string($connection, $_POST['username']);
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
+    $role = $_POST['role'];
+    $status = 'active';
+
+    $hashed = md5($password);
     
 
-    $email_query = "SELECT * FROM register WHERE email='$email' ";
+    $email_query = "SELECT * FROM admin WHERE email='$email' ";
     $email_query_run = mysqli_query($connection,$email_query);
     if(mysqli_num_rows($email_query_run) > 0)
     {
         $_SESSION['status'] = "email already Taken, please another one";
         $_SESSION['status_code'] = "warning";
-        header('location: register.php');
+        header('location: admin');
     }
+    else 
+      
+        $username_query = "SELECT * FROM admin WHERE username='$username' ";
+        $username_query_run = mysqli_query($connection,$username_query);
+        if(mysqli_num_rows($username_query_run) > 0)
+        {
+            $_SESSION['status'] = "Username already Taken, please try another one";
+            $_SESSION['status_code'] = "warning";
+            header('location: admin');
+        }
     else
      {
 
     
         if($password === $cpassword)
         {
-            $query = "INSERT INTO register (username,email,password) VALUES('$username','$email','$password')";
+            $query = "INSERT INTO admin (username,firstname,lastname,role,status,email,password) VALUES('$username','$firstname','$lastname','$role','$status','$email','$hashed')";
             $query_run = mysqli_query($connection,$query);
+            $sql = "INSERT INTO pic (user) VALUES('$email')";
+            $sql_run = mysqli_query($connection,$sql);
+        
         
             if($query_run)
             {
                 //echo saved       
                 $_SESSION['status'] = "Admin Profile Added";
                 $_SESSION['status_code'] = "success";
-                header('location: register.php');
+                header('location: admin');
             }
             else
             {
                 $_SESSION['status'] = "Admin Profile NOT Added";
                 $_SESSION['status_code'] = "error";
-                header('location: register.php');
+                header('location: admin');
             }
         }
         else 
@@ -70,24 +89,27 @@ if(isset($_POST['updatebtn']))
 {
     $id =$_POST['edit_id'];
     $username = mysqli_real_escape_string($connection, $_POST['edit_username']);
+    $firstname = mysqli_real_escape_string($connection, $_POST['edit_first']);
+    $lastname = mysqli_real_escape_string($connection, $_POST['edit_last']);
     $email = mysqli_real_escape_string($connection,$_POST['edit_email']);
-    $password = $_POST['edit_password'];
+    $role = $_POST['role'];
 
-    $query = "UPDATE register SET username='$username', email='$email', password='$password' WHERE id='$id' ";
+
+    $query = "UPDATE admin SET username='$username', firstname='$firstname', lastname='$lastname', email='$email', role='$role' WHERE id='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
     {
         $_SESSION['status'] = "Data has been Updated Successfully";
         $_SESSION['status_code'] = "success";
-        header('Location: register.php');
+        header('Location: admin');
 
     }
     else
     {
         $_SESSION['status'] = "Error! cannot update data, please contact Admin";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');
+        header('Location: admin');
 
 
     }
@@ -96,7 +118,7 @@ if(isset($_POST['delete_btn']))
 {
     $id =$_POST['delete_id'];
 
-    $query = "DELETE FROM register WHERE id='$id' ";
+    $query = "DELETE FROM admin WHERE id='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     
@@ -104,14 +126,14 @@ if(isset($_POST['delete_btn']))
     {
         $_SESSION['status'] = "Data has been Deleted";
         $_SESSION['status_code'] = "success";
-        header('Location: register.php');
+        header('Location: admin');
 
     }
     else
     {
         $_SESSION['status'] = "Error! cannot delete data, please contact Admin";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');
+        header('Location: admin');
 
 
     }
@@ -450,26 +472,25 @@ if(isset($_POST['rentbtn']))
 if(isset($_POST['update_paybtn']))
 {
     $id =$_POST['edit_pay'];
-    $amount = $_POST['edit_amount'];
-    $balance = $_POST['edit_balance'];
-    $month = $_POST['edit_month'];
+    $amount = $_POST['edit_balance'];
+    $mode = $_POST['edit_mode'];
 
 
-    $query = "UPDATE payment SET amount='$amount', balance='$balance', month='$month' WHERE id='$id' ";
+    $query = "UPDATE payment SET balance='$amount', mode='$mode' WHERE transact_id='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
     {
         $_SESSION['status'] = "Data has been Updated Successfully";
         $_SESSION['status_code'] = "success";
-        header('Location: payments.php');
+        header('Location: payments');
 
     }
     else
     {
         $_SESSION['status'] = "Error! cannot update data, please contact Admin";
         $_SESSION['status_code'] = "error";
-        header('Location: payments.php');
+        header('Location: payments');
 
 
     }
@@ -522,11 +543,12 @@ if(isset($_POST['delete_paybtn']))
 
     }
 }
+// delete user message history
 if(isset($_POST['delete_individualbtn']))
 {
     $id =$_POST['delete_individual'];
 
-    $query = "DELETE FROM individual WHERE id='$id' ";
+    $query = "DELETE FROM send_history WHERE id_no='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     
@@ -534,23 +556,24 @@ if(isset($_POST['delete_individualbtn']))
     {
         $_SESSION['status'] = "Message has been Deleted";
         $_SESSION['status_code'] = "success";
-        header('Location: individual_history.php');
+        header('Location: message_history');
 
     }
     else
     {
         $_SESSION['status'] = "Error! cannot delete Message, please contact Admin";
         $_SESSION['status_code'] = "error";
-        header('Location: individual_history.php');
+        header('Location: message_history');
 
 
     }
 }
-if(isset($_POST['delete_vacatebtn']))
+// delete admin alerts
+if(isset($_POST['delete_adminalertbtn']))
 {
-    $id =$_POST['delete_vacate'];
+    $id =$_POST['delete_adminalert'];
 
-    $query = "DELETE FROM vacate WHERE id='$id' ";
+    $query = "DELETE FROM admincast WHERE id_no='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     
@@ -558,23 +581,24 @@ if(isset($_POST['delete_vacatebtn']))
     {
         $_SESSION['status'] = "Message has been Deleted";
         $_SESSION['status_code'] = "success";
-        header('Location: vacate.php');
+        header('Location: alert');
 
     }
     else
     {
         $_SESSION['status'] = "Error! cannot delete Message, please contact Admin";
         $_SESSION['status_code'] = "error";
-        header('Location: vacate.php');
+        header('Location: alert');
 
 
     }
 }
-if(isset($_POST['delete_compbtn']))
+// delete admin Message History
+if(isset($_POST['delete_castbtn']))
 {
-    $id =$_POST['delete_comp'];
+    $id =$_POST['delete_cast'];
 
-    $query = "DELETE FROM complaint WHERE id='$id' ";
+    $query = "DELETE FROM admincastcopy WHERE id_no='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     
@@ -582,37 +606,16 @@ if(isset($_POST['delete_compbtn']))
     {
         $_SESSION['status'] = "Message has been Deleted";
         $_SESSION['status_code'] = "success";
-        header('Location: complaint.php');
+        header('Location: admincast');
 
     }
     else
     {
         $_SESSION['status'] = "Error! cannot delete Message, please contact Admin";
         $_SESSION['status_code'] = "error";
-        header('Location: complaint.php.php');
+        header('Location: admincast');
 
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

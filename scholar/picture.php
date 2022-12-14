@@ -24,14 +24,14 @@ if($query_run)
 {
     $_SESSION['status'] = "Picture has been Successfully uploaded";
     $_SESSION['status_code'] = "success";
-    header('Location: profile.php');
+    header('Location: profiles');
 
 }
 else
 {
     $_SESSION['status'] = "Error! cannot upload picture, please contact Admin";
     $_SESSION['status_code'] = "error";
-    header('Location: profile.php');
+    header('Location: profiles');
 
 
 }

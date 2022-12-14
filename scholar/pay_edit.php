@@ -17,7 +17,7 @@ include('includes/navbar.php');
  {
      $id = $_POST['edit_pay'];
 
-     $query = "SELECT * FROM payment WHERE id='$id' ";
+     $query = "SELECT * FROM payment WHERE transact_id='$id' ";
      $query_run = mysqli_query($connection, $query);
 
      foreach($query_run as $row) 
@@ -25,34 +25,16 @@ include('includes/navbar.php');
        ?>
 
         <form action="code.php" method="POST">
-            <input type="hidden" name="edit_pay" value="<?php echo $row['id'] ?>" >
+            <input type="hidden" name="edit_pay" value="<?php echo $row['transact_id'] ?>" >
             <div class="form-group">
-                <label>Amount Paid</label>
-                <input type="number" name="edit_amount" value="<?php echo $row['amount'] ?>" class="form-control" placeholder="Enter Amount">
+                <label>Balance</label>
+                <input type="number" name="edit_balance" value="<?php echo $row['balance'] ?>" class="form-control" placeholder="Enter Amount">
             </div>
             <div class="form-group">
-                <label>Balance Due</label>
-                <input type="number" name="edit_balance" value="<?php echo $row['balance'] ?>" class="form-control" placeholder="Enter Balace Due">
+                <label>mode</label>
+                <input type="text" name="edit_mode" value="<?php echo $row['mode'] ?>" class="form-control" placeholder="Enter Mode of Payment e.g. M-pesa">
             </div>
-            <div class="form-group">
-                <label>Rental Month</label>
-                <Select  id="month" name="edit_month"  value="<?php echo $row['month'] ?>" class="form-control" placeholder="<?php echo $row['month'] ?>">
-                    <option value="<?php echo $row['month'] ?>" selected="disabled"><?php echo $row['month'] ?></option>
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="april">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                </Select>
-            </div>
-                <a href="payments.php" class="btn btn-danger">Cancel</a>
+                <a href="payments" class="btn btn-danger">Cancel</a>
                 <button type="submit" name="update_paybtn" class="btn btn-success">Update</button>
 
         </form>

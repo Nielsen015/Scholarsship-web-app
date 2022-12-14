@@ -58,7 +58,7 @@ include('security.php');
                         </span>
                         <h3>Notifications</h3>
                         <span class="message-count"><?php 
-                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  state=0";
                             $query_run = mysqli_query($connection, $query);
                             $row = mysqli_num_rows($query_run);
                             {?><?php echo $row; ?></span><?php } ?>
@@ -454,7 +454,8 @@ include('security.php');
                     {
                     ?>
                     <h2>Old Password</h2>
-                    <input type="text" class="input" name="old"  placeholder="Old Password" required>
+                    <input id="password-field2" type="password" class="input" name="old"  placeholder="Old Password" required>
+                    <span toggle="#password-field2" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-left: -30px; cursor: pointer;"></span>
                     <h2>New Password</h2>
                     <input id="password-field" type="password" name="new" class="form-control" placeholder="New Password" required>
                     <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="margin-left: -30px; cursor: pointer;"></span>

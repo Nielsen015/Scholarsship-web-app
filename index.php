@@ -1,5 +1,6 @@
 <?php
 include('database/dbconfig.php');
+include('log.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +92,7 @@ include('database/dbconfig.php');
                 <p>Access scholarships that match your education financial
                      needs and achieve your goals.</p>
                 <div class="btn">
-                    <a href="dashboard/scholarship">Apply Now</a>
+                    <a href="dashboard/index">Apply Now</a>
                 </div>
             </div>
         </div>

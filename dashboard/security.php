@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('log.php');
 include('database/dbconfig.php');
 
 date_default_timezone_set("Africa/Nairobi");
@@ -16,6 +17,6 @@ else
 if(!$_SESSION['username'])
 {
     $_SESSION['id']=$num['id'];
-    header('Location: /scholarship/signin');
+    header('Location: ../signin');
 }
 ?>

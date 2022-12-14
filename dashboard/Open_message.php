@@ -58,7 +58,7 @@ include('security.php');
                         </span>
                         <h3>Notifications</h3>
                         <?php 
-                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  state=0";
                             $query_run = mysqli_query($connection, $query);
                             $row = mysqli_num_rows($query_run);
                             {?>
@@ -129,7 +129,7 @@ include('security.php');
                 if(isset($_GET['id']))
                 {
                     $main_id = $_GET['id'];
-                    $sql_update = mysqli_query($connection,"UPDATE alert SET status=1 WHERE id='$main_id'");
+                    $sql_update = mysqli_query($connection,"UPDATE alert SET state=1 WHERE id='$main_id'");
                 }
                 ?>
                 <div class="table-header">
@@ -142,7 +142,7 @@ include('security.php');
                 <div class="table-section">
                 <?php
                 $sr_no=1;
-                $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=1 AND  id='$main_id'";
+                $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  state=1 AND  id='$main_id'";
                 $query_run = mysqli_query($connection,$query);
 
                  ?>

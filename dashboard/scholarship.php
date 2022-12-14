@@ -1,6 +1,6 @@
 <?php
-include('includes/header.php'); 
 include('security.php');
+include('includes/header.php'); 
 ?>
 <body>
     <div class="scholar">
@@ -58,7 +58,7 @@ include('security.php');
                         </span>
                         <h3>Notifications</h3>
                         <span class="message-count"><?php 
-                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  state=0";
                             $query_run = mysqli_query($connection, $query);
                             $row = mysqli_num_rows($query_run);
                             {?><?php echo $row; ?></span><?php } ?>

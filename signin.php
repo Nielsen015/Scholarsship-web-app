@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('database/dbconfig.php');
+include('log.php');
 ?>
 
 <!DOCTYPE html>

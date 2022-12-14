@@ -19,18 +19,18 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 <div class="container">
 <div class="content">
   <div class="left-side-center">
-    <img src="images/Clog.jpg" style="height: 295px;width:295px;" alt="logo">
+    <img src="images/logo.png" style="height: 295px;width:295px;" alt="logo">
     
   </div>
   <div class="right-side">
-    <div class="topic-text">Tenant message Panel</div>
-    <p>Send Tenant of a specific house number a message with subject to housing matters.</p>
+    <div class="topic-text">Users message Panel</div>
+    <p>Send Users information to keep them update to date.</p>
   <form action="individual_code.php" method="POST">
     <div class="input-box">
     <div class="form-group">
     <label>Receiver:</label>
-<select id="tenant" name="tenant" class="form-control" required>
-    <option value="" selected="selected" class="form-control" disabled="">Select Tenant username</option>
+<select id="user" name="user" class="form-control" required>
+    <option value="" selected="selected" class="form-control" disabled="">Select username</option>
     <?php
     $query = "SELECT username FROM users";
     $query_run = mysqli_query($connection, $query);
@@ -42,6 +42,16 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
 ?>
 </select>
 </div>
+<div class="input-box" style="display: none;">
+    <?php
+    $query = "SELECT username FROM admin where email='".$_SESSION['email']."'";
+    $query_run = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_array($query_run)) {
+      ?>
+         <input type="hidden" name="sender" value="<?php echo $row['username']; ?>">;
+    <?php } ?>
+    </div>
     </div>
     <br> 
     <div class="input-box">

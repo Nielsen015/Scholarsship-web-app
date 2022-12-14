@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CADESONE | Admin Panel</title>
-    <link rel="shortcut icon" href="images/Clogo.jpg" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/Clogo.jpg">
+    <title>SHOLARLY | Admin Panel</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/logo.png">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -30,7 +30,6 @@
 
 
 </head>
-<?php include('dbcon.php'); ?>
 
 <body id="page-top">
 

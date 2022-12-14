@@ -23,11 +23,11 @@ include('includes/navbar.php');
                     <input type="password" name="newpassword" class="form-control" placeholder="Enter New Password" required>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
+                    <label>Confirm Password</label>
                     <input type="password" name="repeatnewpassword" class="form-control" placeholder="Confirm New Password" required>
                 </div>
-                <a href="profile.php" class="btn btn-danger">Cancel</a>
-                <button type="submit" name="pass" class="btn btn-warning">Update</button>
+                <a href="profiles" class="btn btn-danger">Cancel</a>
+                <button type="submit" name="pass" class="btn btn-success">Update</button>
 
         </form>
 

@@ -1,5 +1,6 @@
 <?php
 include('security.php'); 
+include('log.php');
 include('includes/header.php'); 
 include('includes/sidebar.php'); 
 date_default_timezone_set('Africa/Nairobi');

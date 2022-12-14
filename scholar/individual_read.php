@@ -6,10 +6,9 @@ date_default_timezone_set('Africa/Nairobi');
 $currentTime = date( 'd-m-Y h:i:s A', time () );
 ?>
 <?php
-if(isset($_GET['id']))
+if(isset($_GET['id_no']))
 {
-    $main_id = $_GET['id'];
-    $sql_update = mysqli_query($connection,"UPDATE individual SET status=1 WHERE id='$main_id'");
+    $main_id = $_GET['id_no'];
 }
 ?>
 
@@ -27,8 +26,7 @@ if(isset($_GET['id']))
     <div class="table-responsive">
 
     <?php
-    $sr_no=1;
-        $query = "SELECT * FROM individual WHERE  status=1";
+        $query = "SELECT * FROM send_history WHERE id_no=$main_id";
         $query_run = mysqli_query($connection, $query);
 
     ?>
@@ -36,9 +34,10 @@ if(isset($_GET['id']))
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Serial</th>
+            <th>Sender</th>
             <th>Message</th>
             <th>Date Sent</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -49,9 +48,10 @@ if(isset($_GET['id']))
 
           
           <tr>
-            <td><?php echo $sr_no++; ?></td>
-            <td><?php echo $main_result['messages']; ?></td>
+            <td><?php echo $main_result['username']; ?></td>
+            <td><?php echo $main_result['content']; ?></td>
             <td><?php echo $main_result['date']; ?></td>
+            <td><a href="message_history"><p style="color:#1cc88a;">Back</p></a></td>
 
           </tr>
           <?php

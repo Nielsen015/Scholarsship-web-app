@@ -387,7 +387,7 @@ include('database/dbconfig.php');
                             <ul>
                                 <li><a href="signin">Sign in</a></li>
                                 <li><a href="dashboard/index">Dashboard</a></li>
-                                <li><a href="dashboard/list">Wish List</a></li>
+                                <a href="dashboard/college_list"><li>Wish List</li></a>
                                 <li><a href="dashboard/setting">Profile</a></li>
                             </ul>								
                         </div>

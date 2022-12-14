@@ -1,7 +1,7 @@
 <?php
 include('security.php'); 
 
-if(isset($_POST['login_btn'])) 
+if(isset($_POST['signup_btn'])) 
 {
     $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
     $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
@@ -9,6 +9,8 @@ if(isset($_POST['login_btn']))
     $email = mysqli_real_escape_string($connection,$_POST['email']);
     $password = mysqli_real_escape_string($connection,$_POST['password']);
     $cpassword = $_POST['confirmpassword'];
+    $status = 'active';
+    $balance = 0;
 
     
     $email_query = "SELECT * FROM users WHERE email='$email' ";
@@ -36,11 +38,12 @@ if(isset($_POST['login_btn']))
     {
         //$hashed = hash('sha512', $password);
         $hashed = md5($password);
-        $query = "INSERT INTO users (first_name,last_name,username,email,password) VALUES('$first_name','$last_name','$username','$email','$hashed')";
+        $query = "INSERT INTO users (first_name,last_name,username,email,password,status) VALUES('$first_name','$last_name','$username','$email','$hashed','$status')";
         $query_run = mysqli_query($connection,$query);
         $sql = "INSERT INTO academics (username) VALUES('$username')";
         $sql_run = mysqli_query($connection,$sql);
-    
+        $sql1 = "INSERT INTO payment (username,balance) VALUES('$username','$balance')";
+        $sql1_run = mysqli_query($connection,$sql1);
         if($query_run)
         {
             $_SESSION['username'] = $username;

@@ -58,7 +58,7 @@ include('security.php');
                         </span>
                         <h3>Notifications</h3>
                         <?php 
-                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  state=0";
                             $query_run = mysqli_query($connection, $query);
                             $row = mysqli_num_rows($query_run);
                             {?>
@@ -160,7 +160,7 @@ include('security.php');
                             <td><?php echo $sr_no++; ?></td>
                             <td><?php echo $row['subject']; ?></td>
                             <td><?php 
-                    $main_result=$row['status'];
+                    $main_result=$row['state'];
                     if($main_result==1)
                     { ?>
                      <button type="button" class="state btn-success" style="color: #fff; background: #46B469;">Already Read</button>

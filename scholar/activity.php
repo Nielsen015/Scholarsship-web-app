@@ -20,7 +20,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
     <div class="table-responsive">
 
     <?php
-        $query = "SELECT * FROM userlog";
+        $query = "SELECT * FROM visitor_logs";
         $query_run = mysqli_query($connection,$query);
 
     ?>
@@ -67,7 +67,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
             }
           } 
           else{
-            echo "No Record Found";
+            echo '<p style="color:#e74a3b;">No Record(s) found</p>';
           }
           ?>
         

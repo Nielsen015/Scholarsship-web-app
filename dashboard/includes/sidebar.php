@@ -1,7 +1,7 @@
 <aside>
             <div class="top">
                 <div class="logo"  >
-                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/scholarship/index.html';">
+                    <img src="images/logo.png" alt="logo" onclick="window.location.href='scholarship/index';">
                     <h2>SCHO<span class="primary">LARLY </span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -52,7 +52,7 @@
                         </span>
                         <h3>Notifications</h3>
                         <span class="message-count"><?php 
-                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  status=0";
+                            $query = "SELECT * FROM alert WHERE username='".$_SESSION['username']."' AND  state=0";
                             $query_run = mysqli_query($connection, $query);
                             $row = mysqli_num_rows($query_run);
                             {?><?php echo $row; ?></span><?php } ?>

@@ -15,7 +15,7 @@ include('includes/header.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CADESONE | Forgot Password</title>
+    <title>SCHOLARLY | Forgot Password</title>
     <link rel="shortcut icon" href="/images/Clogo.jpg" type="image/icon type">
 
     <!-- Custom fonts for this template-->
@@ -62,10 +62,10 @@ include('includes/header.php');
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="signup.php">Create an Account!</a>
+                                        <a class="small" href="signup">Create an Account!</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="signin.php">Already have an account? Login!</a>
+                                        <a class="small" href="signin">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>
