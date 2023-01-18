@@ -72,12 +72,16 @@ include('security.php');
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
-                    <span class="material-icons-sharp">
-                        logout
-                        </span>
-                        <h3>Logout</h3>
-                </a>
+                    <!-- <form action="logout.php" method="POST" class="logout"> -->
+                    <button class="logout myBtn" type="submit" name="logout_btn">
+            
+            <span class="click-me material-icons-sharp">
+                logout
+                </span> <h3>Logout</h3>
+                
+        </button>
+        
+        <!-- </form> -->
             </div>
         </aside>
     <main>
@@ -180,6 +184,174 @@ include('security.php');
                 
             </div>
     </main>
+    <style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 150px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--color-background);
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  border: 1px solid #888;
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+  color: var(--color-primary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color-danger);
+  text-decoration: none;
+  cursor: pointer;
+}
+/* .myBtn {
+  background-color: #24306e;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  margin-left: 6.6rem;
+  margin-top: 0.8rem;
+}
+.myBtn:hover{
+   color: #24306e;
+   background-color: white;
+   border: 1px solid var(--color-primary);
+} */
+.modal-content h2 {
+   margin: 0;
+   color: var(--color-primary);
+}
+.modal-content p {
+  font-size: 14px;
+  font-weight: 500;
+  /* opacity: 0.7; */
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+.modal-content i{
+    color: var(--color-danger);
+    font-size: 25px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center
+}
+.modal-content a {
+    background-color: #24306e;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px;
+    /* margin-top: 8px; */
+    /* padding-top: 1rem; */
+}
+.modal-content a:hover{
+   color: #24306e;
+   background-color: white;
+   border: 1px solid var(--color-primary);
+}
+/* logout button */
+.modal-content button{
+    background-color: #be2326;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px;
+    margin-left: 1rem;
+    font-family: "Poppins", sans-serif;
+}
+.modal-content button:hover{
+   color: #24306e;
+   background-color: white;
+   border: 1px solid var(--color-primary);
+}
+.modal-content .buttons{
+    flex-direction: row;
+    display: block;
+    justify-content: space-between;
+}
+</style>
+<!-- The Modal <i class='bx bx-x'> -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+     <span class="close">&times;</span>
+
+                        <h2>Ready to leave?</h2><i class="fa fa-sign-out"></i>
+                        <p>Select "Logout" below if you are ready to end your current session, or "cancel" if you are not sure.</p>
+                
+    <div class="buttons">         
+        
+        <form action="logout.php" method="POST" class="logout"> <a href="">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
+        </form>
+    </div>
+  </div>
+
+</div>
+<script>
+// Get the modal
+ var modal = document.getElementById("myModal");
+
+ // Get the button that opens the modal
+ var btn = document.getElementsByClassName("myBtn");
+
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+  btn[i].onclick = function() {
+    modal.style.display = "block";
+  }
+} 
+//  btn.onclick = function() {
+//    modal.style.display = "block";
+//  }
+
+// When the user clicks on <span> (x), close the modal
+ $('.close').click(function(){
+   modal.style.display = "none";
+ })
+//  span.onclick = function() {
+//    modal.style.display = "none";
+//  }
+
+ // When the user clicks anywhere outside of the modal, close it
+//  window.onclick = function(event) {
+//   if (event.target == modal) {
+//      modal.style.display = "none";
+//    }
+//  }
+
+
+</script>
 
 <?php
 include('includes/footer.php');

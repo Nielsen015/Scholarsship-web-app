@@ -716,7 +716,7 @@ main .like a{
 .pagination .disable{
     background: var(--color-dark-variant);
 }
-/* scholarship meadia screen */
+/* scholarship media screen */
 @media screen and (max-width:1200px) {
     .scholar{
         width: 94%;
@@ -1855,7 +1855,7 @@ tr:hover td{
 }
 .wrapper2 h1{
     color: var(--color-success);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 5px;
     margin-top: 1px;
     text-align: center;

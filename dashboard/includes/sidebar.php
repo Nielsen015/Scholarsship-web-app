@@ -64,14 +64,15 @@
                         </span>
                         <h3>settings</h3>
                 </a>
-                <form action="logout.php" method="POST" class="logout">
-                <button class="logout" type="submit" name="logout_btn">
+                      <!-- <form action="logout.php" method="POST" class="logout"> -->
+                      <button class="logout myBtn" type="submit" name="logout_btn">
+            
+            <span class="click-me material-icons-sharp">
+                logout
+                </span> <h3>Logout</h3>
                 
-                    <span class="click-me material-icons-sharp">
-                        logout
-                        </span> <h3>Logout</h3>
-                       
-                </button>
-                </form>
+        </button>
+        
+        <!-- </form> -->
             </div>
         </aside>
