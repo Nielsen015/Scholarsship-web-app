@@ -64,11 +64,14 @@
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
+                <form action="logout.php" method="POST" class="logout">
+                <button class="logout" type="submit" name="logout_btn">
+                
                     <span class="click-me material-icons-sharp">
                         logout
-                        </span>
-                        <h3>Logout</h3>
-                </a>
+                        </span> <h3>Logout</h3>
+                       
+                </button>
+                </form>
             </div>
         </aside>

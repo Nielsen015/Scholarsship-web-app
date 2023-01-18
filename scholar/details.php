@@ -23,7 +23,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary"> Receipt Details
+    <h6 class="m-0 font-weight-bold text-primary"> Refund Details
     </h6>
   </div>
 
@@ -32,21 +32,19 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
     <div class="table-responsive">
 
     <?php
-        $query = "SELECT receipts.*,users.house_no as number from receipts join users on users.username=receipts.tenant where receipts.invoiceNumber='".$_GET['cid']."'";
+        $query = "SELECT refunds.*,refundremark.remark as remark from refunds join refundremark on refundremark.invoiceNumber=refunds.invoiceNumber where refunds.invoiceNumber='".$_GET['cid']."'";
        $query_run = mysqli_query($connection,$query);
     ?>
 
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Invoice Number</th>
-            <th>Tenant Contact</th>
-            <th>Rental Year</th>
-            <th>Rental Month</th>
-            <th>Payment Type</th>
-            <th>Mode of Payment</th>
-            <th>Tenant Comment/Add. Info</th>
-            <th>Receipt Document</th>
+            <th>Usersname</th>
+            <th>Processed By</th>
+            <th>Approved by</th>
+            <th>Approver Comment</th>
+            <th>Processor Comment</th>
+            <th>User Comment/Add. Info</th>
             <th>Final status</th>
             <th>action</th>
   
@@ -60,29 +58,13 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 
           
           <tr>
-            <td><?php echo $main_result['invoiceNumber']; ?></td>
-            <td><?php echo $main_result['contact']; ?></td>
-            <td><?php echo $main_result['year']; ?></td>
-            <td><?php echo $main_result['month']; ?></td>
-            <td><?php echo $main_result['paymenttype']; ?></td>
-            <td><?php echo $main_result['mode']; ?></td>
-            <td> <?php $cfile=$main_result['details'];
-                    if($cfile=="" || $cfile=="NULL")
-                    {
-                      echo "No Comments By tenant";
-                    }
-                    else{?>
-                        <?php echo $main_result['details'];?>
-                    <?php } ?></td>
-            <td> <?php $cfile=$main_result['compfile'];
-                    if($cfile=="" || $cfile=="NULL")
-                    {
-                      echo "File NA";
-                    }
-                    else{?>
-                    <a href="../receipts/<?php echo $main_result['compfile'];?>" ? target="_blank"><button type="button" class="btn btn-info">View File</button></a>
-                    <?php } ?></td>
-           <td><?php 
+            <td><?php echo $main_result['username']; ?></td>
+            <td><?php echo $main_result['admin']; ?></td>
+            <td><?php echo $main_result['approver']; ?></td>
+            <td><?php echo $main_result['remark']; ?></td>
+            <td><?php echo $main_result['details']; ?></td>
+            <td><?php echo $main_result['reason']; ?></td>
+            <td><?php 
                 
                     if($main_result['status']=="" or $main_result['status']=="NULL")
                     { ?>
@@ -132,5 +114,4 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 
 <?php
 include('includes/scripts.php');
-include('includes/footer.php');
 ?>

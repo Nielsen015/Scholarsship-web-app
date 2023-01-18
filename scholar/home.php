@@ -2,7 +2,7 @@
 include('security.php');
 include('log.php');
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbars.php'); 
 date_default_timezone_set('Africa/Nairobi');
 $currentTime = date( 'd-m-Y h:i:s A', time () );
 ?>
@@ -27,7 +27,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="users">Total registered Users</a></div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="users" style="text-decoration: none;color:#24306e;">Total registered Users</a></div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
               <?php
              $query = "SELECT id FROM users ORDER BY id";  
@@ -53,7 +53,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="#">Total Number of Scholarships</a></div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="#" style="text-decoration: none;color:#24306e;">Total Number of Scholarships</a></div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
               <?php
              $query = "SELECT id FROM scholarships ORDER BY id";  
@@ -79,20 +79,14 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="admin">Total Admin users</a></div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">
-              <?php
-             $query = "SELECT id FROM admin ORDER BY id";  
-             $query_run = mysqli_query($connection, $query);
-             $row = mysqli_num_rows($query_run);
-             echo '<h2> '.$row.'</h2>';
-            
-              ?>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="feedback" style="text-decoration: none;color:#24306e;">Client Feedback</a></div>
+              <div class="h5 mb-0 font-weight-bold text-gray-1000">
+                <h6>Compose a direct feedback to system users on responses or refund requests.</h6>
 
               </div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-user fa-3x text-gray-400"></i>
+              <i class="fas fa-comment fa-3x text-gray-400"></i>
             </div>
           </div>
         </div>
@@ -103,14 +97,47 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
       <div class="card border-left-danger shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1"><a href="alert">Notification Panel</a></div>
+            <div class="col mr-2"> <a href="#" class="text-uppercase" style="font-size:10px;text-decoration: none;color:#24306e"><b>Refund Panel</b></a><br>
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1"><a style="text-decoration: none;color:#FF7E01" href="pending">Pending <span class="badge badge-warning badge-counter">
+                           <!-- checking for pending refunds -->
+                           <?php
+                            $status="closed";
+                            $query = "SELECT * FROM refunds where status='$status'";
+                            $query_run = mysqli_query($connection, $query);
+                            $row = mysqli_num_rows($query_run);
+                            {?>
+                                
+											<b class="label orange pull-right"><?php echo $row; ?></b>
+											<?php } ?></span></a></div>
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1"><a style="text-decoration: none;color:#1D7044" href="approved">Approved <span class="badge badge-success badge-counter">
+                           <!-- checking for approved refunds -->
+                           <?php
+                            $status="closed";
+                            $query = "SELECT * FROM refunds where status='$status'";
+                            $query_run = mysqli_query($connection, $query);
+                            $row = mysqli_num_rows($query_run);
+                            {?>
+                                
+											<b class="label orange pull-right"><?php echo $row; ?></b>
+											<?php } ?></span></a></div>
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1"><a style="text-decoration: none;color:#C91414" href="declined">Declined <span class="badge badge-danger badge-counter">
+                           <!-- checking for decliend refunds -->
+                           <?php
+                            $status="declined";
+                            $query = "SELECT * FROM refunds where status='$status'";
+                            $query_run = mysqli_query($connection, $query);
+                            $row = mysqli_num_rows($query_run);
+                            {?>
+                                
+											<b class="label orange pull-right"><?php echo $row; ?></b>
+											<?php } ?></span></a></div>
+
               <div class="h5 mb-0 font-weight-bold text-gray-800">
 
               </div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-comment-dots fa-3x text-gray-400"></i>
+              <i class="fa fa-redo fa-3x text-gray-400"></i>
             </div>
           </div>
         </div>

@@ -123,6 +123,7 @@ include('security.php');
                     </div>
                 </div>
             </div>
+        </div>
     <div class="wrapper3">
     <input type="radio" name="slider" id="hill-1" checked>
     <input type="radio" name="slider" id="hill-2" >

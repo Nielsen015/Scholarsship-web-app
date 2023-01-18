@@ -70,12 +70,14 @@ include('security.php');
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
-                    <span class="material-icons-sharp">
+                <form action="logout.php" method="POST" class="logout">
+                <button class="logout" type="submit" name="logout_btn">
+                
+                    <span class="click-me material-icons-sharp">
                         logout
-                        </span>
-                        <h3>Logout</h3>
-                </a>
+                        </span> <h3>Logout</h3>
+                       
+                </form>
             </div>
         </aside>
     <main>
@@ -124,6 +126,7 @@ include('security.php');
                     </div>
                 </div>
             </div>
+        </div>
     <div class="wrapper2">
     <input type="radio" name="slider" id="tab-1" checked>
     <input type="radio" name="slider" id="tab-2" >

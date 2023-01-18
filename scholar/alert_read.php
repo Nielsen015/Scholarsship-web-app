@@ -74,5 +74,4 @@ if(isset($_GET['id_no']))
 
 <?php
 include('includes/scripts.php');
-include('includes/footer.php');
 ?>

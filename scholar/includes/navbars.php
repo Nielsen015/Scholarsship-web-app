@@ -12,7 +12,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="index">
+    <a class="nav-link" href="home">
         <i class="fa fa-home fa-2x"></i>
         <span>home</span></a>
 </li>
@@ -27,7 +27,7 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="users">
+    <a class="nav-link" href="user">
         <i class="fas fa-user-tie fa-2x"></i>
         <span>Registered Users</span></a>
 </li>
@@ -41,14 +41,14 @@
                 <div id="collapsePagesfour" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Select Option:</h6>
-                        <a class="collapse-item" href="admincaster">Admin</a>
-                        <a class="collapse-item" href="individual">Users</a>
+                        <a class="collapse-item" href="admincom">Admin</a>
+                        <a class="collapse-item" href="individuals">Users</a>
                     </div>
                 </div>
             </li>
 <!-- Nav Item - Ntification Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="alert">
+    <a class="nav-link" href="alerts">
         <i class="far fa-bell fa-1.6x"></i>
         <span>Notification(s)<span class="badge badge-danger badge-counter" style="position: relative;top: -10px;left: 2px;"><?php
                             $query = "SELECT * FROM messages where state= 0";
@@ -60,7 +60,7 @@
 </li>
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="adminalert">
+    <a class="nav-link" href="adminalerts">
         <i class="far fa-bell fa-1.6x"></i>
         <span>Admin Alert(s)<span class="badge badge-danger badge-counter" style="position: relative;top: -10px;left: 2px;"><?php
                             $query = $query = "SELECT c.*, a.* FROM admincast c, admin a where a.email='".$_SESSION['email']."' and c.receiver=a.username and state= 0";
@@ -72,29 +72,12 @@
 </li>
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="admincast">
-        <i class="fas fa-paper-plane fa-1.6x"></i>
-        <span>Admin Message History</span></a>
-</li>
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link" href="message_history.php">
-        <i class="fas fa-paper-plane fa-1.6x"></i>
-        <span>Users Message History</span></a>
-</li>
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link" href="payments.php">
+    <a class="nav-link" href="payment">
         <i class="fas fa-dollar-sign fa-1.6x"></i>
         <span>Payments</span></a>
 </li>
 
 <!-- Nav Item - Tables -->
-<li class="nav-item">
-    <a class="nav-link" href="admin">
-       <i class="fa fa-user fa-1.6x"></i>
-        <span>Admin Users</span></a>
-</li>
    <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -104,8 +87,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Select Option:</h6>
-                        <a class="collapse-item" href="profiles">Profile</a>
-                        <a class="collapse-item" href="activity.php">Activity Logs</a>
+                        <a class="collapse-item" href="settings">Profile</a>
+                        <a class="collapse-item" href="Pass_change">Change Password</a>
                     </div>
                 </div>
             </li>
@@ -208,13 +191,9 @@ while($row=mysqli_fetch_array($query_run))
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="profiles">
+          <a class="dropdown-item" href="settings">
             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
             Profile
-          </a>
-          <a class="dropdown-item" href="activity.php">
-            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-            Activity Log
           </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

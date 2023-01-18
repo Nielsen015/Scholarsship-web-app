@@ -124,6 +124,7 @@ include('security.php');
                     </div>
                 </div>
             </div>
+        </div>
             <div class="table">
             <?php
                 if(isset($_GET['id']))

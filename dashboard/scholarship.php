@@ -1,6 +1,7 @@
 <?php
 include('security.php');
 include('includes/header.php'); 
+
 ?>
 <body>
     <div class="scholar">
@@ -70,12 +71,16 @@ include('includes/header.php');
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
-                    <span class="material-icons-sharp">
+                <!-- <form action="logout.php" method="POST" class="logout"> -->
+                <button class="logout myBtn" type="submit" name="logout_btn">
+                
+                    <span class="click-me material-icons-sharp">
                         logout
-                        </span>
-                        <h3>Logout</h3>
-                </a>
+                        </span> <h3>Logout</h3>
+                       
+                </button>
+                
+                <!-- </form> -->
             </div>
         </aside>
         <!-- main section -->
@@ -207,7 +212,7 @@ include('includes/header.php');
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 200px; /* Location of the box */
+  padding-top: 150px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -246,7 +251,7 @@ include('includes/header.php');
   text-decoration: none;
   cursor: pointer;
 }
-.myBtn {
+/* .myBtn {
   background-color: #24306e;
   border: 0;
   border-radius: 20px;
@@ -260,7 +265,7 @@ include('includes/header.php');
    color: #24306e;
    background-color: white;
    border: 1px solid var(--color-primary);
-}
+} */
 .modal-content h2 {
    margin: 0;
    color: var(--color-primary);
@@ -295,8 +300,14 @@ include('includes/header.php');
 
   <div class="modal-content">
      <span class="close">&times;</span>
+        <?php
+    if(isset($_GET['id_no']))
+    {
+        $main_id = $_GET['id_no'];
+    }
+    ?>
     <?php
-                    $query = "SELECT * FROM scholarships WHERE id=1";
+                    $query = "SELECT * FROM scholarships WHERE id=$main_id";
                     $query_run = mysqli_query($connection,$query);
                     while($row=mysqli_fetch_array($query_run))
                     {

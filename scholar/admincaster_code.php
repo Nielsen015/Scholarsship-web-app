@@ -18,9 +18,24 @@ $query_run = mysqli_query($connection,$query);
  
 if($query_run)
 {
-    $_SESSION['status'] = "Message has been sent";
-    $_SESSION['status_code'] = "success";
-    header('Location: admincaster');
+    $role_query = "SELECT role FROM admin where email='".$_SESSION['email']."'";
+    $role_query_run = mysqli_query($connection, $role_query);
+    while($row=mysqli_fetch_array($role_query_run))
+{
+?>
+<?php
+    if($row['role'] == 'super'){
+        $_SESSION['status'] = "Message has been sent";
+        $_SESSION['status_code'] = "success";
+        header('location: admincaster');
+    } 
+    else 
+    {
+        $_SESSION['status'] = "Message has been sent";
+        $_SESSION['status_code'] = "success";
+        header('location: admincom');
+        } ?>
+        <?php }
 
 }
 else

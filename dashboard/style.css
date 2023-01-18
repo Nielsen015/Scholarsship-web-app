@@ -167,14 +167,30 @@ aside .sidebar a{
     height: 3rem;
     transform: all 300ms ease;
 }
-aside .sidebar a span{
+aside .sidebar a span,
+aside .sidebar .logout span{
     font-size: 1.6rem;
     transition: all 300ms ease;
 }
-aside .sidebar a:last-child{
+aside .sidebar .logout{
+    transform: all 300ms ease;
+}
+aside .sidebar button{
     position: absolute;
-    bottom: 2rem;
-    width: 100%;
+    bottom: 6rem;
+    background: transparent;
+    margin-left: 2rem;
+    color:var(--color-primary);
+    transform: all 300ms ease;
+}
+aside .sidebar .logout h3{
+    display:inline;
+    margin-top: 2px;
+    margin-left: 10px;
+    font-family:Poppins;
+    color:var(--color-primary);
+    font-weight: 500;
+    position: absolute;
 }
 aside .sidebar a.active{
     background: var(--color-light);
@@ -195,6 +211,9 @@ aside .sidebar a:hover{
     color: var(--color-primary);
 }
 aside .sidebar a:hover span{
+    margin-left: 0.5rem;
+}
+aside .sidebar .logout:hover span{
     margin-left: 0.5rem;
 }
 aside .sidebar .message-count{
@@ -2212,9 +2231,9 @@ tr:hover td{
    aside .sidebar a{
     width: 5.6rem;
    }
-   aside .sidebar a:last-child{
+   aside .sidebar .logout{
     position: relative;
-    margin-top: 1.8rem;
+    margin-top: 4rem;
    }
    main .insights{
     grid-template-columns: 1fr;
@@ -2277,7 +2296,7 @@ tr:hover td{
         width: 100%;
         height: 3.4rem;
     }
-    aside .sidebar a:last-child{
+    aside .sidebar .logout{
         position: absolute;
         bottom: 8rem;
     }

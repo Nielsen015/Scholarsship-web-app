@@ -7,7 +7,7 @@ include('security.php');
         <aside>
             <div class="top">
                 <div class="logo"  >
-                    <img src="images/logo.png" alt="logo" onclick="window.location.href='/scholarship/index';">
+                    <img src="images/logo.png" alt="logo" onclick="window.location.href='../index';">
                     <h2>SCHO<span class="primary">LARLY </span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -72,12 +72,15 @@ include('security.php');
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="/scholarship/signin" onclick="return confirm('Are you sure you want to logout?');">
-                    <span class="material-icons-sharp">
+                <form action="logout.php" method="POST" class="logout">
+                <button class="logout" type="submit" name="logout_btn">
+                
+                    <span class="click-me material-icons-sharp">
                         logout
-                        </span>
-                        <h3>Logout</h3>
-                </a>
+                        </span> <h3>Logout</h3>
+                       
+                </button>
+                </form>
             </div>
         </aside>
     <main>
@@ -124,6 +127,7 @@ include('security.php');
                     </div>
                 </div>
             </div>
+        </div>
             <div class="table">
                 <div class="table-header">
                     <p>Notification Panel </p>
@@ -160,7 +164,7 @@ include('security.php');
                             <td><?php echo $sr_no++; ?></td>
                             <td><?php echo $row['subject']; ?></td>
                             <td><?php 
-                    $main_result=$row['state'];
+                    $main_result=$row['status'];
                     if($main_result==1)
                     { ?>
                      <button type="button" class="state btn-success" style="color: #fff; background: #46B469;">Already Read</button>
