@@ -234,6 +234,7 @@ while($row=mysqli_fetch_array($query_run))
                 </div>
             </div>
         </div>
+        
         <?php
         include('includes/footer_index.php');
         include('includes/script.php');
