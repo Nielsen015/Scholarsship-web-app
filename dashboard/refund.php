@@ -1,5 +1,6 @@
 <?php
 include('includes/header.php');
+include('includes/header1.php');
 include('security.php'); 
 ?>
 <body>
@@ -45,7 +46,7 @@ include('security.php');
                         </span>
                         <h3>Application Process</h3>
                 </a>
-                <a href="message" class="active">
+                <a href="message" class="">
                     <span class="material-icons-sharp">
                         message
                         </span>
@@ -127,49 +128,39 @@ include('security.php');
                 </div>
             </div>
         </div>
-        <div class="message1"> 
-            <div class="message1-content">
-                <div class="left-side">
-                    <div class="address details">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="topic">Address</div>
-                        <div class="text-one">Nairobi, Kenya</div>
-                    </div>
-                    <div class="phone details">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="topic">Contact</div>
-                        <div class="text-one">+254743159753</div>
-                    </div>
-                    <div class="email details">
-                        <i class="fas fa-envelope"></i>
-                        <div class="topic">Email</div>
-                        <div class="text-one">scholarly@gmail.com</div>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <div class="topic-text">Send us a Message</div>
-                    <p>Send us a direct chat and we shall respond to your issues.You can also reach us on phone or email address.</p>
-                <form action="send.php" method="POST">
-                <div class="input-box">
-                    <span class="details">Subject</span>
-                    <Select  id="subject" name="subject" class="form-control" required>
-                        <option value="" selected="disabled">Select your Subject</option>
-                        <option value="refund"> Refund</option>
-                        <option value="others">Wallet Balance</option>
-                        <option value="others">Other Issues</option>
-                    </Select>
-                </div>
-                <div class="input-box message1-box">
-                    <span class="details">Message</span>
-                    <textarea name="message" id="message" required placeholder="Type Your Message Here"></textarea>
-                </div>
-                <div class="button">
-                    <button type="submit"  name="submit" value="Send">Send Now</button>
-                </div>
-                </form>
-                </div>
-            </div>
+        <div class="containers">
+    <div class="title">Refund Form</div>
+    <p><b>Note:</b> Refunds can only be claimed within 7 days of payment</p>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" style="color:#24306e" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Number used during payment" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Reason for refund</span>
+            <textarea name="message" id="message" required placeholder="Type Your Message Here"></textarea>
+          </div>
         </div>
+        <div class="button">
+          <input type="submit" value="Claim">
+        </div>
+      </form>
+    </div>
+  </div>
     </main>
     </div>
     <style>

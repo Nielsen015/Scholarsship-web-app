@@ -504,6 +504,7 @@ include('security.php');
         
 </div>
 </main>
+</div>
 <style>
 /* The Modal (background) */
 .modal {

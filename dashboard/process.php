@@ -202,6 +202,7 @@ include('security.php');
             </div>
         </div>
     </main>
+    </div>
     <style>
 /* The Modal (background) */
 .modal {

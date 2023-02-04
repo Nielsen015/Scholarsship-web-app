@@ -205,7 +205,7 @@ while($row=mysqli_fetch_array($query_run))
                         </span>
                     </div>
                     <div class="right">
-                        <div class="info"><h3>Request Refund</h3></div>
+                        <div class="info" onclick="window.location.href='refund';"><h3>Request Refund</h3></div>
 
                     </div>
 

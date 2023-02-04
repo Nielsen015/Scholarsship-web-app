@@ -27,7 +27,7 @@ include('security.php');
                         </span>
                         <h3>Scholarships</h3>
                 </a>
-                <a href="wallet" class="active">
+                <a href="wallet" class="">
                     <span class="material-icons-sharp">
                         account_balance_wallet
                         </span>

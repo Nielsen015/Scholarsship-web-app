@@ -674,7 +674,7 @@ main .like a{
 .pagination{
     text-align: center;
     margin: 10px 10px auto;
-    user-select: none;
+    /* user-select: none; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2233,7 +2233,8 @@ tr:hover td{
    }
    aside .sidebar .logout{
     position: relative;
-    margin-top: 4rem;
+    bottom: -4rem;
+    margin-right: auto;
    }
    main .insights{
     grid-template-columns: 1fr;
@@ -2297,8 +2298,8 @@ tr:hover td{
         height: 3.4rem;
     }
     aside .sidebar .logout{
-        position: absolute;
-        bottom: 8rem;
+        position: relative;
+        bottom: -4rem;
     }
     aside .close{
         display: inline-block;
