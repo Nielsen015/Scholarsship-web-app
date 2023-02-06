@@ -359,7 +359,7 @@ while($row=mysqli_fetch_array($query_run))
                 
     <div class="buttons">         
         
-        <form action="logout.php" method="POST" class="logout"> <a href="">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
+        <form action="logout.php" method="POST" class="logout"> <a class="cancel">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
         </form>
     </div>
   </div>
@@ -374,6 +374,8 @@ while($row=mysqli_fetch_array($query_run))
 
  // Get the <span> element that closes the modal
  var span = document.getElementsByClassName("close")[0];
+//  Get the a tag for the cancel button
+ var a = document.getElementsByClassName("cancel")[0];
 
 // When the user clicks the button, open the modal
 for (var i = 0; i < btn.length; i++) {
@@ -387,6 +389,10 @@ for (var i = 0; i < btn.length; i++) {
 
 // When the user clicks on <span> (x), close the modal
  $('.close').click(function(){
+   modal.style.display = "none";
+ })
+//  when user clicks cancel button
+ $('.cancel').click(function(){
    modal.style.display = "none";
  })
 //  span.onclick = function() {

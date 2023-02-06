@@ -144,11 +144,11 @@ include('security.php');
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input type="email" placeholder="Enter your email" required>
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Number used during payment" required>
+            <input type="tel" id="phone" name="phone" pattern="[0-7]{2}[0-9]{8}" required placeholder="0712345678">
           </div>
           <div class="input-box">
             <span class="details">Reason for refund</span>

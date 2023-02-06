@@ -147,7 +147,7 @@ include('security.php');
             <h5>Amount(minimum 100)</h5>
             <input type="number" placeholder="Enter Amount" value="100" min="100" required>
             <h5>Enter Your M-pesa Number</h5>
-            <input input type="tel" id="phone" name="phone" pattern="[0-7]{2}[0-9]{8}" required placeholder="0712345678">
+            <input type="tel" id="phone" name="phone" pattern="[0-7]{2}[0-9]{8}" required placeholder="0712345678">
           <button>Pay</button>
           </form>
         </div>
@@ -298,7 +298,7 @@ include('security.php');
                 
     <div class="buttons">         
         
-        <form action="logout.php" method="POST" class="logout"> <a href="">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
+        <form action="logout.php" method="POST" class="logout"> <a class="cancel">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
         </form>
     </div>
   </div>
@@ -313,6 +313,8 @@ include('security.php');
 
  // Get the <span> element that closes the modal
  var span = document.getElementsByClassName("close")[0];
+  //  Get the a tag for cancel button
+  var a = document.getElementsByClassName("cancel")[0];
 
 // When the user clicks the button, open the modal
 for (var i = 0; i < btn.length; i++) {
@@ -326,6 +328,10 @@ for (var i = 0; i < btn.length; i++) {
 
 // When the user clicks on <span> (x), close the modal
  $('.close').click(function(){
+   modal.style.display = "none";
+ })
+  //  when user clicks cancel button
+  $('.cancel').click(function(){
    modal.style.display = "none";
  })
 //  span.onclick = function() {

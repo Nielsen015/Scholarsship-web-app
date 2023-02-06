@@ -630,7 +630,7 @@ justify-content: space-between;
             
 <div class="buttons">         
     
-    <form action="logout.php" method="POST" class="logout"> <a href="">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
+    <form action="logout.php" method="POST" class="logout"> <a class="cancel">Cancel</a><button class="logout" type="submit" name="logout_btn">Logout</button>
     </form>
 </div>
 </div>
@@ -645,6 +645,8 @@ var btn = document.getElementsByClassName("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+ //  Get the a tag for cancel button
+ var a = document.getElementsByClassName("cancel")[0];
 
 // When the user clicks the button, open the modal
 for (var i = 0; i < btn.length; i++) {
@@ -660,6 +662,10 @@ modal.style.display = "block";
 $('.close').click(function(){
 modal.style.display = "none";
 })
+ //  when user clicks cancel button
+ $('.cancel').click(function(){
+   modal.style.display = "none";
+ })
 //  span.onclick = function() {
 //    modal.style.display = "none";
 //  }

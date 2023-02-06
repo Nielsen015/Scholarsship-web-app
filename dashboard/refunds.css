@@ -104,10 +104,21 @@ form .input-box span.details{
   font-size: 16px;
   outline: none;
   border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #9b59b6;
+  border-color: #46B469;
+}
+.user-details .input-box textarea:focus,
+.user-details .input-box textarea:valid{
+  border-color: #46B469;
+}
+.user-details .input-box input:invalid {
+  border-color: #be2326;
+}
+.user-details .input-box textarea:invalid {
+  border-color: #be2326;
 }
  form .gender-details .gender-title{
   font-size: 20px;
