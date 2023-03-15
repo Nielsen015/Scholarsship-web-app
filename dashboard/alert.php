@@ -165,7 +165,7 @@ include('security.php');
                             <td><?php echo $sr_no++; ?></td>
                             <td><?php echo $row['subject']; ?></td>
                             <td><?php 
-                    $main_result=$row['status'];
+                    $main_result=$row['state'];
                     if($main_result==1)
                     { ?>
                      <button type="button" class="state btn-success" style="color: #fff; background: #46B469;">Already Read</button>

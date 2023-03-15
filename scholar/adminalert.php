@@ -33,6 +33,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
             <th>Sender</th>
             <th>Date sent</th>
             <th>Subject</th>
+            <th>Status</th>
             <th>Action</th>
             <th>Action</th>
           </tr>
@@ -50,7 +51,17 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
             <td><?php echo $row['sender']; ?></td>
             <td><?php echo $row['date']; ?></td>
             <td><?php echo $row['subject']; ?></td>
-            <td><a href="alert_read.php? id_no=<?php echo $row['id_no'];?>">
+            <td><?php 
+                    $main_result=$row['state'];
+                    if($main_result==1)
+                    { ?>
+                     <p style="color:#1cc88a;">Read</p>
+                    <?php }
+                  if($main_result=="0"){ ?>
+                    <p style="color:#e74a3b;">Not Read</p>
+                  <?php } ?></td>
+            
+            <td><a href="alerts_read.php? id_no=<?php echo $row['id_no'];?>">
 <button type="button" class="btn btn-info">Read</button></a>
             </td>
             <td>

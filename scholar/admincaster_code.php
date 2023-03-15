@@ -40,9 +40,16 @@ if($query_run)
 }
 else
 {
+    if($row['role'] == 'super'){
     $_SESSION['status'] = "Error! cannot send message, please contact Admin";
     $_SESSION['status_code'] = "error";
     header('Location: admincaster');
+    }
+    else{
+        $_SESSION['status'] = "Error! cannot send message, please contact Admin";
+        $_SESSION['status_code'] = "error";
+        header('Location: admincom');
+    }
 
 
 }

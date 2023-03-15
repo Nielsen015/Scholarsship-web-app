@@ -78,13 +78,13 @@
 </li>
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="message_history.php">
+    <a class="nav-link" href="message_history">
         <i class="fas fa-paper-plane fa-1.6x"></i>
         <span>Users Message History</span></a>
 </li>
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link" href="payments.php">
+    <a class="nav-link" href="payments">
         <i class="fas fa-dollar-sign fa-1.6x"></i>
         <span>Payments</span></a>
 </li>

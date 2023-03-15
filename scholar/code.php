@@ -568,6 +568,31 @@ if(isset($_POST['delete_individualbtn']))
 
     }
 }
+// delete admin users admin messages\
+if(isset($_POST['delete_adminalertbtns']))
+{
+    $id =$_POST['delete_adminalerts'];
+
+    $query = "DELETE FROM admincast WHERE id_no='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    
+    if($query_run)
+    {
+        $_SESSION['status'] = "Message has been Deleted";
+        $_SESSION['status_code'] = "success";
+        header('Location: adminalerts');
+
+    }
+    else
+    {
+        $_SESSION['status'] = "Error! cannot delete Message, please contact Admin";
+        $_SESSION['status_code'] = "error";
+        header('Location: adminalerts');
+
+
+    }
+}
 // delete admin alerts
 if(isset($_POST['delete_adminalertbtn']))
 {

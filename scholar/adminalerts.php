@@ -1,7 +1,9 @@
 <?php
 include('security.php'); 
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbars.php');
+date_default_timezone_set('Africa/Nairobi');
+$currentTime = date( 'd-m-Y h:i:s A', time () );
 ?>
 
 
@@ -10,7 +12,7 @@ include('includes/navbar.php');
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary"> Your Notification Panel
+    <h6 class="m-0 font-weight-bold text-primary"> Admin Community Notification Panel
     </h6>
   </div>
 
@@ -19,8 +21,9 @@ include('includes/navbar.php');
     <div class="table-responsive">
 
     <?php
-        $query = "SELECT m.*,u.* from messages m,users u where m.username=u.username";
-       $query_run = mysqli_query($connection,$query);
+    $sr_no=1;
+        $query = "SELECT c.*, a.* FROM admincast c, admin a where a.email='".$_SESSION['email']."' and c.receiver=a.username";
+        $query_run = mysqli_query($connection,$query);
 
     ?>
 
@@ -28,10 +31,9 @@ include('includes/navbar.php');
         <thead>
           <tr>
             <th>Sender</th>
-            <th>Email</th>
+            <th>Date sent</th>
             <th>Subject</th>
             <th>Message Status</th>
-           
             <th>Action</th>
             <th>Action</th>
           </tr>
@@ -46,8 +48,8 @@ include('includes/navbar.php');
 
           
           <tr>
-            <td><?php echo $row['username']; ?></td>
-            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['sender']; ?></td>
+            <td><?php echo $row['date']; ?></td>
             <td><?php echo $row['subject']; ?></td>
             <td><?php 
                     $main_result=$row['state'];
@@ -59,13 +61,13 @@ include('includes/navbar.php');
                     <p style="color:#e74a3b;">Not Read</p>
                   <?php } ?></td>
             
-            <td><a href="notification_read? id_no=<?php echo $row['id_no'];?>">
-              <button type="button" class="btn btn-info">Read</button></a>
+            <td><a href="alerts_read.php? id_no=<?php echo $row['id_no'];?>">
+<button type="button" class="btn btn-info">Read</button></a>
             </td>
             <td>
                 <form action="code.php" method="post">
-                  <input type="hidden" name="delete_alert" value="<?php echo $row['id_no']; ?>">
-                <button type="submit" name="delete_alertbtn"class="btn btn-danger">Delete</button>
+                  <input type="hidden" name="delete_adminalerts" value="<?php echo $row['id_no']; ?>">
+                <button type="submit" name="delete_adminalertbtns"class="btn btn-danger">Delete</button>
             </form>
             </td>
           </tr>
@@ -83,6 +85,8 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
+<br>
+<br>
 
 
 

@@ -1,7 +1,7 @@
 <?php
 include('security.php'); 
 include('includes/header.php'); 
-include('includes/navbar.php'); 
+include('includes/navbars.php'); 
 ?>
 
 
@@ -64,14 +64,15 @@ include('includes/navbar.php');
             </td>
             <td>
                 <form action="code.php" method="post">
-                  <input type="hidden" name="delete_alert" value="<?php echo $row['id_no']; ?>">
-                <button type="submit" name="delete_alertbtn"class="btn btn-danger">Delete</button>
+                  <input type="hidden" name="delete_alerts" value="<?php echo $row['id_no']; ?>">
+                <button type="submit" name="delete_alertbtns"class="btn btn-danger">Delete</button>
             </form>
             </td>
           </tr>
           <?php
             }
           } 
+          
           else{
             echo '<p style="color:#e74a3b;">No Messages found</p>';
           }
