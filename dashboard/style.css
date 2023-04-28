@@ -615,17 +615,26 @@ main .like a{
     color: var(--color-dark-variant);
     font-size: 16px;
     margin-top: 2.5px;
+    
 }
 .card .heart{
     position: absolute;
     right: 30px;
     background: none;
     top: 10px;
+    
+    
 }
+
+.card .heart span:active{
+    color: var(--color-danger);
+}
+
+
 .card .heart span{
-    /* color: var(--color-primary); */
     font-size: 25px;
     cursor: pointer;
+    /* background-color: var(--color-primary); */
 }
 .card .date h3{
     font-size: 14px;

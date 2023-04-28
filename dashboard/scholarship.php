@@ -184,8 +184,9 @@ include('includes/header.php');
                         </div>
                         
                         <button class="myBtn btn">View details<button>
-                        <button id="btnh1" class="heart"><span class="material-icons-sharp">
-                        favorite
+                        <button id="btnh1" class="heart">
+                            <span class="material-icons-sharp">
+                                favorite
                         </span></i>
                         </button>
                     
@@ -365,7 +366,13 @@ for (var i = 0; i < btn.length; i++) {
    }
  }
 
+</script>
+<script>
+    var shape = document.querySelector('.heart');
 
+shape.addEventListener('click', function(){
+    this.classList.toggle('active');
+});
 </script>
         <script type="text/javascript">
             function getPageList(totalPages, page, maxLength){
